@@ -1,0 +1,98 @@
+[gd_scene load_steps=17 format=3 uid="uid://dyjtrux3nl5ue"]
+
+[ext_resource type="Script" path="res://login/login.gd" id="1_fdlry"]
+[ext_resource type="Texture2D" uid="uid://cytgmkva30mmr" path="res://login/background.png" id="1_i6vrf"]
+[ext_resource type="Texture2D" uid="uid://flls5n1l0e11" path="res://login/logo.png" id="2_2k0rq"]
+[ext_resource type="Texture2D" uid="uid://c0x4ispspp4t7" path="res://login/start_button_normal.png" id="2_n7rfi"]
+[ext_resource type="Texture2D" uid="uid://bu2u3v8768j85" path="res://login/start_button_pressed.png" id="3_0khe7"]
+[ext_resource type="Texture2D" uid="uid://bux2506mhcpsf" path="res://login/server_select_button_normal.png" id="4_rf6ec"]
+[ext_resource type="Texture2D" uid="uid://ceskbiu6ubmfu" path="res://login/sign.png" id="6_4tg6f"]
+[ext_resource type="Texture2D" uid="uid://tt4urkoqf2ph" path="res://login/server_select_button_pressed.png.png" id="6_nogcq"]
+[ext_resource type="Texture2D" uid="uid://2pvp5fmx5714" path="res://login/config_buttion_normal.png" id="7_ey6e8"]
+[ext_resource type="Texture2D" uid="uid://c35k6c2xe64h7" path="res://login/config_buttion_pressed.png" id="8_7a87b"]
+[ext_resource type="Texture2D" uid="uid://0torg08mrrlt" path="res://login/account_buttion_normal.png" id="9_qnbbu"]
+[ext_resource type="Texture2D" uid="uid://cu5x13e5yp0lp" path="res://login/account_buttion_pressed.png" id="10_vstp2"]
+[ext_resource type="Texture2D" uid="uid://cth2m5gptj8po" path="res://login/notice_buttion_normal.png" id="11_y42ya"]
+[ext_resource type="Texture2D" uid="uid://c2llxcm1wejm0" path="res://login/notice_buttion_pressed.png" id="12_gru5w"]
+[ext_resource type="Texture2D" uid="uid://cbsbvq7my45lv" path="res://login/help_button_normal.png" id="13_wcl1g"]
+[ext_resource type="Texture2D" uid="uid://bp6fdor4eci3a" path="res://login/help_button_pressed.png" id="14_hohyo"]
+
+[node name="Login" type="Node2D"]
+script = ExtResource("1_fdlry")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(961, 540)
+texture = ExtResource("1_i6vrf")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1083.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 2
+offset_left = 3.0
+offset_top = 109.0
+offset_right = 553.0
+offset_bottom = 279.0
+texture = ExtResource("2_2k0rq")
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 0
+offset_top = 862.0
+offset_right = 1922.0
+offset_bottom = 1081.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="TextureButton" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_n7rfi")
+texture_pressed = ExtResource("3_0khe7")
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ServerSelectButton" type="TextureButton" parent="Control/CenterContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_rf6ec")
+texture_pressed = ExtResource("6_nogcq")
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 1768.0
+offset_top = 912.0
+offset_right = 1918.0
+offset_bottom = 1062.0
+texture = ExtResource("6_4tg6f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 1798.0
+offset_top = 119.0
+offset_right = 1898.0
+offset_bottom = 219.0
+
+[node name="ConfigButton" type="TextureButton" parent="Control/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_ey6e8")
+texture_pressed = ExtResource("8_7a87b")
+
+[node name="ConfigButton2" type="TextureButton" parent="Control/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_qnbbu")
+texture_pressed = ExtResource("10_vstp2")
+
+[node name="ConfigButton3" type="TextureButton" parent="Control/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("11_y42ya")
+texture_pressed = ExtResource("12_gru5w")
+
+[node name="ConfigButton4" type="TextureButton" parent="Control/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("13_wcl1g")
+texture_pressed = ExtResource("14_hohyo")
+
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

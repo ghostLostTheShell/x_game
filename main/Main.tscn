@@ -1,0 +1,223 @@
+[gd_scene load_steps=25 format=3 uid="uid://c7ua4r03xqw40"]
+
+[ext_resource type="Texture2D" uid="uid://dt18hft62v0b2" path="res://main/background.png" id="1_2mble"]
+[ext_resource type="PackedScene" uid="uid://c4nj64wmqhnpa" path="res://main/user_info/UserInfo.tscn" id="2_1ssoa"]
+[ext_resource type="Texture2D" uid="uid://csxuh5fc6iy08" path="res://main/电池.png" id="2_3sogo"]
+[ext_resource type="Texture2D" uid="uid://3rvlolvrj0jl" path="res://main/buttom_background.png" id="2_kjdbb"]
+[ext_resource type="Texture2D" uid="uid://chc5nedch2x5r" path="res://main/网络.png" id="3_is400"]
+[ext_resource type="Texture2D" uid="uid://cfh4w3h01up24" path="res://main/设置.png" id="4_8vecx"]
+[ext_resource type="Texture2D" uid="uid://dccsctg6drrie" path="res://main/体力.png" id="5_hwqt4"]
+[ext_resource type="Texture2D" uid="uid://dhwg63vr8ltqn" path="res://main/货币加号.png" id="6_c1ngb"]
+[ext_resource type="Texture2D" uid="uid://fjuj6hqoddga" path="res://main/金币.png" id="7_jy0hp"]
+[ext_resource type="Texture2D" uid="uid://b4alxeun1f2vq" path="res://main/水晶货币.png" id="8_cjdfn"]
+[ext_resource type="Texture2D" uid="uid://cnhvguafkacf1" path="res://main/广播.png" id="11_vy5s5"]
+[ext_resource type="Texture2D" uid="uid://b1s4oviuc1hth" path="res://main/广播——暗.png" id="12_2wm8y"]
+[ext_resource type="Texture2D" uid="uid://qjhpibqbtlcy" path="res://main/交易所.png" id="12_68sg7"]
+[ext_resource type="Texture2D" uid="uid://cghvpgju21wo2" path="res://main/邮箱.png" id="13_t7yps"]
+[ext_resource type="Texture2D" uid="uid://cqmydqggxjoop" path="res://main/好友.png" id="14_gg4mw"]
+[ext_resource type="Texture2D" uid="uid://cydp51rwv61rq" path="res://main/交易所——暗.png" id="14_q4gvr"]
+[ext_resource type="Texture2D" uid="uid://dejlutkofubyx" path="res://main/邮箱——暗.png" id="15_fr4sy"]
+[ext_resource type="Texture2D" uid="uid://drycowmc6wjqf" path="res://main/好友——暗.png" id="17_sc51a"]
+[ext_resource type="Texture2D" uid="uid://cstab3ixi7xb1" path="res://main/main_panel/广告框.png" id="19_0yadd"]
+[ext_resource type="Texture2D" uid="uid://8gwb76omae4h" path="res://main/main_panel/赏金令.png" id="20_rdtu0"]
+[ext_resource type="Texture2D" uid="uid://cvo3wjs5jvn60" path="res://main/main_panel/派遣.png" id="21_ppvio"]
+[ext_resource type="Texture2D" uid="uid://bxvkq7qu12ijq" path="res://main/main_panel/抽奖.png" id="22_38cea"]
+[ext_resource type="Texture2D" uid="uid://dewsxxa0fvep8" path="res://main/main_panel/种植.png" id="23_eem0j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m2tgk"]
+font_size = 40
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 541)
+texture = ExtResource("1_2mble")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1918.0
+offset_bottom = 1083.0
+
+[node name="UserInfo" parent="Control" instance=ExtResource("2_1ssoa")]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 8.0
+offset_bottom = 124.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control"]
+layout_mode = 2
+offset_left = 1578.0
+offset_top = 32.0
+offset_right = 1886.0
+offset_bottom = 140.0
+
+[node name="TextureRect4" type="TextureRect" parent="Control/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("2_3sogo")
+
+[node name="TextureRect5" type="TextureRect" parent="Control/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("3_is400")
+
+[node name="TextureRect6" type="TextureRect" parent="Control/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("4_8vecx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.391
+anchor_top = 0.001
+anchor_right = 0.391
+anchor_bottom = 0.001
+offset_left = -53.938
+offset_top = -1.083
+offset_right = 828.062
+offset_bottom = 142.917
+
+[node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_hwqt4")
+
+[node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer/TextureRect3"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 24.0
+offset_right = 288.0
+offset_bottom = 120.0
+texture = ExtResource("6_c1ngb")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/TextureRect3"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 40.0
+offset_right = 240.0
+offset_bottom = 104.0
+text = "100
+"
+label_settings = SubResource("LabelSettings_m2tgk")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_jy0hp")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 40.0
+offset_right = 234.0
+offset_bottom = 104.0
+text = "100
+"
+label_settings = SubResource("LabelSettings_m2tgk")
+horizontal_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 24.0
+offset_right = 290.0
+offset_bottom = 120.0
+texture = ExtResource("6_c1ngb")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_cjdfn")
+
+[node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer/TextureRect2"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 24.0
+offset_right = 290.0
+offset_bottom = 120.0
+texture = ExtResource("6_c1ngb")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/TextureRect2"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 40.0
+offset_right = 236.0
+offset_bottom = 104.0
+text = "100
+"
+label_settings = SubResource("LabelSettings_m2tgk")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_top = 956.0
+offset_right = 1920.0
+offset_bottom = 1076.0
+texture = ExtResource("2_kjdbb")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect"]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 1920.0
+offset_bottom = 110.0
+
+[node name="SidebarContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 192.0
+offset_right = 166.0
+offset_bottom = 884.0
+
+[node name="TextureButton" type="TextureButton" parent="Control/SidebarContainer"]
+layout_mode = 2
+texture_normal = ExtResource("11_vy5s5")
+texture_pressed = ExtResource("12_2wm8y")
+
+[node name="TextureButton2" type="TextureButton" parent="Control/SidebarContainer"]
+layout_mode = 2
+texture_normal = ExtResource("12_68sg7")
+texture_pressed = ExtResource("14_q4gvr")
+
+[node name="TextureButton3" type="TextureButton" parent="Control/SidebarContainer"]
+layout_mode = 2
+texture_normal = ExtResource("13_t7yps")
+texture_pressed = ExtResource("15_fr4sy")
+
+[node name="TextureButton4" type="TextureButton" parent="Control/SidebarContainer"]
+layout_mode = 2
+texture_normal = ExtResource("14_gg4mw")
+texture_pressed = ExtResource("17_sc51a")
+
+[node name="MainPanelContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 216.0
+offset_right = 1836.0
+offset_bottom = 845.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MainPanelContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("19_0yadd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MainPanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("20_rdtu0")
+
+[node name="TextureRect" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("21_ppvio")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MainPanelContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/MainPanelContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("22_38cea")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MainPanelContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("23_eem0j")
