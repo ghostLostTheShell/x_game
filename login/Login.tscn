@@ -33,9 +33,9 @@ offset_bottom = 1083.0
 [node name="TextureRect" type="TextureRect" parent="Control"]
 layout_mode = 2
 offset_left = 3.0
-offset_top = 109.0
+offset_top = 91.0
 offset_right = 553.0
-offset_bottom = 279.0
+offset_bottom = 261.0
 texture = ExtResource("2_2k0rq")
 
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
@@ -62,18 +62,18 @@ texture_pressed = ExtResource("6_nogcq")
 
 [node name="TextureRect2" type="TextureRect" parent="Control"]
 layout_mode = 0
-offset_left = 1768.0
-offset_top = 912.0
-offset_right = 1918.0
-offset_bottom = 1062.0
+offset_left = 1759.0
+offset_top = 909.0
+offset_right = 1909.0
+offset_bottom = 1059.0
 texture = ExtResource("6_4tg6f")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 0
-offset_left = 1798.0
+offset_left = 1793.0
 offset_top = 119.0
-offset_right = 1898.0
-offset_bottom = 219.0
+offset_right = 1893.0
+offset_bottom = 503.0
 
 [node name="ConfigButton" type="TextureButton" parent="Control/VBoxContainer"]
 layout_mode = 2

@@ -68,33 +68,32 @@ texture = ExtResource("4_8vecx")
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.391
-anchor_top = 0.001
-anchor_right = 0.391
-anchor_bottom = 0.001
-offset_left = -53.938
-offset_top = -1.083
-offset_right = 828.062
-offset_bottom = 142.917
+anchor_left = 0.363
+anchor_right = 0.363
+offset_left = -40.234
+offset_top = 24.0
+offset_right = 841.766
+offset_bottom = 168.0
 
 [node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_hwqt4")
+stretch_mode = 4
 
 [node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer/TextureRect3"]
 layout_mode = 0
 offset_left = 208.0
-offset_top = 24.0
+offset_top = 20.0
 offset_right = 288.0
-offset_bottom = 120.0
+offset_bottom = 100.0
 texture = ExtResource("6_c1ngb")
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/TextureRect3"]
 layout_mode = 0
 offset_left = 104.0
-offset_top = 40.0
+offset_top = 32.0
 offset_right = 240.0
-offset_bottom = 104.0
+offset_bottom = 88.0
 text = "100
 "
 label_settings = SubResource("LabelSettings_m2tgk")
@@ -103,13 +102,14 @@ horizontal_alignment = 1
 [node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("7_jy0hp")
+stretch_mode = 4
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/TextureRect"]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 40.0
-offset_right = 234.0
-offset_bottom = 104.0
+offset_left = 82.0
+offset_top = 32.0
+offset_right = 226.0
+offset_bottom = 88.0
 text = "100
 "
 label_settings = SubResource("LabelSettings_m2tgk")
@@ -117,22 +117,23 @@ horizontal_alignment = 1
 
 [node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer/TextureRect"]
 layout_mode = 0
-offset_left = 210.0
-offset_top = 24.0
-offset_right = 290.0
-offset_bottom = 120.0
+offset_left = 209.0
+offset_top = 20.0
+offset_right = 289.0
+offset_bottom = 100.0
 texture = ExtResource("6_c1ngb")
 
 [node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("8_cjdfn")
+stretch_mode = 4
 
 [node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer/TextureRect2"]
 layout_mode = 0
-offset_left = 204.0
-offset_top = 24.0
-offset_right = 290.0
-offset_bottom = 120.0
+offset_left = 208.0
+offset_top = 20.0
+offset_right = 288.0
+offset_bottom = 100.0
 texture = ExtResource("6_c1ngb")
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/TextureRect2"]
@@ -199,6 +200,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("19_0yadd")
+stretch_mode = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MainPanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -206,10 +208,12 @@ layout_mode = 2
 [node name="TextureRect2" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("20_rdtu0")
+stretch_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("21_ppvio")
+stretch_mode = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MainPanelContainer"]
 layout_mode = 2
@@ -217,7 +221,9 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="Control/MainPanelContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("22_38cea")
+stretch_mode = 4
 
 [node name="TextureRect2" type="TextureRect" parent="Control/MainPanelContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("23_eem0j")
+stretch_mode = 4
