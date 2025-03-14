@@ -1,66 +1,94 @@
-[gd_scene load_steps=17 format=3 uid="uid://dyjtrux3nl5ue"]
+[gd_scene load_steps=36 format=3 uid="uid://dyjtrux3nl5ue"]
 
 [ext_resource type="Script" path="res://login/login.gd" id="1_fdlry"]
-[ext_resource type="Texture2D" uid="uid://cytgmkva30mmr" path="res://login/background.png" id="1_i6vrf"]
-[ext_resource type="Texture2D" uid="uid://flls5n1l0e11" path="res://login/logo.png" id="2_2k0rq"]
-[ext_resource type="Texture2D" uid="uid://c0x4ispspp4t7" path="res://login/start_button_normal.png" id="2_n7rfi"]
-[ext_resource type="Texture2D" uid="uid://bu2u3v8768j85" path="res://login/start_button_pressed.png" id="3_0khe7"]
-[ext_resource type="Texture2D" uid="uid://bux2506mhcpsf" path="res://login/server_select_button_normal.png" id="4_rf6ec"]
-[ext_resource type="Texture2D" uid="uid://ceskbiu6ubmfu" path="res://login/sign.png" id="6_4tg6f"]
-[ext_resource type="Texture2D" uid="uid://tt4urkoqf2ph" path="res://login/server_select_button_pressed.png.png" id="6_nogcq"]
-[ext_resource type="Texture2D" uid="uid://2pvp5fmx5714" path="res://login/config_buttion_normal.png" id="7_ey6e8"]
-[ext_resource type="Texture2D" uid="uid://c35k6c2xe64h7" path="res://login/config_buttion_pressed.png" id="8_7a87b"]
-[ext_resource type="Texture2D" uid="uid://0torg08mrrlt" path="res://login/account_buttion_normal.png" id="9_qnbbu"]
-[ext_resource type="Texture2D" uid="uid://cu5x13e5yp0lp" path="res://login/account_buttion_pressed.png" id="10_vstp2"]
-[ext_resource type="Texture2D" uid="uid://cth2m5gptj8po" path="res://login/notice_buttion_normal.png" id="11_y42ya"]
-[ext_resource type="Texture2D" uid="uid://c2llxcm1wejm0" path="res://login/notice_buttion_pressed.png" id="12_gru5w"]
-[ext_resource type="Texture2D" uid="uid://cbsbvq7my45lv" path="res://login/help_button_normal.png" id="13_wcl1g"]
-[ext_resource type="Texture2D" uid="uid://bp6fdor4eci3a" path="res://login/help_button_pressed.png" id="14_hohyo"]
+[ext_resource type="Texture2D" uid="uid://cytgmkva30mmr" path="res://login/wallpaper/background.png" id="1_i6vrf"]
+[ext_resource type="Texture2D" uid="uid://c0x4ispspp4t7" path="res://login/texture/start_button_normal.png" id="2_n7rfi"]
+[ext_resource type="Texture2D" uid="uid://bu2u3v8768j85" path="res://login/texture/start_button_pressed.png" id="3_0khe7"]
+[ext_resource type="Texture2D" uid="uid://dema0mn0gl705" path="res://login/wallpaper/logo.png" id="3_k16k6"]
+[ext_resource type="Texture2D" uid="uid://bux2506mhcpsf" path="res://login/texture/server_select_button_normal.png" id="4_rf6ec"]
+[ext_resource type="Script" path="res://login/guide.gd" id="4_vr1ie"]
+[ext_resource type="Texture2D" uid="uid://coy08inc72ytx" path="res://login/texture/logo1.png" id="5_cev4a"]
+[ext_resource type="Texture2D" uid="uid://ceskbiu6ubmfu" path="res://login/texture/sign.png" id="6_4tg6f"]
+[ext_resource type="Texture2D" uid="uid://tt4urkoqf2ph" path="res://login/texture/server_select_button_pressed.png.png" id="6_nogcq"]
+[ext_resource type="Texture2D" uid="uid://2pvp5fmx5714" path="res://login/texture/config_buttion_normal.png" id="7_ey6e8"]
+[ext_resource type="Texture2D" uid="uid://c35k6c2xe64h7" path="res://login/texture/config_buttion_pressed.png" id="8_7a87b"]
+[ext_resource type="Texture2D" uid="uid://0torg08mrrlt" path="res://login/texture/account_buttion_normal.png" id="9_qnbbu"]
+[ext_resource type="Texture2D" uid="uid://cu5x13e5yp0lp" path="res://login/texture/account_buttion_pressed.png" id="10_vstp2"]
+[ext_resource type="Texture2D" uid="uid://cth2m5gptj8po" path="res://login/texture/notice_buttion_normal.png" id="11_y42ya"]
+[ext_resource type="Texture2D" uid="uid://c2llxcm1wejm0" path="res://login/texture/notice_buttion_pressed.png" id="12_gru5w"]
+[ext_resource type="Texture2D" uid="uid://cbsbvq7my45lv" path="res://login/texture/help_button_normal.png" id="13_wcl1g"]
+[ext_resource type="Texture2D" uid="uid://bp6fdor4eci3a" path="res://login/texture/help_button_pressed.png" id="14_hohyo"]
+[ext_resource type="Script" path="res://login/login_diglog.gd" id="19_8f3ml"]
+[ext_resource type="Texture2D" uid="uid://ch4wgvtmk3ui" path="res://login/diglog/texture/白板.png" id="19_ckdsa"]
+[ext_resource type="Texture2D" uid="uid://d070robjxylhp" path="res://login/diglog/texture/关闭.png" id="20_mwmsu"]
+[ext_resource type="Texture2D" uid="uid://d0nqf6mh1x8rp" path="res://login/diglog/texture/密码.png" id="21_ikhv0"]
+[ext_resource type="Texture2D" uid="uid://eoqp5mu1i8gy" path="res://login/diglog/texture/关闭_亮.png" id="21_o1lef"]
+[ext_resource type="PackedScene" uid="uid://bi1oenfjrnvi5" path="res://login/diglog/input/Input.tscn" id="22_iph26"]
+[ext_resource type="Texture2D" uid="uid://76q8hvpe73hq" path="res://login/diglog/texture/账号.png" id="23_41733"]
+[ext_resource type="Texture2D" uid="uid://cuuynst04v7vn" path="res://login/diglog/texture/验证码右.png" id="25_8671x"]
+[ext_resource type="Texture2D" uid="uid://dybwxc1h77cww" path="res://login/diglog/texture/验证码左.png" id="25_nxllg"]
+[ext_resource type="Texture2D" uid="uid://b44ubgnpiv345" path="res://login/diglog/texture/验证码.png" id="26_87w6s"]
+[ext_resource type="Texture2D" uid="uid://srxt4cgyatuo" path="res://login/diglog/texture/人机.png" id="26_fiwot"]
+[ext_resource type="Texture2D" uid="uid://b70x11ha6lshc" path="res://login/diglog/texture/登录.png" id="27_ugkn4"]
+[ext_resource type="Texture2D" uid="uid://t86wbldyltd3" path="res://login/diglog/texture/登录-暗.png" id="28_je5c0"]
+[ext_resource type="Texture2D" uid="uid://ofluom7kmobp" path="res://login/diglog/texture/游客进入.png" id="29_2mev7"]
+[ext_resource type="Texture2D" uid="uid://c8aje0qa8cgf5" path="res://login/diglog/texture/用户协议.png" id="30_aoohs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tmuoj"]
+
+[sub_resource type="Theme" id="Theme_koaoo"]
+Button/styles/normal = SubResource("StyleBoxEmpty_tmuoj")
 
 [node name="Login" type="Node2D"]
 script = ExtResource("1_fdlry")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(961, 540)
+[node name="BackGround" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
 texture = ExtResource("1_i6vrf")
 
-[node name="Control" type="Control" parent="."]
+[node name="Guide" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("3_k16k6")
+script = ExtResource("4_vr1ie")
+
+[node name="Ui" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1083.0
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="Ui"]
 layout_mode = 2
-offset_left = 3.0
-offset_top = 91.0
-offset_right = 553.0
-offset_bottom = 261.0
-texture = ExtResource("2_2k0rq")
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 540.0
+offset_bottom = 257.0
+texture = ExtResource("5_cev4a")
 
-[node name="CenterContainer" type="CenterContainer" parent="Control"]
+[node name="CenterContainer" type="CenterContainer" parent="Ui"]
 layout_mode = 0
 offset_top = 862.0
 offset_right = 1922.0
 offset_bottom = 1081.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Ui/CenterContainer"]
 layout_mode = 2
 
-[node name="StartButton" type="TextureButton" parent="Control/CenterContainer/VBoxContainer"]
+[node name="StartButton" type="TextureButton" parent="Ui/CenterContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("2_n7rfi")
 texture_pressed = ExtResource("3_0khe7")
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/CenterContainer/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="Ui/CenterContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="ServerSelectButton" type="TextureButton" parent="Control/CenterContainer/VBoxContainer/CenterContainer"]
+[node name="ServerSelectButton" type="TextureButton" parent="Ui/CenterContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_rf6ec")
 texture_pressed = ExtResource("6_nogcq")
 
-[node name="TextureRect2" type="TextureRect" parent="Control"]
+[node name="TextureRect2" type="TextureRect" parent="Ui"]
 layout_mode = 0
 offset_left = 1759.0
 offset_top = 909.0
@@ -68,31 +96,138 @@ offset_right = 1909.0
 offset_bottom = 1059.0
 texture = ExtResource("6_4tg6f")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Ui"]
 layout_mode = 0
 offset_left = 1793.0
 offset_top = 119.0
 offset_right = 1893.0
 offset_bottom = 503.0
 
-[node name="ConfigButton" type="TextureButton" parent="Control/VBoxContainer"]
+[node name="ConfigButton" type="TextureButton" parent="Ui/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("7_ey6e8")
 texture_pressed = ExtResource("8_7a87b")
 
-[node name="ConfigButton2" type="TextureButton" parent="Control/VBoxContainer"]
+[node name="ConfigButton2" type="TextureButton" parent="Ui/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("9_qnbbu")
 texture_pressed = ExtResource("10_vstp2")
 
-[node name="ConfigButton3" type="TextureButton" parent="Control/VBoxContainer"]
+[node name="ConfigButton3" type="TextureButton" parent="Ui/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("11_y42ya")
 texture_pressed = ExtResource("12_gru5w")
 
-[node name="ConfigButton4" type="TextureButton" parent="Control/VBoxContainer"]
+[node name="ConfigButton4" type="TextureButton" parent="Ui/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("13_wcl1g")
 texture_pressed = ExtResource("14_hohyo")
 
-[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[node name="LoginDiglog" type="ColorRect" parent="Ui"]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.329412, 0.247059, 0.247059, 0.619608)
+script = ExtResource("19_8f3ml")
+
+[node name="CenterContainer" type="CenterContainer" parent="Ui/LoginDiglog"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Panel" type="TextureRect" parent="Ui/LoginDiglog/CenterContainer"]
+layout_mode = 2
+theme = SubResource("Theme_koaoo")
+texture = ExtResource("19_ckdsa")
+
+[node name="Input" parent="Ui/LoginDiglog/CenterContainer/Panel" instance=ExtResource("22_iph26")]
+offset_left = 61.0
+offset_top = 179.0
+offset_right = 61.0
+offset_bottom = 179.0
+iconTexture = ExtResource("23_41733")
+placeholder_text = "请输入用户账号"
+
+[node name="Input2" parent="Ui/LoginDiglog/CenterContainer/Panel" instance=ExtResource("22_iph26")]
+offset_left = 61.0
+offset_top = 307.0
+offset_right = 61.0
+offset_bottom = 307.0
+iconTexture = ExtResource("21_ikhv0")
+placeholder_text = "请输入密码"
+
+[node name="CloseButton" type="TextureButton" parent="Ui/LoginDiglog/CenterContainer/Panel"]
+layout_mode = 2
+offset_left = 725.0
+offset_top = 35.0
+offset_right = 774.0
+offset_bottom = 84.0
+texture_normal = ExtResource("20_mwmsu")
+texture_pressed = ExtResource("21_o1lef")
+
+[node name="VerificationCodeWarp" type="TextureRect" parent="Ui/LoginDiglog/CenterContainer/Panel"]
+offset_left = 469.0
+offset_top = 435.0
+offset_right = 752.0
+offset_bottom = 536.0
+texture = ExtResource("25_8671x")
+
+[node name="VerificationCode" type="TextureRect" parent="Ui/LoginDiglog/CenterContainer/Panel/VerificationCodeWarp"]
+offset_left = 1.0
+offset_right = 284.0
+offset_bottom = 101.0
+texture = ExtResource("26_87w6s")
+
+[node name="VerificationCodeInput" type="TextureRect" parent="Ui/LoginDiglog/CenterContainer/Panel"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 435.0
+offset_right = 450.0
+offset_bottom = 536.0
+texture = ExtResource("25_nxllg")
+
+[node name="Icon" type="TextureRect" parent="Ui/LoginDiglog/CenterContainer/Panel/VerificationCodeInput"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 77.0
+offset_bottom = 94.0
+texture = ExtResource("26_fiwot")
+
+[node name="TextureButton2" type="TextureButton" parent="Ui/LoginDiglog/CenterContainer/Panel"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 571.0
+offset_right = 755.0
+offset_bottom = 672.0
+texture_normal = ExtResource("27_ugkn4")
+texture_pressed = ExtResource("28_je5c0")
+
+[node name="AnonymousLoginButton" type="Button" parent="Ui/LoginDiglog/CenterContainer/Panel"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 699.0
+offset_right = 201.0
+offset_bottom = 779.0
+theme_override_colors/font_color = Color(0.227451, 0.227451, 0.227451, 1)
+theme_override_constants/h_separation = 20
+theme_override_font_sizes/font_size = 24
+text = "游客进入"
+icon = ExtResource("29_2mev7")
+
+[node name="AgreementButton" type="Button" parent="Ui/LoginDiglog/CenterContainer/Panel"]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 699.0
+offset_right = 757.0
+offset_bottom = 779.0
+theme_override_colors/font_color = Color(0.227451, 0.227451, 0.227451, 1)
+theme_override_constants/h_separation = 20
+theme_override_font_sizes/font_size = 24
+text = "<用户使用协议>"
+icon = ExtResource("30_aoohs")
+
+[connection signal="pressed" from="Ui/CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Ui/LoginDiglog/CenterContainer/Panel/CloseButton" to="Ui/LoginDiglog" method="_on_close_button_pressed"]
+[connection signal="pressed" from="Ui/LoginDiglog/CenterContainer/Panel/AnonymousLoginButton" to="Ui/LoginDiglog" method="_on_anonymous_login_button_pressed"]

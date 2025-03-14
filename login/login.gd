@@ -1,10 +1,14 @@
 extends Node2D
 
+@onready var backGround = $BackGround
+@onready var ui = $Ui
+@onready var loginDiglog = $Ui/LoginDiglog
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	await get_tree().create_timer(2.5).timeout
+	ui.visible = true
+	#backGround.texture = load("res://login/wallpaper/output.webp") 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -12,4 +16,4 @@ func _process(delta: float) -> void:
 
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://main/Main.tscn")
+	loginDiglog.visible=true

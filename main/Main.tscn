@@ -149,9 +149,9 @@ horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
 layout_mode = 0
-offset_top = 956.0
+offset_top = 961.0
 offset_right = 1920.0
-offset_bottom = 1076.0
+offset_bottom = 1081.0
 texture = ExtResource("2_kjdbb")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect"]
