@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnhvguafkacf1"
-path="res://.godot/imported/广播.png-bab3fa8e78340c19cc73b951c685aef1.ctex"
+uid="uid://dun5lgpuh8aeg"
+path="res://.godot/imported/滑槽.png-7ea2b4eaa1a0c161f175055d29d156f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/广播.png"
-dest_files=["res://.godot/imported/广播.png-bab3fa8e78340c19cc73b951c685aef1.ctex"]
+source_file="res://main/setup_page/texture/滑槽.png"
+dest_files=["res://.godot/imported/滑槽.png-7ea2b4eaa1a0c161f175055d29d156f8.ctex"]
 
 [params]
 

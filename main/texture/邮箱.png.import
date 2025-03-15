@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3rvlolvrj0jl"
-path="res://.godot/imported/buttom_background.png-c9a6b436b206d0ef7c3bc286de639a2d.ctex"
+uid="uid://cghvpgju21wo2"
+path="res://.godot/imported/邮箱.png-17368d6511a044bbcad3202823fc1788.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/buttom_background.png"
-dest_files=["res://.godot/imported/buttom_background.png-c9a6b436b206d0ef7c3bc286de639a2d.ctex"]
+source_file="res://main/texture/邮箱.png"
+dest_files=["res://.godot/imported/邮箱.png-17368d6511a044bbcad3202823fc1788.ctex"]
 
 [params]
 

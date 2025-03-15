@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1s4oviuc1hth"
-path="res://.godot/imported/广播——暗.png-bfad8eb9b47615bb960d08e26061e23e.ctex"
+uid="uid://csxuh5fc6iy08"
+path="res://.godot/imported/电池.png-c7556e5bfbd434c0feab610853d09fe1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/广播——暗.png"
-dest_files=["res://.godot/imported/广播——暗.png-bfad8eb9b47615bb960d08e26061e23e.ctex"]
+source_file="res://main/texture/电池.png"
+dest_files=["res://.godot/imported/电池.png-c7556e5bfbd434c0feab610853d09fe1.ctex"]
 
 [params]
 

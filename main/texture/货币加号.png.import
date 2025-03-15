@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfh4w3h01up24"
-path="res://.godot/imported/设置.png-0401df1b0e9f21bb36bd93f767f9fe6c.ctex"
+uid="uid://dhwg63vr8ltqn"
+path="res://.godot/imported/货币加号.png-1a421080ede3d403441372cea7721e43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/设置.png"
-dest_files=["res://.godot/imported/设置.png-0401df1b0e9f21bb36bd93f767f9fe6c.ctex"]
+source_file="res://main/texture/货币加号.png"
+dest_files=["res://.godot/imported/货币加号.png-1a421080ede3d403441372cea7721e43.ctex"]
 
 [params]
 

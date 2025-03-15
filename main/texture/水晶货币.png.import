@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csxuh5fc6iy08"
-path="res://.godot/imported/电池.png-5cadc55e186dce1011b12df57eca8d32.ctex"
+uid="uid://b4alxeun1f2vq"
+path="res://.godot/imported/水晶货币.png-d8e3a7abfba1d116bdc06aab389437b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/电池.png"
-dest_files=["res://.godot/imported/电池.png-5cadc55e186dce1011b12df57eca8d32.ctex"]
+source_file="res://main/texture/水晶货币.png"
+dest_files=["res://.godot/imported/水晶货币.png-d8e3a7abfba1d116bdc06aab389437b9.ctex"]
 
 [params]
 

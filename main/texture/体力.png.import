@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt18hft62v0b2"
-path="res://.godot/imported/background.png-4e680d2d470c29a8d80d69e1a2b50433.ctex"
+uid="uid://dccsctg6drrie"
+path="res://.godot/imported/体力.png-3a8de772c7730933ae1b396ecb3ed42f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/background.png"
-dest_files=["res://.godot/imported/background.png-4e680d2d470c29a8d80d69e1a2b50433.ctex"]
+source_file="res://main/texture/体力.png"
+dest_files=["res://.godot/imported/体力.png-3a8de772c7730933ae1b396ecb3ed42f.ctex"]
 
 [params]
 

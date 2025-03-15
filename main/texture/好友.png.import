@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dejlutkofubyx"
-path="res://.godot/imported/邮箱——暗.png-018182f660cce46158ef008148142b3d.ctex"
+uid="uid://cqmydqggxjoop"
+path="res://.godot/imported/好友.png-725603f312b298ed09d59780b015e509.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/邮箱——暗.png"
-dest_files=["res://.godot/imported/邮箱——暗.png-018182f660cce46158ef008148142b3d.ctex"]
+source_file="res://main/texture/好友.png"
+dest_files=["res://.godot/imported/好友.png-725603f312b298ed09d59780b015e509.ctex"]
 
 [params]
 

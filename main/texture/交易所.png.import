@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chc5nedch2x5r"
-path="res://.godot/imported/网络.png-e6ec0817778cf37442beddb9473fee86.ctex"
+uid="uid://qjhpibqbtlcy"
+path="res://.godot/imported/交易所.png-884c54f97e242163765c55fe289d68e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/网络.png"
-dest_files=["res://.godot/imported/网络.png-e6ec0817778cf37442beddb9473fee86.ctex"]
+source_file="res://main/texture/交易所.png"
+dest_files=["res://.godot/imported/交易所.png-884c54f97e242163765c55fe289d68e3.ctex"]
 
 [params]
 

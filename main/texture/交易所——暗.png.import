@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fjuj6hqoddga"
-path="res://.godot/imported/金币.png-5c588e5db46a890a95e52cca0676061b.ctex"
+uid="uid://cydp51rwv61rq"
+path="res://.godot/imported/交易所——暗.png-d588b3d45fb4cd3f90b51a8a5215bffc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/金币.png"
-dest_files=["res://.godot/imported/金币.png-5c588e5db46a890a95e52cca0676061b.ctex"]
+source_file="res://main/texture/交易所——暗.png"
+dest_files=["res://.godot/imported/交易所——暗.png-d588b3d45fb4cd3f90b51a8a5215bffc.ctex"]
 
 [params]
 

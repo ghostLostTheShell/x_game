@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drycowmc6wjqf"
-path="res://.godot/imported/好友——暗.png-90cc1dde00ab82531495b902a8249a45.ctex"
+uid="uid://3rvlolvrj0jl"
+path="res://.godot/imported/buttom_background.png-e0800c4fc665e11a5b66d06cdf3d7cac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/好友——暗.png"
-dest_files=["res://.godot/imported/好友——暗.png-90cc1dde00ab82531495b902a8249a45.ctex"]
+source_file="res://main/texture/buttom_background.png"
+dest_files=["res://.godot/imported/buttom_background.png-e0800c4fc665e11a5b66d06cdf3d7cac.ctex"]
 
 [params]
 

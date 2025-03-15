@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqmydqggxjoop"
-path="res://.godot/imported/好友.png-b9cd6bedf878fcc532fc2cdaf6f57d1e.ctex"
+uid="uid://cuaqisa43sor3"
+path="res://.godot/imported/设置面板.png-e5be4594625e3ecc6d2487dfe210c994.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/好友.png"
-dest_files=["res://.godot/imported/好友.png-b9cd6bedf878fcc532fc2cdaf6f57d1e.ctex"]
+source_file="res://main/setup_page/texture/设置面板.png"
+dest_files=["res://.godot/imported/设置面板.png-e5be4594625e3ecc6d2487dfe210c994.ctex"]
 
 [params]
 
