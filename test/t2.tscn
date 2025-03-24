@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dco5blwidehac"]
+
+[ext_resource type="Texture2D" uid="uid://c64yk42tf5564" path="res://login/wallpaper/wallhaven-k7yw91.jpg" id="1_c7wip"]
+[ext_resource type="Shader" path="res://test/t20.gdshader" id="1_ufh3u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_56uoi"]
+shader = ExtResource("1_ufh3u")
+shader_parameter/speed = 2.0
+shader_parameter/amplitude = 0.02
+
+[node name="T2" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_56uoi")
+offset_right = 190.0
+offset_bottom = 1080.0
+texture = ExtResource("1_c7wip")

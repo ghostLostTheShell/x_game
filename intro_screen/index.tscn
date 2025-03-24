@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi14acnhxxghr"]
+
+[ext_resource type="Texture2D" uid="uid://dema0mn0gl705" path="res://login/wallpaper/logo.png" id="1_83uvd"]
+[ext_resource type="Script" path="res://intro_screen/index.gd" id="1_hufeq"]
+[ext_resource type="Script" path="res://intro_screen/guide.gd" id="2_tyskh"]
+
+[node name="Index" type="Node2D"]
+script = ExtResource("1_hufeq")
+
+[node name="Guide" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_83uvd")
+script = ExtResource("2_tyskh")

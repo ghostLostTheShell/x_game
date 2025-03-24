@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 
 
 func _on_settings_buttion_pressed() -> void:
-	setupPage.visible = true
+	setupPage.toggleVisibility()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cr8sagt1r4jac"]
+[gd_scene load_steps=21 format=3 uid="uid://cr8sagt1r4jac"]
 
 [ext_resource type="Shader" path="res://main/setup_page/SetuoPage.gdshader" id="1_x0lee"]
 [ext_resource type="Texture2D" uid="uid://dcxn78443okpl" path="res://main/setup_page/wallhaven-k7yw91.jpg" id="1_xi1m1"]
@@ -11,10 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://dun5lgpuh8aeg" path="res://main/setup_page/texture/滑槽.png" id="8_wmn7r"]
 [ext_resource type="Texture2D" uid="uid://cuept638ysuc3" path="res://main/setup_page/texture/滑钮.png" id="9_o83qk"]
 [ext_resource type="Script" path="res://main/setup_page/graphics_quality_control.gd" id="11_2g4qr"]
+[ext_resource type="Texture2D" uid="uid://feopyvnl5wx6" path="res://main/setup_page/texture/领取.png" id="12_rkpif"]
+[ext_resource type="Texture2D" uid="uid://cbxij8ticmgjk" path="res://main/setup_page/texture/领取-暗.png" id="13_vviba"]
+[ext_resource type="Texture2D" uid="uid://cici1uaonaptb" path="res://main/setup_page/texture/按钮未激活.png" id="14_olg8f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4kd6c"]
 shader = ExtResource("1_x0lee")
-shader_parameter/sigma = 2.0
+shader_parameter/sigma = 4.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wka80"]
 
@@ -65,6 +68,7 @@ texture_normal = ExtResource("5_ug7kp")
 texture_pressed = ExtResource("6_s0162")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 173.0
 offset_right = 1906.0
@@ -85,13 +89,12 @@ offset_bottom = 31.0
 texture = ExtResource("8_wmn7r")
 
 [node name="HSlider" type="HSlider" parent="TextureRect2/Volume/Progress"]
-offset_left = 28.0
-offset_top = -14.0
-offset_right = 314.0
-offset_bottom = 98.0
+layout_mode = 0
+offset_left = -1.0
+offset_top = -27.0
+offset_right = 312.0
+offset_bottom = 85.0
 theme = SubResource("Theme_83qrf")
-theme_override_constants/center_grabber = 1
-theme_override_constants/grabber_offset = -15
 theme_override_icons/grabber = ExtResource("9_o83qk")
 theme_override_icons/grabber_highlight = ExtResource("9_o83qk")
 theme_override_icons/grabber_disabled = ExtResource("9_o83qk")
@@ -112,13 +115,11 @@ texture = ExtResource("8_wmn7r")
 
 [node name="HSlider" type="HSlider" parent="TextureRect2/GraphicsQualityControl"]
 layout_mode = 0
-offset_left = 28.0
-offset_top = -14.0
-offset_right = 314.0
-offset_bottom = 98.0
+offset_left = -4.0
+offset_top = -26.0
+offset_right = 311.0
+offset_bottom = 86.0
 theme = SubResource("Theme_83qrf")
-theme_override_constants/center_grabber = 1
-theme_override_constants/grabber_offset = -15
 theme_override_icons/grabber = ExtResource("9_o83qk")
 theme_override_icons/grabber_highlight = ExtResource("9_o83qk")
 theme_override_icons/grabber_disabled = ExtResource("9_o83qk")
@@ -138,13 +139,12 @@ offset_bottom = 31.0
 texture = ExtResource("8_wmn7r")
 
 [node name="HSlider" type="HSlider" parent="TextureRect2/FrameRate"]
-offset_left = 28.0
-offset_top = -14.0
-offset_right = 314.0
-offset_bottom = 98.0
+layout_mode = 0
+offset_left = -4.0
+offset_top = -30.0
+offset_right = 315.0
+offset_bottom = 82.0
 theme = SubResource("Theme_83qrf")
-theme_override_constants/center_grabber = 1
-theme_override_constants/grabber_offset = -15
 theme_override_icons/grabber = ExtResource("9_o83qk")
 theme_override_icons/grabber_highlight = ExtResource("9_o83qk")
 theme_override_icons/grabber_disabled = ExtResource("9_o83qk")
@@ -164,13 +164,12 @@ offset_bottom = 31.0
 texture = ExtResource("8_wmn7r")
 
 [node name="HSlider" type="HSlider" parent="TextureRect2/SoundEffect"]
-offset_left = 28.0
-offset_top = -14.0
-offset_right = 314.0
-offset_bottom = 98.0
+layout_mode = 0
+offset_left = -2.0
+offset_top = -29.0
+offset_right = 316.0
+offset_bottom = 83.0
 theme = SubResource("Theme_83qrf")
-theme_override_constants/center_grabber = 1
-theme_override_constants/grabber_offset = -15
 theme_override_icons/grabber = ExtResource("9_o83qk")
 theme_override_icons/grabber_highlight = ExtResource("9_o83qk")
 theme_override_icons/grabber_disabled = ExtResource("9_o83qk")
@@ -192,4 +191,30 @@ caret_blink = true
 caret_force_displayed = true
 caret_mid_grapheme = true
 
+[node name="TextureButton" type="TextureButton" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 1402.0
+offset_top = 593.0
+offset_right = 1663.0
+offset_bottom = 674.0
+texture_normal = ExtResource("12_rkpif")
+texture_pressed = ExtResource("13_vviba")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 981.0
+offset_top = 607.0
+offset_right = 1115.0
+offset_bottom = 741.0
+texture = ExtResource("14_olg8f")
+
+[node name="AntiAliasingStatus" type="TextureButton" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 607.0
+offset_right = 522.0
+offset_bottom = 741.0
+texture_normal = ExtResource("14_olg8f")
+
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="TextureRect2/AntiAliasingStatus" to="." method="_on_anti_aliasing_status_pressed"]

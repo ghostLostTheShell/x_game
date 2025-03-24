@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://52qbwn1qj0ue"]
+
+[ext_resource type="Shader" path="res://test/t2.gdshader" id="1_48jan"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_buwbq"]
+shader = ExtResource("1_48jan")
+
+[node name="T1" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 768.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_buwbq")
+offset_left = 113.0
+offset_top = 67.0
+offset_right = 1667.0
+offset_bottom = 891.0
+color = Color(0.286959, 0.683749, 0.830415, 1)

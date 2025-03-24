@@ -1,4 +1,4 @@
-//shader_type canvas_item;
+shader_type canvas_item;
 //
 //uniform float sigma : hint_range(0.1, 10.0) = 3.0; // 控制模糊程度
 //

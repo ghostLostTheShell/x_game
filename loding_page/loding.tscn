@@ -22,11 +22,11 @@ layout_mode = 0
 offset_top = 960.0
 offset_right = 1920.0
 offset_bottom = 1080.0
-theme_override_font_sizes/bold_italics_font_size = 40
-theme_override_font_sizes/italics_font_size = 40
-theme_override_font_sizes/mono_font_size = 40
-theme_override_font_sizes/normal_font_size = 40
-theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
 text = "[center]红光：促进叶片扩展和茎伸长，加速光合作用（如糖类）积累
 [center]蓝光：争强叶片厚度，抑制徒长，提升维生素和抗氧化物质含量[center]"
@@ -36,32 +36,31 @@ position = Vector2(1832, 952)
 script = ExtResource("3_ryj1b")
 
 [node name="Polygon2D0" type="Polygon2D" parent="LodingSymbol"]
-color = Color(0.8, 0.8, 0.8, 1)
 polygon = PackedVector2Array(0, 0, 16, 24, -16, 24)
 
-[node name="Polygon2D1" type="Polygon2D" parent="LodingSymbol"]
+[node name="Polygon2D5" type="Polygon2D" parent="LodingSymbol"]
 position = Vector2(35, 50)
 rotation = -3.14159
+color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(0, 0, 16, 24, -16, 24)
 
-[node name="Polygon2D2" type="Polygon2D" parent="LodingSymbol"]
+[node name="Polygon2D4" type="Polygon2D" parent="LodingSymbol"]
 position = Vector2(35, 53)
-color = Color(0, 0, 0, 1)
+color = Color(0.2, 0.2, 0.2, 1)
 polygon = PackedVector2Array(0, 0, 16, 24, -16, 24)
 
 [node name="Polygon2D3" type="Polygon2D" parent="LodingSymbol"]
 position = Vector2(0, 102)
 rotation = 3.14159
-color = Color(0.2, 0.2, 0.2, 1)
-polygon = PackedVector2Array(0, 0, 16, 24, -16, 24)
-
-[node name="Polygon2D4" type="Polygon2D" parent="LodingSymbol"]
-position = Vector2(-35, 53)
 color = Color(0.6, 0.6, 0.6, 1)
 polygon = PackedVector2Array(0, 0, 16, 24, -16, 24)
 
-[node name="Polygon2D5" type="Polygon2D" parent="LodingSymbol"]
+[node name="Polygon2D2" type="Polygon2D" parent="LodingSymbol"]
+position = Vector2(-35, 53)
+color = Color(0.8, 0.8, 0.8, 1)
+polygon = PackedVector2Array(0, 0, 16, 24, -16, 24)
+
+[node name="Polygon2D1" type="Polygon2D" parent="LodingSymbol"]
 position = Vector2(-35, 50)
 rotation = -3.14159
-color = Color(0.8, 0.8, 0.8, 1)
 polygon = PackedVector2Array(0, 0, 16, 24, -16, 24)

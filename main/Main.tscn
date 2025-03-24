@@ -232,5 +232,6 @@ texture = ExtResource("23_eem0j")
 stretch_mode = 4
 
 [node name="SetupPage" parent="Control" instance=ExtResource("25_44kcb")]
+visible = false
 
 [connection signal="pressed" from="Control/HBoxContainer2/SettingsButtion" to="Control" method="_on_settings_buttion_pressed"]

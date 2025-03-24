@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b508l8qxswepv"]
+
+[ext_resource type="Shader" path="res://shader/transition_effect.gdshader" id="1_ohiu5"]
+
+[resource]
+shader = ExtResource("1_ohiu5")
+shader_parameter/progress = 0.0
+shader_parameter/scale = Vector2(1, 0.6)

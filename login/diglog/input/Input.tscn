@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bi1oenfjrnvi5"]
 
-[ext_resource type="Texture2D" uid="uid://b2prte0jq5ihu" path="res://login/diglog/texture/账号密码通用框.png" id="1_cdkvv"]
+[ext_resource type="Texture2D" uid="uid://buvfy5ikikqp6" path="res://login/diglog/texture/账号密码通用框.png" id="1_cdkvv"]
 [ext_resource type="Script" path="res://login/diglog/input/input.gd" id="1_nrfs4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lihab"]
@@ -16,11 +16,12 @@ script = ExtResource("1_nrfs4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 694.0
+offset_bottom = 101.0
 texture = ExtResource("1_cdkvv")
 
 [node name="Icon" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 24.0
 offset_right = 86.0
@@ -33,7 +34,14 @@ offset_top = 24.0
 offset_right = 664.0
 offset_bottom = 80.0
 theme_override_colors/clear_button_color_pressed = Color(0, 0, 0, 0)
+theme_override_colors/clear_button_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0.737255, 0.737255, 0.737255, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lihab")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_ptxkt")
