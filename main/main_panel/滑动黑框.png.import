@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vb6o8uqdbyx1"
-path="res://.godot/imported/赏金令.png-39e1ef49636353da3e7845d0c97079d7.ctex"
+uid="uid://dwnoa7xsmfj0j"
+path="res://.godot/imported/滑动黑框.png-2c5423dc1f3a0bf578139ccd12dafa0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/main_panel/赏金令.png"
-dest_files=["res://.godot/imported/赏金令.png-39e1ef49636353da3e7845d0c97079d7.ctex"]
+source_file="res://main/main_panel/滑动黑框.png"
+dest_files=["res://.godot/imported/滑动黑框.png-2c5423dc1f3a0bf578139ccd12dafa0e.ctex"]
 
 [params]
 

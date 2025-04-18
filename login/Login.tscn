@@ -252,7 +252,6 @@ icon = ExtResource("30_aoohs")
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_y1hon")
 offset_right = 1920.0
 offset_bottom = 1080.0

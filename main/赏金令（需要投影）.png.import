@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vb6o8uqdbyx1"
-path="res://.godot/imported/赏金令.png-39e1ef49636353da3e7845d0c97079d7.ctex"
+uid="uid://ck3wjp4iyf32s"
+path="res://.godot/imported/赏金令（需要投影）.png-67717dccff0a566f317f24621aa210f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/main_panel/赏金令.png"
-dest_files=["res://.godot/imported/赏金令.png-39e1ef49636353da3e7845d0c97079d7.ctex"]
+source_file="res://main/赏金令（需要投影）.png"
+dest_files=["res://.godot/imported/赏金令（需要投影）.png-67717dccff0a566f317f24621aa210f4.ctex"]
 
 [params]
 

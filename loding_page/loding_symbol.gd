@@ -16,7 +16,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if frame_counter >= 20:  # 每 10 帧切换一次颜色
 		frame_counter = 0  # 归零
 		color_index = (color_index + 1) % colors.size()

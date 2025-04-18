@@ -1,8 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4nj64wmqhnpa"]
+[gd_scene load_steps=11 format=3 uid="uid://c4nj64wmqhnpa"]
 
-[ext_resource type="Texture2D" uid="uid://suknu56sbjyv" path="res://main/user_info/姓名栏背板.png" id="1_v6ghe"]
+[ext_resource type="Texture2D" uid="uid://suknu56sbjyv" path="res://main/user_info/texture/姓名栏背板.png" id="1_v6ghe"]
 [ext_resource type="Texture2D" uid="uid://2ujxqr3t4wu6" path="res://main/user_info/头像框.png" id="2_l3urd"]
+[ext_resource type="Texture2D" uid="uid://nq5ji70mmbi0" path="res://main/user_info/texture/修改姓名.png" id="2_rvybn"]
 [ext_resource type="Texture2D" uid="uid://cgh04xicdloh1" path="res://main/user_info/默认头像1.png" id="3_1uo6x"]
+[ext_resource type="Shader" path="res://main/user_info/level_warp.gdshader" id="3_8itxc"]
+[ext_resource type="Texture2D" uid="uid://b82dy103h8v82" path="res://main/user_info/linear_progress/texture/黑洞.png" id="3_xmb1e"]
+[ext_resource type="Shader" path="res://main/user_info/linear_progress.gdshader" id="5_6e74f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7hu5o"]
+shader = ExtResource("3_8itxc")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nk1fu"]
+render_priority = 0
+shader = ExtResource("5_6e74f")
+
+[sub_resource type="Theme" id="Theme_ocjo7"]
 
 [node name="UserInfo" type="Control"]
 layout_mode = 3
@@ -10,11 +25,56 @@ anchors_preset = 0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 121.0
+offset_left = 114.0
 offset_top = -5.0
-offset_right = 521.0
+offset_right = 514.0
 offset_bottom = 170.0
 texture = ExtResource("1_v6ghe")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 21.0
+offset_right = 314.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 21
+text = "宇航员001"
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 22.0
+offset_right = 178.0
+offset_bottom = 62.0
+texture = ExtResource("2_rvybn")
+
+[node name="LevelWarp" type="TextureRect" parent="TextureRect"]
+material = SubResource("ShaderMaterial_7hu5o")
+layout_mode = 0
+offset_left = 28.0
+offset_top = 41.0
+offset_right = 135.0
+offset_bottom = 150.0
+texture = ExtResource("3_xmb1e")
+
+[node name="Label" type="Label" parent="TextureRect/LevelWarp"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 40.0
+offset_right = 62.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 20
+text = "lv."
+justification_flags = 0
+
+[node name="Label2" type="Label" parent="TextureRect/LevelWarp"]
+offset_left = 53.0
+offset_top = 20.0
+offset_right = 78.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 40
+text = "1"
+justification_flags = 0
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
@@ -30,3 +90,20 @@ offset_top = 13.0
 offset_right = 137.0
 offset_bottom = 138.0
 texture = ExtResource("3_1uo6x")
+
+[node name="LinearProgress" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_nk1fu")
+layout_mode = 0
+offset_left = 256.0
+offset_top = 65.0
+offset_right = 478.0
+offset_bottom = 71.0
+theme = SubResource("Theme_ocjo7")
+color = Color(0.176419, 0.176419, 0.176419, 1)
+
+[node name="LinearProgress" type="ColorRect" parent="LinearProgress"]
+layout_mode = 0
+offset_right = 91.0
+offset_bottom = 6.0
+theme = SubResource("Theme_ocjo7")
+color = Color(0.737258, 0.61711, 0.782661, 1)

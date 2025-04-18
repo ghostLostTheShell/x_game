@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vb6o8uqdbyx1"
-path="res://.godot/imported/赏金令.png-39e1ef49636353da3e7845d0c97079d7.ctex"
+uid="uid://cbajs1f8fpeuv"
+path="res://.godot/imported/黑洞（需要旋转）.png-72831b53a0068be814fe983b50da9646.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/main_panel/赏金令.png"
-dest_files=["res://.godot/imported/赏金令.png-39e1ef49636353da3e7845d0c97079d7.ctex"]
+source_file="res://loding_page/黑洞（需要旋转）.png"
+dest_files=["res://.godot/imported/黑洞（需要旋转）.png-72831b53a0068be814fe983b50da9646.ctex"]
 
 [params]
 

@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://s8ifxj0osj6w"]
+
+[ext_resource type="Texture2D" uid="uid://3rvlolvrj0jl" path="res://main/bottom_nav_bar/texture/background.png" id="1_dxech"]
+[ext_resource type="Texture2D" uid="uid://dgss4q7cgisw1" path="res://main/bottom_nav_bar/texture/mesbackground.png" id="2_st38n"]
+[ext_resource type="Texture2D" uid="uid://bnvqs03alo1un" path="res://main/bottom_nav_bar/texture/message_icon.png" id="3_vjts6"]
+[ext_resource type="Texture2D" uid="uid://nuxvlrw1cyvn" path="res://main/bottom_nav_bar/texture/仓库.png" id="4_ltxkw"]
+[ext_resource type="Texture2D" uid="uid://ctm34ndmjblti" path="res://main/bottom_nav_bar/texture/成就.png" id="5_pii5v"]
+[ext_resource type="Texture2D" uid="uid://dqsok30meydbd" path="res://main/bottom_nav_bar/texture/购物.png" id="6_jts0j"]
+[ext_resource type="Texture2D" uid="uid://cstmta1ujnoq0" path="res://main/bottom_nav_bar/texture/活动.png" id="7_2iog2"]
+[ext_resource type="Texture2D" uid="uid://c6km25042q2uo" path="res://main/bottom_nav_bar/texture/任务.png" id="8_42gyb"]
+
+[node name="BottomNavBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_dxech")
+
+[node name="HButtonBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 22.0
+offset_right = 1905.0
+offset_bottom = 107.0
+
+[node name="MessageContainer" type="TextureRect" parent="HButtonBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_st38n")
+
+[node name="MessageIcon" type="TextureRect" parent="HButtonBoxContainer/MessageContainer"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 15.0
+offset_right = 99.0
+offset_bottom = 70.0
+texture = ExtResource("3_vjts6")
+
+[node name="Text" type="RichTextLabel" parent="HButtonBoxContainer/MessageContainer"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 13.0
+offset_right = 343.0
+offset_bottom = 78.0
+bbcode_enabled = true
+text = "[[color=#FF0000]宇宙[/color]]abc：宇航员002在星辉不集中获取传说物品：[color=#FF0000]脉冲共振培养皿α型[/color]"
+
+[node name="TextureButton" type="TextureButton" parent="HButtonBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_ltxkw")
+
+[node name="TextureButton2" type="TextureButton" parent="HButtonBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_pii5v")
+
+[node name="TextureButton3" type="TextureButton" parent="HButtonBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_jts0j")
+
+[node name="TextureButton4" type="TextureButton" parent="HButtonBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_2iog2")
+
+[node name="TextureButton5" type="TextureButton" parent="HButtonBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_42gyb")

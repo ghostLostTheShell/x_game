@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cstab3ixi7xb1"
-path="res://.godot/imported/广告框.png-ee89c9dc746af83ecde66f133903f459.ctex"
+uid="uid://c6km25042q2uo"
+path="res://.godot/imported/任务.png-ba9e86acab91fe937ac142f8797dfe99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/main_panel/广告框.png"
-dest_files=["res://.godot/imported/广告框.png-ee89c9dc746af83ecde66f133903f459.ctex"]
+source_file="res://main/bottom_nav_bar/texture/任务.png"
+dest_files=["res://.godot/imported/任务.png-ba9e86acab91fe937ac142f8797dfe99.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vb6o8uqdbyx1"
-path="res://.godot/imported/赏金令.png-39e1ef49636353da3e7845d0c97079d7.ctex"
+uid="uid://ctm34ndmjblti"
+path="res://.godot/imported/成就.png-03b452614cac46f4bf529215250d517f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/main_panel/赏金令.png"
-dest_files=["res://.godot/imported/赏金令.png-39e1ef49636353da3e7845d0c97079d7.ctex"]
+source_file="res://main/bottom_nav_bar/texture/成就.png"
+dest_files=["res://.godot/imported/成就.png-03b452614cac46f4bf529215250d517f.ctex"]
 
 [params]
 

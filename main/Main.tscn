@@ -1,9 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://c7ua4r03xqw40"]
+[gd_scene load_steps=36 format=3 uid="uid://c7ua4r03xqw40"]
 
-[ext_resource type="Texture2D" uid="uid://dt18hft62v0b2" path="res://main/texture/background.png" id="1_2mble"]
+[ext_resource type="Texture2D" uid="uid://dnsor5c7ckrp2" path="res://main/texture/background.png" id="1_2mble"]
 [ext_resource type="PackedScene" uid="uid://c4nj64wmqhnpa" path="res://main/user_info/UserInfo.tscn" id="2_1ssoa"]
 [ext_resource type="Texture2D" uid="uid://csxuh5fc6iy08" path="res://main/texture/电池.png" id="2_3sogo"]
-[ext_resource type="Texture2D" uid="uid://3rvlolvrj0jl" path="res://main/texture/buttom_background.png" id="2_kjdbb"]
 [ext_resource type="Script" path="res://main/control.gd" id="2_mtkkj"]
 [ext_resource type="Texture2D" uid="uid://chc5nedch2x5r" path="res://main/texture/网络.png" id="3_is400"]
 [ext_resource type="Texture2D" uid="uid://cfh4w3h01up24" path="res://main/texture/设置.png" id="4_8vecx"]
@@ -19,15 +18,38 @@
 [ext_resource type="Texture2D" uid="uid://cydp51rwv61rq" path="res://main/texture/交易所——暗.png" id="14_q4gvr"]
 [ext_resource type="Texture2D" uid="uid://dejlutkofubyx" path="res://main/texture/邮箱——暗.png" id="15_fr4sy"]
 [ext_resource type="Texture2D" uid="uid://drycowmc6wjqf" path="res://main/texture/好友——暗.png" id="17_sc51a"]
-[ext_resource type="Texture2D" uid="uid://cstab3ixi7xb1" path="res://main/main_panel/广告框.png" id="19_0yadd"]
-[ext_resource type="Texture2D" uid="uid://8gwb76omae4h" path="res://main/main_panel/赏金令.png" id="20_rdtu0"]
-[ext_resource type="Texture2D" uid="uid://cvo3wjs5jvn60" path="res://main/main_panel/派遣.png" id="21_ppvio"]
-[ext_resource type="Texture2D" uid="uid://bxvkq7qu12ijq" path="res://main/main_panel/抽奖.png" id="22_38cea"]
-[ext_resource type="Texture2D" uid="uid://dewsxxa0fvep8" path="res://main/main_panel/种植.png" id="23_eem0j"]
+[ext_resource type="Texture2D" uid="uid://d4gugr22tvlod" path="res://main/main_panel/广告背板.png" id="20_1nhng"]
+[ext_resource type="Texture2D" uid="uid://vb6o8uqdbyx1" path="res://main/main_panel/赏金令.png" id="20_rdtu0"]
+[ext_resource type="Texture2D" uid="uid://cveqcoonyj57v" path="res://main/main_panel/派遣.png" id="21_ppvio"]
+[ext_resource type="Texture2D" uid="uid://cfpo7drmt2rrk" path="res://main/main_panel/notice1.png" id="21_svrar"]
+[ext_resource type="Texture2D" uid="uid://7nmh2agxwykp" path="res://main/placard/switch_button/texture/button.png" id="22_6hakc"]
+[ext_resource type="Texture2D" uid="uid://crqsv3sgw1ttv" path="res://main/main_panel/抽奖.png" id="22_38cea"]
+[ext_resource type="Texture2D" uid="uid://crh5jpox7jald" path="res://main/placard/switch_button/texture/button_activated.png" id="22_usy2d"]
+[ext_resource type="Texture2D" uid="uid://bcq1kxjofnxs1" path="res://main/main_panel/种植.png" id="23_eem0j"]
 [ext_resource type="PackedScene" uid="uid://cr8sagt1r4jac" path="res://main/setup_page/SetupPage.tscn" id="25_44kcb"]
+[ext_resource type="Shader" path="res://main/box_shadow.gdshader" id="25_a8wwl"]
+[ext_resource type="PackedScene" uid="uid://s8ifxj0osj6w" path="res://main/bottom_nav_bar.tscn" id="28_llaq0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m2tgk"]
 font_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uh51k"]
+shadow_size = 5
+
+[sub_resource type="Theme" id="Theme_hgidc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwtmx"]
+shadow_size = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yqbrf"]
+shader = ExtResource("25_a8wwl")
+shader_parameter/shadow_color = Color(0.533333, 0, 0.858824, 0.835294)
+shader_parameter/shadow_offset = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pujsk"]
+shader = ExtResource("25_a8wwl")
+shader_parameter/shadow_color = Color(0, 1, 0, 0.501961)
+shader_parameter/shadow_offset = 5.0
 
 [node name="Main" type="Node2D"]
 
@@ -141,27 +163,14 @@ texture = ExtResource("6_c1ngb")
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/TextureRect2"]
 layout_mode = 0
-offset_left = 68.0
-offset_top = 40.0
-offset_right = 236.0
-offset_bottom = 104.0
+offset_left = 62.0
+offset_top = 30.0
+offset_right = 230.0
+offset_bottom = 94.0
 text = "100
 "
 label_settings = SubResource("LabelSettings_m2tgk")
 horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Control"]
-layout_mode = 0
-offset_top = 961.0
-offset_right = 1920.0
-offset_bottom = 1081.0
-texture = ExtResource("2_kjdbb")
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect"]
-layout_mode = 0
-offset_top = 11.0
-offset_right = 1920.0
-offset_bottom = 110.0
 
 [node name="SidebarContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 0
@@ -194,44 +203,149 @@ texture_pressed = ExtResource("17_sc51a")
 layout_mode = 0
 offset_left = 824.0
 offset_top = 216.0
-offset_right = 1836.0
-offset_bottom = 845.0
+offset_right = 1708.0
+offset_bottom = 793.0
+theme_override_constants/separation = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MainPanelContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="TextureRect" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer"]
+[node name="HeroAdBannerBackground" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("19_0yadd")
+texture = ExtResource("20_1nhng")
 stretch_mode = 4
+
+[node name="Content" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer/HeroAdBannerBackground"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 415.0
+offset_bottom = 221.0
+texture = ExtResource("21_svrar")
+
+[node name="TextureRect" type="HBoxContainer" parent="Control/MainPanelContainer/VBoxContainer/HeroAdBannerBackground"]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 223.0
+offset_right = 409.0
+offset_bottom = 231.0
+
+[node name="Button1" type="TextureButton" parent="Control/MainPanelContainer/VBoxContainer/HeroAdBannerBackground/TextureRect"]
+layout_mode = 2
+texture_normal = ExtResource("22_usy2d")
+
+[node name="Button2" type="TextureButton" parent="Control/MainPanelContainer/VBoxContainer/HeroAdBannerBackground/TextureRect"]
+layout_mode = 2
+texture_normal = ExtResource("22_6hakc")
+
+[node name="Button3" type="TextureButton" parent="Control/MainPanelContainer/VBoxContainer/HeroAdBannerBackground/TextureRect"]
+layout_mode = 2
+texture_normal = ExtResource("22_6hakc")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MainPanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="TextureRect2" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(208, 279)
 layout_mode = 2
-texture = ExtResource("20_rdtu0")
-stretch_mode = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_uh51k")
 
-[node name="TextureRect" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
+[node name="TextureRect2" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -139.5
+offset_right = 104.0
+offset_bottom = 139.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
 texture = ExtResource("21_ppvio")
+
+[node name="Panel" type="Panel" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(208, 279)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uh51k")
+
+[node name="TextureRect" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -139.5
+offset_right = 104.0
+offset_bottom = 139.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_rdtu0")
 stretch_mode = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MainPanelContainer"]
 layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 10
 
-[node name="TextureRect" type="TextureRect" parent="Control/MainPanelContainer/HBoxContainer"]
+[node name="ColorRect2" type="Panel" parent="Control/MainPanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(224, 0)
 layout_mode = 2
+theme = SubResource("Theme_hgidc")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dwtmx")
+
+[node name="TextureRect" type="TextureRect" parent="Control/MainPanelContainer/HBoxContainer/ColorRect2"]
+material = SubResource("ShaderMaterial_yqbrf")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -288.5
+offset_right = 112.0
+offset_bottom = 288.5
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("22_38cea")
-stretch_mode = 4
+stretch_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="Control/MainPanelContainer/HBoxContainer"]
+[node name="ColorRect" type="Panel" parent="Control/MainPanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(224, 0)
 layout_mode = 2
+theme = SubResource("Theme_hgidc")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dwtmx")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MainPanelContainer/HBoxContainer/ColorRect"]
+material = SubResource("ShaderMaterial_pujsk")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -288.5
+offset_right = 112.0
+offset_bottom = 288.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(15, 200)
 texture = ExtResource("23_eem0j")
-stretch_mode = 4
+stretch_mode = 2
 
 [node name="SetupPage" parent="Control" instance=ExtResource("25_44kcb")]
 visible = false
+
+[node name="BottomNavBar" parent="." instance=ExtResource("28_llaq0")]
+offset_top = 961.0
+offset_bottom = 961.0
 
 [connection signal="pressed" from="Control/HBoxContainer2/SettingsButtion" to="Control" method="_on_settings_buttion_pressed"]
