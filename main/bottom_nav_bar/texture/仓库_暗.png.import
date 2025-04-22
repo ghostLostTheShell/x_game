@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbajs1f8fpeuv"
-path="res://.godot/imported/黑洞（需要旋转）.png-72831b53a0068be814fe983b50da9646.ctex"
+uid="uid://cwtdalphppdig"
+path="res://.godot/imported/仓库_暗.png-b2d5b9a92a68c03138c113bc1a574e19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://loding_page/黑洞（需要旋转）.png"
-dest_files=["res://.godot/imported/黑洞（需要旋转）.png-72831b53a0068be814fe983b50da9646.ctex"]
+source_file="res://main/bottom_nav_bar/texture/仓库_暗.png"
+dest_files=["res://.godot/imported/仓库_暗.png-b2d5b9a92a68c03138c113bc1a574e19.ctex"]
 
 [params]
 

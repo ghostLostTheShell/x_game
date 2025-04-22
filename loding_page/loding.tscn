@@ -1,15 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcag8h58nqmii"]
+[gd_scene load_steps=7 format=3 uid="uid://bcag8h58nqmii"]
 
-[ext_resource type="Texture2D" uid="uid://dodoqosrgu08f" path="res://loding_page/texture/加载.png" id="1_5fp64"]
+[ext_resource type="Texture2D" uid="uid://c4j78uk0c0tki" path="res://loding_page/texture/加载.png" id="1_5fp64"]
 [ext_resource type="Script" path="res://loding_page/loding.gd" id="1_6hy6s"]
+[ext_resource type="Shader" path="res://shader/rotation.gdshader" id="2_0axl6"]
 [ext_resource type="Script" path="res://loding_page/loding_symbol.gd" id="3_ryj1b"]
+[ext_resource type="Texture2D" uid="uid://bamwxh3g8csal" path="res://loding_page/texture/指南针.png" id="4_5c0gu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4dlkg"]
+shader = ExtResource("2_0axl6")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/speed = 1.0
 
 [node name="Loding" type="Node2D"]
 script = ExtResource("1_6hy6s")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
-texture = ExtResource("1_5fp64")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -17,11 +20,28 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
-layout_mode = 0
-offset_top = 960.0
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
+texture = ExtResource("1_5fp64")
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+material = SubResource("ShaderMaterial_4dlkg")
+layout_mode = 0
+offset_left = 647.0
+offset_top = 174.0
+offset_right = 1247.0
+offset_bottom = 774.0
+texture = ExtResource("4_5c0gu")
+stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+visible = false
+layout_mode = 0
+offset_top = 956.0
+offset_right = 1920.0
+offset_bottom = 1076.0
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
@@ -32,36 +52,36 @@ text = "[center]红光：促进叶片扩展和茎伸长，加速光合作用（�
 [center]蓝光：争强叶片厚度，抑制徒长，提升维生素和抗氧化物质含量[center]"
 
 [node name="LodingSymbol" type="Node2D" parent="."]
+visible = false
 position = Vector2(1832, 952)
 script = ExtResource("3_ryj1b")
 
 [node name="Polygon2D0" type="Polygon2D" parent="LodingSymbol"]
-color = Color(0.2, 0.2, 0.2, 1)
 polygon = PackedVector2Array(0, 0, 16, 24, -16, 24)
 
 [node name="Polygon2D5" type="Polygon2D" parent="LodingSymbol"]
 position = Vector2(35, 50)
 rotation = -3.14159
-color = Color(0.2, 0.2, 0.2, 1)
 polygon = PackedVector2Array(0, 0, 16, 24, -16, 24)
 
 [node name="Polygon2D4" type="Polygon2D" parent="LodingSymbol"]
 position = Vector2(35, 53)
-color = Color(0, 0, 0, 1)
+color = Color(0.8, 0.8, 0.8, 1)
 polygon = PackedVector2Array(0, 0, 16, 24, -16, 24)
 
 [node name="Polygon2D3" type="Polygon2D" parent="LodingSymbol"]
 position = Vector2(0, 102)
 rotation = 3.14159
+color = Color(0.6, 0.6, 0.6, 1)
 polygon = PackedVector2Array(0, 0, 16, 24, -16, 24)
 
 [node name="Polygon2D2" type="Polygon2D" parent="LodingSymbol"]
 position = Vector2(-35, 53)
-color = Color(0.8, 0.8, 0.8, 1)
+color = Color(0.2, 0.2, 0.2, 1)
 polygon = PackedVector2Array(0, 0, 16, 24, -16, 24)
 
 [node name="Polygon2D1" type="Polygon2D" parent="LodingSymbol"]
 position = Vector2(-35, 50)
 rotation = -3.14159
-color = Color(0.6, 0.6, 0.6, 1)
+color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(0, 0, 16, 24, -16, 24)

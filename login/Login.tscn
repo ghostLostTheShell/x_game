@@ -148,36 +148,36 @@ theme = SubResource("Theme_koaoo")
 texture = ExtResource("19_ckdsa")
 
 [node name="Input" parent="Ui/LoginDiglog/CenterContainer/Panel" instance=ExtResource("22_iph26")]
-offset_left = 61.0
-offset_top = 179.0
-offset_right = 61.0
-offset_bottom = 179.0
+offset_left = 90.0
+offset_top = 187.0
+offset_right = 90.0
+offset_bottom = 187.0
 iconTexture = ExtResource("23_41733")
 placeholder_text = "请输入用户账号"
 
 [node name="Input2" parent="Ui/LoginDiglog/CenterContainer/Panel" instance=ExtResource("22_iph26")]
-offset_left = 61.0
+offset_left = 90.0
 offset_top = 307.0
-offset_right = 61.0
+offset_right = 90.0
 offset_bottom = 307.0
 iconTexture = ExtResource("21_ikhv0")
 placeholder_text = "请输入密码"
 
 [node name="CloseButton" type="TextureButton" parent="Ui/LoginDiglog/CenterContainer/Panel"]
 layout_mode = 2
-offset_left = 725.0
-offset_top = 35.0
-offset_right = 774.0
-offset_bottom = 84.0
+offset_left = 768.0
+offset_top = 52.0
+offset_right = 817.0
+offset_bottom = 101.0
 texture_normal = ExtResource("20_mwmsu")
 texture_pressed = ExtResource("21_o1lef")
 
 [node name="VerificationCodeWarp" type="TextureRect" parent="Ui/LoginDiglog/CenterContainer/Panel"]
 layout_mode = 0
-offset_left = 469.0
-offset_top = 435.0
-offset_right = 752.0
-offset_bottom = 536.0
+offset_left = 492.0
+offset_top = 437.0
+offset_right = 775.0
+offset_bottom = 538.0
 texture = ExtResource("25_8671x")
 
 [node name="VerificationCode" type="TextureRect" parent="Ui/LoginDiglog/CenterContainer/Panel/VerificationCodeWarp"]
@@ -189,46 +189,48 @@ texture = ExtResource("26_87w6s")
 
 [node name="VerificationCodeInput" type="TextureRect" parent="Ui/LoginDiglog/CenterContainer/Panel"]
 layout_mode = 0
-offset_left = 61.0
-offset_top = 435.0
-offset_right = 450.0
-offset_bottom = 536.0
+offset_left = 90.0
+offset_top = 437.0
+offset_right = 479.0
+offset_bottom = 538.0
 texture = ExtResource("25_nxllg")
 
 [node name="Icon" type="TextureRect" parent="Ui/LoginDiglog/CenterContainer/Panel/VerificationCodeInput"]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 24.0
-offset_right = 77.0
-offset_bottom = 94.0
+offset_left = 22.0
+offset_top = 18.0
+offset_right = 83.0
+offset_bottom = 88.0
 texture = ExtResource("26_fiwot")
 
 [node name="TextEdit" type="TextEdit" parent="Ui/LoginDiglog/CenterContainer/Panel/VerificationCodeInput"]
 layout_mode = 0
-offset_left = 104.0
+offset_left = 111.0
 offset_top = 24.0
-offset_right = 360.0
+offset_right = 367.0
 offset_bottom = 83.0
+theme_override_colors/font_placeholder_color = Color(0.737255, 0.737255, 0.737255, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_h2ux3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_b6orv")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_gycmb")
+placeholder_text = "验证码"
 
 [node name="TextureButton2" type="TextureButton" parent="Ui/LoginDiglog/CenterContainer/Panel"]
 layout_mode = 0
-offset_left = 61.0
+offset_left = 93.0
 offset_top = 571.0
-offset_right = 755.0
+offset_right = 787.0
 offset_bottom = 672.0
 texture_normal = ExtResource("27_ugkn4")
 texture_pressed = ExtResource("28_je5c0")
 
 [node name="AnonymousLoginButton" type="Button" parent="Ui/LoginDiglog/CenterContainer/Panel"]
 layout_mode = 0
-offset_left = 69.0
+offset_left = 84.0
 offset_top = 699.0
-offset_right = 201.0
+offset_right = 256.0
 offset_bottom = 779.0
 theme_override_colors/font_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_constants/h_separation = 20
@@ -238,9 +240,9 @@ icon = ExtResource("29_2mev7")
 
 [node name="AgreementButton" type="Button" parent="Ui/LoginDiglog/CenterContainer/Panel"]
 layout_mode = 0
-offset_left = 509.0
+offset_left = 528.0
 offset_top = 699.0
-offset_right = 757.0
+offset_right = 776.0
 offset_bottom = 779.0
 theme_override_colors/font_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_constants/h_separation = 20

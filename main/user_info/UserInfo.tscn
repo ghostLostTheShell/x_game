@@ -68,6 +68,7 @@ text = "lv."
 justification_flags = 0
 
 [node name="Label2" type="Label" parent="TextureRect/LevelWarp"]
+layout_mode = 0
 offset_left = 53.0
 offset_top = 20.0
 offset_right = 78.0

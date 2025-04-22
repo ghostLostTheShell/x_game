@@ -6,10 +6,10 @@ uniform float transparency_width = 0.2; // 透明区域的宽度，比例
 void fragment() {
     // 获取当前像素的 UV 坐标
     float xPos = UV.x;
-	
+
 	//vec2 center = vec2(0.5);
-	
-	
+
+
     // 计算透明区域的起始和结束位置
     float start = (0.5 - transparency_width / 2.0);  // 中间区域的左边界
     float end = (0.5 + transparency_width / 2.0);    // 中间区域的右边界

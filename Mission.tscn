@@ -1,0 +1,179 @@
+[gd_scene load_steps=18 format=3 uid="uid://cwamml4ey3v1r"]
+
+[ext_resource type="Texture2D" uid="uid://dt84ufi8eby5r" path="res://mission_manager/texture/bg.png" id="1_61rk1"]
+[ext_resource type="Script" path="res://mission_manager/mission.gd" id="1_ci5vk"]
+[ext_resource type="Texture2D" uid="uid://dlmv8oxl4c7s4" path="res://mission_manager/texture/返回上一级.png" id="2_a4ytt"]
+[ext_resource type="Texture2D" uid="uid://bamq0npe66gx5" path="res://mission_manager/texture/返回上一级-暗.png" id="3_ds0on"]
+[ext_resource type="Texture2D" uid="uid://cgx1p76ek4p0e" path="res://mission_manager/texture/主页面.png" id="4_o3bcd"]
+[ext_resource type="Texture2D" uid="uid://dowmb1uunr40k" path="res://mission_manager/texture/主页面-暗.png" id="5_y228k"]
+[ext_resource type="Texture2D" uid="uid://mfdrkhvixxf3" path="res://mission_manager/texture/白条.png" id="6_5ntdm"]
+[ext_resource type="Texture2D" uid="uid://bqa7xdj351aqs" path="res://mission_manager/texture/全部.png" id="7_1006q"]
+[ext_resource type="Texture2D" uid="uid://djsv4370qekon" path="res://mission_manager/texture/每日.png" id="8_m1ixi"]
+[ext_resource type="Texture2D" uid="uid://bdursatt6absi" path="res://mission_manager/texture/主线.png" id="9_ntqsb"]
+[ext_resource type="Texture2D" uid="uid://os714hoctcdu" path="res://mission_manager/texture/任务1.png" id="10_a270v"]
+[ext_resource type="Texture2D" uid="uid://d4d6n55cfg7u5" path="res://mission_manager/texture/可领取.png" id="11_rvlw4"]
+[ext_resource type="Script" path="res://mission_1.gd" id="12_exe83"]
+[ext_resource type="Script" path="res://mission_manager/mission_2.gd" id="14_aenox"]
+[ext_resource type="Script" path="res://mission_manager/mission_3.gd" id="15_f67hu"]
+[ext_resource type="Script" path="res://mission_manager/mission_4.gd" id="16_sg3c3"]
+[ext_resource type="Script" path="res://mission_manager/mission_5.gd" id="17_goegh"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ci5vk")
+
+[node name="BackGround" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_61rk1")
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 27.0
+offset_right = 574.0
+offset_bottom = 142.0
+texture_normal = ExtResource("2_a4ytt")
+texture_pressed = ExtResource("3_ds0on")
+
+[node name="HomeButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1762.0
+offset_top = 27.0
+offset_right = 1885.0
+offset_bottom = 151.0
+texture_normal = ExtResource("4_o3bcd")
+texture_pressed = ExtResource("5_y228k")
+
+[node name="Bar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 180.0
+offset_right = 1920.0
+offset_bottom = 294.0
+texture = ExtResource("6_5ntdm")
+
+[node name="Button1" type="TextureButton" parent="Bar"]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 25.0
+offset_right = 660.0
+offset_bottom = 88.0
+texture_normal = ExtResource("7_1006q")
+
+[node name="Button2" type="TextureButton" parent="Bar"]
+layout_mode = 0
+offset_left = 821.0
+offset_top = 25.0
+offset_right = 1100.0
+offset_bottom = 88.0
+texture_normal = ExtResource("8_m1ixi")
+
+[node name="Button3" type="TextureButton" parent="Bar"]
+layout_mode = 0
+offset_left = 1261.0
+offset_top = 25.0
+offset_right = 1540.0
+offset_bottom = 88.0
+texture_normal = ExtResource("9_ntqsb")
+
+[node name="Mission1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 305.0
+offset_right = 382.0
+offset_bottom = 1062.0
+texture = ExtResource("10_a270v")
+script = ExtResource("12_exe83")
+
+[node name="ReceiveButton" type="TextureButton" parent="Mission1"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 613.0
+offset_right = 325.0
+offset_bottom = 710.0
+texture_normal = ExtResource("11_rvlw4")
+
+[node name="Mission2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 305.0
+offset_right = 757.0
+offset_bottom = 1062.0
+texture = ExtResource("10_a270v")
+script = ExtResource("14_aenox")
+
+[node name="ReceiveButton" type="TextureButton" parent="Mission2"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 613.0
+offset_right = 325.0
+offset_bottom = 710.0
+texture_normal = ExtResource("11_rvlw4")
+
+[node name="Mission3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 305.0
+offset_right = 1132.0
+offset_bottom = 1062.0
+texture = ExtResource("10_a270v")
+script = ExtResource("15_f67hu")
+
+[node name="ReceiveButton" type="TextureButton" parent="Mission3"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 613.0
+offset_right = 325.0
+offset_bottom = 710.0
+texture_normal = ExtResource("11_rvlw4")
+
+[node name="Mission4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1539.0
+offset_top = 305.0
+offset_right = 1882.0
+offset_bottom = 1062.0
+texture = ExtResource("10_a270v")
+script = ExtResource("16_sg3c3")
+
+[node name="ReceiveButton" type="TextureButton" parent="Mission4"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 613.0
+offset_right = 325.0
+offset_bottom = 710.0
+texture_normal = ExtResource("11_rvlw4")
+
+[node name="Mission5" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1164.0
+offset_top = 305.0
+offset_right = 1507.0
+offset_bottom = 1062.0
+texture = ExtResource("10_a270v")
+script = ExtResource("17_goegh")
+
+[node name="ReceiveButton" type="TextureButton" parent="Mission5"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 613.0
+offset_right = 325.0
+offset_bottom = 710.0
+texture_normal = ExtResource("11_rvlw4")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="Bar/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Bar/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Bar/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Mission1/ReceiveButton" to="Mission1" method="_on_receive_button_pressed"]
+[connection signal="pressed" from="Mission2/ReceiveButton" to="Mission2" method="_on_receive_button_pressed"]
+[connection signal="pressed" from="Mission3/ReceiveButton" to="Mission3" method="_on_receive_button_pressed"]
+[connection signal="pressed" from="Mission4/ReceiveButton" to="Mission4" method="_on_receive_button_pressed"]
+[connection signal="pressed" from="Mission5/ReceiveButton" to="Mission5" method="_on_receive_button_pressed"]
