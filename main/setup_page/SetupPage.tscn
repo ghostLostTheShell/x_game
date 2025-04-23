@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cr8sagt1r4jac"]
+[gd_scene load_steps=25 format=3 uid="uid://cr8sagt1r4jac"]
 
 [ext_resource type="Shader" path="res://main/setup_page/SetuoPage.gdshader" id="1_x0lee"]
 [ext_resource type="Texture2D" uid="uid://dcxn78443okpl" path="res://main/setup_page/wallhaven-k7yw91.jpg" id="1_xi1m1"]
@@ -12,8 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://cuept638ysuc3" path="res://main/setup_page/texture/滑钮.png" id="9_o83qk"]
 [ext_resource type="Script" path="res://main/setup_page/graphics_quality_control.gd" id="11_2g4qr"]
 [ext_resource type="Texture2D" uid="uid://feopyvnl5wx6" path="res://main/setup_page/texture/领取.png" id="12_rkpif"]
+[ext_resource type="Texture2D" uid="uid://codpf7auje3yy" path="res://main/main_panel/输入框.png" id="12_vyqvk"]
 [ext_resource type="Texture2D" uid="uid://cbxij8ticmgjk" path="res://main/setup_page/texture/领取-暗.png" id="13_vviba"]
 [ext_resource type="Texture2D" uid="uid://cici1uaonaptb" path="res://main/setup_page/texture/按钮未激活.png" id="14_olg8f"]
+[ext_resource type="Texture2D" uid="uid://bu2lbgtlk03xc" path="res://main/setup_page/texture/图像.png" id="16_3pwk0"]
+[ext_resource type="Texture2D" uid="uid://bmnqlmpl4vsjw" path="res://main/setup_page/texture/兑换码.png" id="17_50qih"]
+[ext_resource type="Texture2D" uid="uid://cra7d103ygb1i" path="res://main/setup_page/texture/声音.png" id="18_7nipq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4kd6c"]
 shader = ExtResource("1_x0lee")
@@ -174,6 +178,14 @@ theme_override_icons/grabber = ExtResource("9_o83qk")
 theme_override_icons/grabber_highlight = ExtResource("9_o83qk")
 theme_override_icons/grabber_disabled = ExtResource("9_o83qk")
 
+[node name="TextureRect" type="TextureRect" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 1286.0
+offset_top = 435.0
+offset_right = 1785.0
+offset_bottom = 517.0
+texture = ExtResource("12_vyqvk")
+
 [node name="RedeemCode" type="LineEdit" parent="TextureRect2"]
 layout_mode = 0
 offset_left = 1298.0
@@ -215,6 +227,28 @@ offset_top = 607.0
 offset_right = 522.0
 offset_bottom = 741.0
 texture_normal = ExtResource("14_olg8f")
+
+[node name="T3" type="TextureRect" parent="TextureRect2"]
+offset_left = 148.0
+offset_top = 28.0
+offset_right = 544.0
+offset_bottom = 145.0
+texture = ExtResource("16_3pwk0")
+
+[node name="T1" type="TextureRect" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 1345.0
+offset_top = 28.0
+offset_right = 1741.0
+offset_bottom = 145.0
+texture = ExtResource("17_50qih")
+
+[node name="T2" type="TextureRect" parent="TextureRect2"]
+offset_left = 752.0
+offset_top = 28.0
+offset_right = 1148.0
+offset_bottom = 145.0
+texture = ExtResource("18_7nipq")
 
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="TextureRect2/VoiceStatus" to="." method="_on_voice_status_pressed"]

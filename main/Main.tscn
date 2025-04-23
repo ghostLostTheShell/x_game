@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://c7ua4r03xqw40"]
+[gd_scene load_steps=41 format=3 uid="uid://c7ua4r03xqw40"]
 
 [ext_resource type="Texture2D" uid="uid://dnsor5c7ckrp2" path="res://main/texture/background.png" id="1_2mble"]
 [ext_resource type="PackedScene" uid="uid://c4nj64wmqhnpa" path="res://main/user_info/UserInfo.tscn" id="2_1ssoa"]
@@ -29,7 +29,11 @@
 [ext_resource type="Texture2D" uid="uid://bcq1kxjofnxs1" path="res://main/main_panel/种植.png" id="23_eem0j"]
 [ext_resource type="PackedScene" uid="uid://cr8sagt1r4jac" path="res://main/setup_page/SetupPage.tscn" id="25_44kcb"]
 [ext_resource type="Shader" path="res://main/box_shadow.gdshader" id="25_a8wwl"]
+[ext_resource type="Texture2D" uid="uid://0a0qhtk5dsx1" path="res://main/main_panel/派遣-暗.png" id="25_qfnth"]
+[ext_resource type="Texture2D" uid="uid://bqdps5cukyel1" path="res://main/main_panel/赏金令-暗.png" id="27_s0vmf"]
 [ext_resource type="PackedScene" uid="uid://s8ifxj0osj6w" path="res://main/bottom_nav_bar.tscn" id="28_llaq0"]
+[ext_resource type="Texture2D" uid="uid://cjsmdgd2npxa1" path="res://main/main_panel/抽奖-暗.png" id="30_662xt"]
+[ext_resource type="Texture2D" uid="uid://cgksnfdbqx55m" path="res://main/main_panel/种植-暗.png" id="32_uvnqc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m2tgk"]
 line_spacing = 1.0
@@ -265,7 +269,7 @@ custom_minimum_size = Vector2(208, 279)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uh51k")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer/Panel2"]
+[node name="TextureRect2" type="TextureButton" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer/Panel2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -279,14 +283,15 @@ offset_bottom = 139.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_stretch_ratio = 0.0
-texture = ExtResource("21_ppvio")
+texture_normal = ExtResource("21_ppvio")
+texture_pressed = ExtResource("25_qfnth")
 
 [node name="Panel" type="Panel" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(208, 279)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uh51k")
 
-[node name="TextureRect" type="TextureRect" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer/Panel"]
+[node name="TextureRect" type="TextureButton" parent="Control/MainPanelContainer/VBoxContainer/HBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -299,7 +304,8 @@ offset_right = 104.0
 offset_bottom = 139.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("20_rdtu0")
+texture_normal = ExtResource("20_rdtu0")
+texture_pressed = ExtResource("27_s0vmf")
 stretch_mode = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MainPanelContainer"]
@@ -313,7 +319,7 @@ layout_mode = 2
 theme = SubResource("Theme_hgidc")
 theme_override_styles/panel = SubResource("StyleBoxFlat_dwtmx")
 
-[node name="TextureRect" type="TextureRect" parent="Control/MainPanelContainer/HBoxContainer/ColorRect2"]
+[node name="TextureRect" type="TextureButton" parent="Control/MainPanelContainer/HBoxContainer/ColorRect2"]
 material = SubResource("ShaderMaterial_yqbrf")
 layout_mode = 1
 anchors_preset = 8
@@ -327,8 +333,8 @@ offset_right = 112.0
 offset_bottom = 288.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("22_38cea")
-stretch_mode = 2
+texture_normal = ExtResource("22_38cea")
+texture_pressed = ExtResource("30_662xt")
 
 [node name="ColorRect" type="Panel" parent="Control/MainPanelContainer/HBoxContainer"]
 custom_minimum_size = Vector2(224, 0)
@@ -336,7 +342,7 @@ layout_mode = 2
 theme = SubResource("Theme_hgidc")
 theme_override_styles/panel = SubResource("StyleBoxFlat_dwtmx")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/MainPanelContainer/HBoxContainer/ColorRect"]
+[node name="TextureRect2" type="TextureButton" parent="Control/MainPanelContainer/HBoxContainer/ColorRect"]
 material = SubResource("ShaderMaterial_pujsk")
 layout_mode = 1
 anchors_preset = 8
@@ -351,8 +357,8 @@ offset_bottom = 288.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(15, 200)
-texture = ExtResource("23_eem0j")
-stretch_mode = 2
+texture_normal = ExtResource("23_eem0j")
+texture_pressed = ExtResource("32_uvnqc")
 
 [node name="SetupPage" parent="Control" instance=ExtResource("25_44kcb")]
 visible = false

@@ -17,5 +17,3 @@ void fragment() {
 	}
 	//COLOR=eq_color;
 }
-
-
