@@ -360,11 +360,12 @@ pivot_offset = Vector2(15, 200)
 texture_normal = ExtResource("23_eem0j")
 texture_pressed = ExtResource("32_uvnqc")
 
+[node name="BottomNavBar" parent="Control" instance=ExtResource("28_llaq0")]
+layout_mode = 1
+offset_bottom = 962.0
+
 [node name="SetupPage" parent="Control" instance=ExtResource("25_44kcb")]
 visible = false
-
-[node name="BottomNavBar" parent="." instance=ExtResource("28_llaq0")]
-offset_bottom = 962.0
 
 [connection signal="pressed" from="Control/HBoxContainer2/SettingsButtion" to="Control" method="_on_settings_buttion_pressed"]
 [connection signal="pressed" from="Control/MainPanelContainer/VBoxContainer/Panel2/HeroAdBannerBackground/TextureRect/Button1" to="Control/MainPanelContainer/VBoxContainer/Panel2" method="_on_button_1_pressed"]

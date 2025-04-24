@@ -58,3 +58,7 @@ func _on_voice_status_pressed() -> void:
 	else:
 		voice_status = true
 		voice_status_ui.texture_normal = t_anti_aliasing_status_enable
+
+
+func _on_brack_buttion_pressed() -> void:
+	visible = false

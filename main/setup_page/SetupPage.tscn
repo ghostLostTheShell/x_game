@@ -229,6 +229,7 @@ offset_bottom = 741.0
 texture_normal = ExtResource("14_olg8f")
 
 [node name="T3" type="TextureRect" parent="TextureRect2"]
+layout_mode = 0
 offset_left = 148.0
 offset_top = 28.0
 offset_right = 544.0
@@ -244,12 +245,14 @@ offset_bottom = 145.0
 texture = ExtResource("17_50qih")
 
 [node name="T2" type="TextureRect" parent="TextureRect2"]
+layout_mode = 0
 offset_left = 752.0
 offset_top = 28.0
 offset_right = 1148.0
 offset_bottom = 145.0
 texture = ExtResource("18_7nipq")
 
+[connection signal="pressed" from="BrackButtion" to="." method="_on_brack_buttion_pressed"]
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="TextureRect2/VoiceStatus" to="." method="_on_voice_status_pressed"]
 [connection signal="pressed" from="TextureRect2/AntiAliasingStatus" to="." method="_on_anti_aliasing_status_pressed"]
