@@ -1,6 +1,6 @@
 @tool
 extends Control
-class_name NutritionTrackerPanel
+class_name CultureMediumPanel
 @onready var boxContainer = $HBoxContainer
 
 # Called when the node enters the scene tree for the first time.
