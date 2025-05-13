@@ -18,6 +18,7 @@ extends Control
 
 @onready var seedPanel = $SeedPanel
 @onready var cultureMediumPanel = $CultureMediumPanel
+@onready var nutritionTrackerPanel = $NutritionTrackerPanel
 
 func _ready() -> void:
 	switch_to_seed()
@@ -28,9 +29,9 @@ func switch_to_culture_medium() -> void:
 	nutrient_solution_button.texture_normal = nutrient_solution_button_texture
 	seed_button.texture_normal = seed_button_texture
 	tool_button.texture_normal = tool_button_texture
-	
 	seedPanel.visible = false
-	seedPanel.refreshItem()
+	nutritionTrackerPanel.visible = false
+	cultureMediumPanel.refreshItem()
 	cultureMediumPanel.visible = true
 	
 func switch_to_nutrient_solution() -> void:
@@ -40,15 +41,19 @@ func switch_to_nutrient_solution() -> void:
 	tool_button.texture_normal = tool_button_texture
 	seedPanel.visible = false
 	cultureMediumPanel.visible = false
-	seedPanel.refreshItem()
+	nutritionTrackerPanel.refreshItem()
+	nutritionTrackerPanel.visible = true
 
 func switch_to_seed() -> void:
 	culture_medium_button.texture_normal = culture_medium_button_texture
 	nutrient_solution_button.texture_normal = nutrient_solution_button_texture
 	seed_button.texture_normal = seed_select_button_texture
 	tool_button.texture_normal = tool_button_texture
+	seedPanel.refreshItem()
 	seedPanel.visible = true
 	cultureMediumPanel.visible = false
+	nutritionTrackerPanel.visible = false
+	
 
 func switch_to_tool() -> void:
 	culture_medium_button.texture_normal = culture_medium_button_texture
@@ -58,6 +63,7 @@ func switch_to_tool() -> void:
 	
 	seedPanel.visible = false
 	cultureMediumPanel.visible = false
+	nutritionTrackerPanel.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,6 +1,6 @@
 @tool
 extends Control
-class_name NutritionTrackerPanel
+class_name CultureMediumPanel
 @onready var boxContainer = $HBoxContainer
 
 # Called when the node enters the scene tree for the first time.
@@ -14,7 +14,7 @@ func refreshItem() -> void:
 		el.queue_free() 
 	
 	
-	var items = CultivationWarehouse.all_item_list.filter(func(item): return item is CultureMedium)
+	var items = CultivationWarehouse.all_item_list.filter(func(item): return item is NutritionTracker)
 	
 	var i = 0
 	for item in items:

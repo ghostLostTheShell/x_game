@@ -1,28 +1,20 @@
 extends Node2D
 
-var seed_stock:Array[Seed] = [
-	Seed.new("生菜种子", 0),
-	Seed.new("生菜种子", 1),
-	Seed.new("生菜种子", 2),
-	Seed.new("生菜种子", 3),
-	Seed.new("生菜种子", 3),
-	Seed.new("生菜种子", 3),
+class_name CultivationWarehouse
+
+static var all_item_list:Array[Item] = [
+	RockWoolCultureMedium.new(0),
+	VermiculitecultureMedium.new(1),
+	RockWoolCultureMedium.new(3),
+	VermiculitecultureMedium.new(4),
+	Lettuce.new(0),
+	Pepper.new(1),
+	Radish.new(3),
+	SoilLeachate.new(1),
+	SyntheticInorganicSalts.new(1),
+	ReuseWaterCycle.new(0)
 ]
 
-var culture_medium_stock:Array[CultureMedium] = [
-	CultureMedium.new("岩棉培养基", 0),
-	CultureMedium.new("蛭石培养基", 1),
-	CultureMedium.new("岩棉培养基", 2),
-	CultureMedium.new("蛭石培养基", 3),
-	CultureMedium.new("岩棉培养基", 3),
-	CultureMedium.new("岩棉培养基", 3),
-]
-
-var in_use_culture_medium_list:Array[CultureMedium] = [
-	
-]
-#营养液
-var in_nutrient_solution
 
 
 func _init() -> void:

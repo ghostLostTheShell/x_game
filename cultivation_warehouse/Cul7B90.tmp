@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://s8kapcxfxw28"]
+[gd_scene load_steps=35 format=3 uid="uid://s8kapcxfxw28"]
 
 [ext_resource type="Texture2D" uid="uid://hcgf5tnlqdm7" path="res://cultivation_warehouse/texture/bg.png" id="1_lnfni"]
 [ext_resource type="Script" path="res://cultivation_warehouse/cultivation_warehouse.gd" id="1_x41sm"]
@@ -27,10 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://dhwg63vr8ltqn" path="res://main/texture/货币加号.png" id="18_apixa"]
 [ext_resource type="Texture2D" uid="uid://cyb3u45kaemvr" path="res://cultivation_warehouse/texture/主页面.png" id="19_frg43"]
 [ext_resource type="Texture2D" uid="uid://b5oebcn51ygif" path="res://cultivation_warehouse/texture/主页面-暗.png" id="20_05ktb"]
-[ext_resource type="Script" path="res://cultivation_warehouse/nutrition_tracker_panel.gd" id="20_pxxx2"]
 [ext_resource type="Texture2D" uid="uid://biuu8yqdhp02h" path="res://cultivation_warehouse/texture/剩余营养槽填充.png" id="20_s2wa4"]
 [ext_resource type="Script" path="res://cultivation_warehouse/culture_medium_panel.gd" id="21_gx6wo"]
-[ext_resource type="Script" path="res://cultivation_warehouse/liquid_inlet_area.gd" id="22_ajtvg"]
 [ext_resource type="Texture2D" uid="uid://hquqwe7075rg" path="res://cultivation_warehouse/texture/能量槽填充.png" id="23_arvdj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eacvo"]
@@ -277,55 +275,6 @@ offset_bottom = 287.0
 scale = Vector2(0.5, 0.5)
 theme_override_constants/separation = 15
 
-[node name="NutritionTrackerPanel" type="Control" parent="PropContainer"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 24.0
-offset_top = 915.0
-offset_right = 840.0
-offset_bottom = 1070.0
-script = ExtResource("20_pxxx2")
-
-[node name="RPageTurningButton" type="TextureButton" parent="PropContainer/NutritionTrackerPanel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.943115
-anchor_top = -0.254463
-anchor_right = 0.943115
-anchor_bottom = -0.254463
-offset_left = 0.417908
-offset_top = 38.4418
-offset_right = 62.4179
-offset_bottom = 328.442
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("8_e2o46")
-texture_pressed = ExtResource("9_atdrd")
-metadata/_edit_use_anchors_ = true
-
-[node name="LPageTurningButton" type="TextureButton" parent="PropContainer/NutritionTrackerPanel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.00980392
-anchor_top = -0.0129032
-anchor_right = 0.00980392
-anchor_bottom = -0.0129032
-offset_right = 62.0
-offset_bottom = 290.0
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("10_cgo4w")
-texture_pressed = ExtResource("11_mbl05")
-metadata/_edit_use_anchors_ = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PropContainer/NutritionTrackerPanel"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = -3.0
-offset_right = 1472.0
-offset_bottom = 287.0
-scale = Vector2(0.5, 0.5)
-theme_override_constants/separation = 15
-
 [node name="ControlPanel" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -339,22 +288,6 @@ offset_top = 856.0
 offset_right = 1894.0
 offset_bottom = 1071.0
 texture = ExtResource("7_0h8t0")
-
-[node name="LiquidInletArea" type="Control" parent="ControlPanel"]
-anchors_preset = 0
-offset_left = 1776.0
-offset_top = 894.0
-offset_right = 1846.0
-offset_bottom = 958.0
-script = ExtResource("22_ajtvg")
-
-[node name="DrainingLiquidArea" type="Control" parent="ControlPanel"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1784.0
-offset_top = 968.0
-offset_right = 1846.0
-offset_bottom = 1032.0
 
 [node name="NutritionTracker" type="Control" parent="."]
 layout_mode = 3
