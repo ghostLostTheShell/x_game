@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://c7ua4r03xqw40"]
+[gd_scene load_steps=42 format=3 uid="uid://c7ua4r03xqw40"]
 
 [ext_resource type="Texture2D" uid="uid://dnsor5c7ckrp2" path="res://main/texture/background.png" id="1_2mble"]
 [ext_resource type="PackedScene" uid="uid://c4nj64wmqhnpa" path="res://main/user_info/UserInfo.tscn" id="2_1ssoa"]
@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://s8ifxj0osj6w" path="res://main/bottom_nav_bar.tscn" id="28_llaq0"]
 [ext_resource type="Texture2D" uid="uid://cjsmdgd2npxa1" path="res://main/main_panel/抽奖-暗.png" id="30_662xt"]
 [ext_resource type="Texture2D" uid="uid://cgksnfdbqx55m" path="res://main/main_panel/种植-暗.png" id="32_uvnqc"]
+[ext_resource type="PackedScene" uid="uid://s8kapcxfxw28" path="res://cultivation_warehouse/CultivationWarehouse.tscn" id="35_awq16"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m2tgk"]
 line_spacing = 1.0
@@ -342,7 +343,7 @@ layout_mode = 2
 theme = SubResource("Theme_hgidc")
 theme_override_styles/panel = SubResource("StyleBoxFlat_dwtmx")
 
-[node name="TextureRect2" type="TextureButton" parent="Control/MainPanelContainer/HBoxContainer/ColorRect"]
+[node name="ToCultivationWarehouseButton" type="TextureButton" parent="Control/MainPanelContainer/HBoxContainer/ColorRect"]
 material = SubResource("ShaderMaterial_pujsk")
 layout_mode = 1
 anchors_preset = 8
@@ -367,7 +368,11 @@ offset_bottom = 962.0
 [node name="SetupPage" parent="Control" instance=ExtResource("25_44kcb")]
 visible = false
 
+[node name="CultivationWarehouse" parent="Control" instance=ExtResource("35_awq16")]
+visible = false
+
 [connection signal="pressed" from="Control/HBoxContainer2/SettingsButtion" to="Control" method="_on_settings_buttion_pressed"]
 [connection signal="pressed" from="Control/MainPanelContainer/VBoxContainer/Panel2/HeroAdBannerBackground/TextureRect/Button1" to="Control/MainPanelContainer/VBoxContainer/Panel2" method="_on_button_1_pressed"]
 [connection signal="pressed" from="Control/MainPanelContainer/VBoxContainer/Panel2/HeroAdBannerBackground/TextureRect/Button2" to="Control/MainPanelContainer/VBoxContainer/Panel2" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Control/MainPanelContainer/VBoxContainer/Panel2/HeroAdBannerBackground/TextureRect/Button3" to="Control/MainPanelContainer/VBoxContainer/Panel2" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/MainPanelContainer/HBoxContainer/ColorRect/ToCultivationWarehouseButton" to="Control" method="_on_to_cultivation_warehouse_button_pressed"]

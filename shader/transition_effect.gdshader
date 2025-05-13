@@ -12,7 +12,7 @@ void fragment() {
     	float dist = distance(scaled_UV, center);
     	// 控制亮度过渡
     	float alpha = smoothstep(progress-0.3, progress+1.0, dist * (1.0-progress));
-		
+
     	COLOR = vec4(0.0, 0.0, 0.0, alpha);
 
 }

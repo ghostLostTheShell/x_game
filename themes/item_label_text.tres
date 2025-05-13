@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://brvxxl1qjnqve"]
+
+[sub_resource type="SystemFont" id="SystemFont_ouo2n"]
+
+[resource]
+default_font = SubResource("SystemFont_ouo2n")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 34
+Label/fonts/font = SubResource("SystemFont_ouo2n")

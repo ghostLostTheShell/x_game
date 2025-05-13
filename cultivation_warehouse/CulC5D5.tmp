@@ -1,0 +1,369 @@
+[gd_scene load_steps=32 format=3 uid="uid://s8kapcxfxw28"]
+
+[ext_resource type="Texture2D" uid="uid://hcgf5tnlqdm7" path="res://cultivation_warehouse/texture/bg.png" id="1_lnfni"]
+[ext_resource type="Script" path="res://cultivation_warehouse/cultivation_warehouse.gd" id="1_x41sm"]
+[ext_resource type="Texture2D" uid="uid://plv2ktgn2vmf" path="res://cultivation_warehouse/texture/空间站.png" id="2_2xesb"]
+[ext_resource type="Texture2D" uid="uid://dqfcwkq48edqp" path="res://cultivation_warehouse/texture/培养舱.png" id="3_itr35"]
+[ext_resource type="Texture2D" uid="uid://cfjjh2rukmdo1" path="res://cultivation_warehouse/texture/培养基.png" id="4_6tbub"]
+[ext_resource type="Texture2D" uid="uid://bftkeegc2bupn" path="res://cultivation_warehouse/texture/高性能.png" id="5_v12fh"]
+[ext_resource type="Script" path="res://cultivation_warehouse/prop_container.gd" id="6_idwt6"]
+[ext_resource type="Texture2D" uid="uid://pp6q2nyoai54" path="res://cultivation_warehouse/prop_container/texture/左组背板.png" id="6_r8lov"]
+[ext_resource type="Texture2D" uid="uid://p0v8owvtib2j" path="res://cultivation_warehouse/control_panel/texture/右组背板.png" id="7_0h8t0"]
+[ext_resource type="Script" path="res://cultivation_warehouse/seed_panel.gd" id="7_n4p1t"]
+[ext_resource type="Texture2D" uid="uid://bwowrdh432iky" path="res://cultivation_warehouse/prop_container/texture/右翻页.png" id="8_e2o46"]
+[ext_resource type="Texture2D" uid="uid://cdegpryvhg6km" path="res://cultivation_warehouse/nutrition_tracker/texture/剩余营养背板.png" id="8_hau4x"]
+[ext_resource type="Texture2D" uid="uid://o4haaghg6nfn" path="res://cultivation_warehouse/prop_container/texture/右翻页-暗.png" id="9_atdrd"]
+[ext_resource type="Texture2D" uid="uid://c5m7jmqkhn73n" path="res://cultivation_warehouse/prop_container/texture/左翻页.png" id="10_cgo4w"]
+[ext_resource type="Texture2D" uid="uid://be2ypdmw47gqy" path="res://cultivation_warehouse/prop_container/texture/左翻页-暗.png" id="11_mbl05"]
+[ext_resource type="Texture2D" uid="uid://wx4wr12jy02m" path="res://cultivation_warehouse/prop_container/texture/switch_button/seed_switch_button.png" id="12_funv6"]
+[ext_resource type="Texture2D" uid="uid://2coga3ces11x" path="res://cultivation_warehouse/prop_container/texture/switch_button/culture_medium.png" id="13_mdgs6"]
+[ext_resource type="Texture2D" uid="uid://oklsroofxe5r" path="res://cultivation_warehouse/prop_container/texture/switch_button/nutrient_solution.png" id="14_1sfjv"]
+[ext_resource type="Texture2D" uid="uid://dimh1iwcoxqhp" path="res://cultivation_warehouse/texture/返回.png" id="14_cfiai"]
+[ext_resource type="Texture2D" uid="uid://byeg04uocyp3w" path="res://cultivation_warehouse/prop_container/texture/switch_button/tool.png" id="15_7i2k6"]
+[ext_resource type="Texture2D" uid="uid://b6hvrj6k0difh" path="res://cultivation_warehouse/texture/返回-暗.png" id="15_15g0b"]
+[ext_resource type="Texture2D" uid="uid://cyiam374sp67q" path="res://cultivation_warehouse/texture/状态条背板.png" id="16_u4v2w"]
+[ext_resource type="Texture2D" uid="uid://dccsctg6drrie" path="res://main/texture/体力.png" id="17_d03w6"]
+[ext_resource type="Texture2D" uid="uid://dhwg63vr8ltqn" path="res://main/texture/货币加号.png" id="18_apixa"]
+[ext_resource type="Texture2D" uid="uid://cyb3u45kaemvr" path="res://cultivation_warehouse/texture/主页面.png" id="19_frg43"]
+[ext_resource type="Texture2D" uid="uid://b5oebcn51ygif" path="res://cultivation_warehouse/texture/主页面-暗.png" id="20_05ktb"]
+[ext_resource type="Texture2D" uid="uid://hquqwe7075rg" path="res://cultivation_warehouse/texture/能量槽填充.png" id="23_arvdj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eacvo"]
+
+[sub_resource type="Theme" id="Theme_h5ft6"]
+Panel/styles/panel = SubResource("StyleBoxFlat_eacvo")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lvdm"]
+bg_color = Color(0.145257, 0.342344, 0.305073, 1)
+border_color = Color(0.0145148, 0.124004, 0.173554, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_mutt3"]
+line_spacing = 1.0
+font_size = 33
+outline_size = 5
+
+[node name="CultivationWarehouse" type="Node2D"]
+script = ExtResource("1_x41sm")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_lnfni")
+
+[node name="Rom" type="TextureRect" parent="."]
+offset_left = 76.0
+offset_top = 128.0
+offset_right = 1846.0
+offset_bottom = 835.0
+texture = ExtResource("2_2xesb")
+metadata/_edit_use_anchors_ = true
+
+[node name="Warehouse" type="TextureRect" parent="Rom"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 136.0
+offset_right = 1352.0
+offset_bottom = 642.0
+texture = ExtResource("3_itr35")
+
+[node name="CultureMedium" type="TextureRect" parent="Rom/Warehouse"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 216.0
+offset_right = 189.0
+offset_bottom = 293.0
+texture = ExtResource("4_6tbub")
+
+[node name="CultureMedium2" type="TextureRect" parent="Rom/Warehouse"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 216.0
+offset_right = 357.0
+offset_bottom = 293.0
+texture = ExtResource("4_6tbub")
+
+[node name="CultureMedium3" type="TextureRect" parent="Rom/Warehouse"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 216.0
+offset_right = 525.0
+offset_bottom = 293.0
+texture = ExtResource("4_6tbub")
+
+[node name="CultureMedium4" type="TextureRect" parent="Rom/Warehouse"]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 216.0
+offset_right = 861.0
+offset_bottom = 293.0
+texture = ExtResource("4_6tbub")
+
+[node name="CultureMedium5" type="TextureRect" parent="Rom/Warehouse"]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 216.0
+offset_right = 693.0
+offset_bottom = 293.0
+texture = ExtResource("4_6tbub")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 865.0
+offset_top = 884.0
+offset_right = 1223.0
+offset_bottom = 1242.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_v12fh")
+
+[node name="PropContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_idwt6")
+
+[node name="Background" type="TextureRect" parent="PropContainer"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 856.0
+offset_right = 1664.0
+offset_bottom = 1286.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_r8lov")
+
+[node name="SwitchControl" type="Control" parent="PropContainer"]
+anchors_preset = 0
+offset_left = 65.0
+offset_top = 869.0
+offset_right = 781.0
+offset_bottom = 907.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PropContainer/SwitchControl"]
+layout_mode = 0
+offset_right = 328.0
+offset_bottom = 74.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 40
+
+[node name="SeedButton" type="TextureButton" parent="PropContainer/SwitchControl/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("12_funv6")
+stretch_mode = 1
+
+[node name="CultureMediumButton" type="TextureButton" parent="PropContainer/SwitchControl/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("13_mdgs6")
+stretch_mode = 1
+
+[node name="NutrientSolutionButton" type="TextureButton" parent="PropContainer/SwitchControl/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("14_1sfjv")
+stretch_mode = 1
+
+[node name="ToolButton" type="TextureButton" parent="PropContainer/SwitchControl/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("15_7i2k6")
+stretch_mode = 1
+
+[node name="SeedPanel" type="Control" parent="PropContainer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 915.0
+offset_right = 840.0
+offset_bottom = 1070.0
+script = ExtResource("7_n4p1t")
+
+[node name="RPageTurningButton" type="TextureButton" parent="PropContainer/SeedPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.943115
+anchor_top = -0.254463
+anchor_right = 0.943115
+anchor_bottom = -0.254463
+offset_left = 0.417892
+offset_top = 38.4418
+offset_right = 62.4179
+offset_bottom = 328.442
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("8_e2o46")
+texture_pressed = ExtResource("9_atdrd")
+metadata/_edit_use_anchors_ = true
+
+[node name="LPageTurningButton" type="TextureButton" parent="PropContainer/SeedPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00980392
+anchor_top = -0.0129032
+anchor_right = 0.00980392
+anchor_bottom = -0.0129032
+offset_right = 62.0
+offset_bottom = 290.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("10_cgo4w")
+texture_pressed = ExtResource("11_mbl05")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PropContainer/SeedPanel"]
+layout_mode = 0
+offset_left = 41.0
+offset_right = 1495.0
+offset_bottom = 280.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="ControlPanel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="ControlPanel"]
+layout_mode = 0
+offset_left = 1072.0
+offset_top = 856.0
+offset_right = 1894.0
+offset_bottom = 1071.0
+texture = ExtResource("7_0h8t0")
+
+[node name="NutritionTracker" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="NutritionTracker"]
+layout_mode = 0
+offset_left = 1864.0
+offset_top = 128.0
+offset_right = 1948.0
+offset_bottom = 1526.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_hau4x")
+
+[node name="BackButton" type="TextureButton" parent="."]
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 568.0
+offset_bottom = 123.0
+texture_normal = ExtResource("14_cfiai")
+texture_pressed = ExtResource("15_15g0b")
+
+[node name="ConsumptionPanel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="ConsumptionPanel"]
+layout_mode = 0
+offset_left = 632.0
+offset_top = 16.0
+offset_right = 1904.0
+offset_bottom = 220.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_u4v2w")
+
+[node name="BackGround" type="Panel" parent="ConsumptionPanel/TextureRect"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 42.0
+offset_right = 1254.0
+offset_bottom = 88.0
+theme = SubResource("Theme_h5ft6")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7lvdm")
+
+[node name="TextureRect" type="TextureRect" parent="ConsumptionPanel/TextureRect/BackGround"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -496.0
+offset_top = -20.0
+offset_right = 496.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_arvdj")
+
+[node name="BackGround2" type="Panel" parent="ConsumptionPanel/TextureRect"]
+offset_left = 254.0
+offset_top = 118.0
+offset_right = 1254.0
+offset_bottom = 164.0
+theme = SubResource("Theme_h5ft6")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7lvdm")
+
+[node name="TextureRect" type="TextureRect" parent="ConsumptionPanel/TextureRect/BackGround2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -496.0
+offset_top = -20.0
+offset_right = 496.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_arvdj")
+
+[node name="Electricity" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ElectricityRect" type="TextureRect" parent="Electricity"]
+layout_mode = 0
+offset_left = 1304.0
+offset_top = 8.0
+offset_right = 1594.0
+offset_bottom = 128.0
+texture = ExtResource("17_d03w6")
+stretch_mode = 4
+
+[node name="Fitment" type="TextureRect" parent="Electricity/ElectricityRect"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 20.0
+offset_right = 288.0
+offset_bottom = 100.0
+texture = ExtResource("18_apixa")
+
+[node name="ElectricityLabel" type="Label" parent="Electricity/ElectricityRect"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 30.0
+offset_right = 223.0
+offset_bottom = 91.0
+text = "00/100"
+label_settings = SubResource("LabelSettings_mutt3")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HomeButton" type="TextureButton" parent="."]
+offset_left = 1768.0
+offset_right = 1891.0
+offset_bottom = 124.0
+texture_normal = ExtResource("19_frg43")
+texture_pressed = ExtResource("20_05ktb")
+
+[connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/SeedButton" to="PropContainer" method="_on_seed_button_pressed"]
+[connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/CultureMediumButton" to="PropContainer" method="_on_culture_medium_button_pressed"]
+[connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/NutrientSolutionButton" to="PropContainer" method="_on_nutrient_solution_button_pressed"]
+[connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/ToolButton" to="PropContainer" method="_on_tool_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]

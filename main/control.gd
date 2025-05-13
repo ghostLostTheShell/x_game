@@ -4,7 +4,7 @@ extends Control
 @onready var electricityLabel = $HBoxContainer/ElectricityRect/ElectricityLabel
 @onready var goleLabel = $HBoxContainer/GoldRect/GoldLabel
 @onready var crystLabel = $HBoxContainer/CrystalRect/CrystalLabel
-
+@onready var cultivationWarehouse = $CultivationWarehouse
 
 
 # Called when the node enters the scene tree for the first time.
@@ -37,3 +37,7 @@ func _on_electricity_num_changed(new_value: int) -> void:
 
 func _on_gold_num_changed(new_value: int) -> void:
 	goleLabel.text = "%d" % new_value
+
+
+func _on_to_cultivation_warehouse_button_pressed() -> void:
+	cultivationWarehouse.visible = true
