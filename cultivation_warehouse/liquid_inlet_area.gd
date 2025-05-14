@@ -20,4 +20,5 @@ func _can_drop_data(position, data):
 	return false
 	
 func _drop_data(at_position: Vector2, data: Variant):
-	pass
+	print("补充 %s" % data.name)
+	

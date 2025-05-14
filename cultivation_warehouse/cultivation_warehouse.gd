@@ -1,6 +1,7 @@
 extends Node2D
 
 class_name CultivationWarehouse
+@onready var timer = $Timer
 
 static var all_item_list:Array[Item] = [
 	RockWoolCultureMedium.new(0),

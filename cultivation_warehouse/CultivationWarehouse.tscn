@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://s8kapcxfxw28"]
+[gd_scene load_steps=39 format=3 uid="uid://s8kapcxfxw28"]
 
 [ext_resource type="Texture2D" uid="uid://hcgf5tnlqdm7" path="res://cultivation_warehouse/texture/bg.png" id="1_lnfni"]
 [ext_resource type="Script" path="res://cultivation_warehouse/cultivation_warehouse.gd" id="1_x41sm"]
@@ -31,7 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://biuu8yqdhp02h" path="res://cultivation_warehouse/texture/剩余营养槽填充.png" id="20_s2wa4"]
 [ext_resource type="Script" path="res://cultivation_warehouse/culture_medium_panel.gd" id="21_gx6wo"]
 [ext_resource type="Script" path="res://cultivation_warehouse/liquid_inlet_area.gd" id="22_ajtvg"]
+[ext_resource type="Texture2D" uid="uid://dyy2mvf4vyvle" path="res://cultivation_warehouse/texture/switch/开.png" id="22_d3mt5"]
 [ext_resource type="Texture2D" uid="uid://hquqwe7075rg" path="res://cultivation_warehouse/texture/能量槽填充.png" id="23_arvdj"]
+[ext_resource type="Texture2D" uid="uid://bs0ujhgfkirag" path="res://cultivation_warehouse/texture/switch/关.png" id="24_rvgew"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eacvo"]
 
@@ -340,6 +342,14 @@ offset_right = 1894.0
 offset_bottom = 1071.0
 texture = ExtResource("7_0h8t0")
 
+[node name="LiquidInletSwitchButton" type="TextureButton" parent="ControlPanel"]
+layout_mode = 0
+offset_left = 1598.0
+offset_top = 907.0
+offset_right = 1670.0
+offset_bottom = 939.0
+texture_normal = ExtResource("22_d3mt5")
+
 [node name="LiquidInletArea" type="Control" parent="ControlPanel"]
 anchors_preset = 0
 offset_left = 1776.0
@@ -355,6 +365,13 @@ offset_left = 1784.0
 offset_top = 968.0
 offset_right = 1846.0
 offset_bottom = 1032.0
+
+[node name="DrainingLiquidSwitchButton" type="TextureButton" parent="ControlPanel"]
+offset_left = 1598.0
+offset_top = 984.0
+offset_right = 1670.0
+offset_bottom = 1016.0
+texture_normal = ExtResource("24_rvgew")
 
 [node name="NutritionTracker" type="Control" parent="."]
 layout_mode = 3
@@ -497,6 +514,10 @@ offset_right = 1891.0
 offset_bottom = 124.0
 texture_normal = ExtResource("19_frg43")
 texture_pressed = ExtResource("20_05ktb")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
 
 [connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/SeedButton" to="PropContainer" method="_on_seed_button_pressed"]
 [connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/CultureMediumButton" to="PropContainer" method="_on_culture_medium_button_pressed"]
