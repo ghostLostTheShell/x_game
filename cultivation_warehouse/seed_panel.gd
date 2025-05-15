@@ -13,7 +13,7 @@ func refreshItem() -> void:
 	for el in self.boxContainer.get_children():
 		el.queue_free() 
 	
-	var botanys = CultivationWarehouse.all_item_list.filter(func(item): return item is Botany)
+	var botanys = CultivationWarehouse.all_item_list.filter(func(item): return item is Botany and item.state == Botany.PlantGrowthStage.SEED)
 	
 	var i = 0
 	

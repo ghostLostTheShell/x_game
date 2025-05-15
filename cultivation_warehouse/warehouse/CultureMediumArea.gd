@@ -5,6 +5,8 @@ class_name CultureMediumArea
 @export var index:int = 0
 
 var has_cultureMedium:bool = false
+var currentCultrueMediumEntity:CultrueMediumEntity
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,21 +19,24 @@ func _process(delta: float) -> void:
 	
 
 func _can_drop_data(position, data):
-	
-	if has_cultureMedium:
-		return false
 		
 	return true
 	
 func _drop_data(at_position: Vector2, data: Variant):
 	var warehouse:Warehouse = get_parent()
+	var propContainer = warehouse.get_parent().get_parent().get_node("PropContainer")
 	
 	if warehouse == null:
 		printerr("无法找到培育仓")
 	
 	if data is CultureMedium:
+		if has_cultureMedium:
+			return
+			
 		var entity:CultrueMediumEntity = data.to_entity()
+		
 		add_child(entity)
+		currentCultrueMediumEntity=entity
 		var center_x = (size.x - entity.size.x )  / 2
 		
 		match index:
@@ -56,6 +61,27 @@ func _drop_data(at_position: Vector2, data: Variant):
 		var index = CultivationWarehouse.all_item_list.find(data)
 		CultivationWarehouse.all_item_list.remove_at(index)
 	
-		var panel:CultureMediumPanel = get_tree().get_root().get_node("/root/CultivationWarehouse/PropContainer/CultureMediumPanel")
+		var p:CultivationWarehouse = get_parent().get_parent().get_parent()
+		propContainer.refreshAll()
 
-		panel.refreshItem()
+		
+	elif  data is Shear:
+		print("对区域使用剪刀")
+		if has_cultureMedium:
+			if currentCultrueMediumEntity.has_item:
+				var item = currentCultrueMediumEntity._item
+				if item is BotanyEntity:
+					if item.pure_botany.state == Botany.PlantGrowthStage.FRUITING:
+						var botany = item.pure_botany
+						CultivationWarehouse.all_item_list.append(botany.gather())
+						
+
+						propContainer.refreshAll()
+						currentCultrueMediumEntity.has_item = false
+						currentCultrueMediumEntity._item = null
+						item.queue_free()
+						
+						pass
+			return
+			
+			

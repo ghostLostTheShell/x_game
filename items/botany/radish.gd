@@ -29,7 +29,7 @@ static var _texture_stet_map = {
 	PlantGrowthStage.YOUNG: _2_texture,
 	PlantGrowthStage.MATURE: _3_texture,
 	PlantGrowthStage.FLOWERING: _4_texture,
-	PlantGrowthStage.FRUITING: _texture,
+	PlantGrowthStage.FRUITING: _4_texture,
 	PlantGrowthStage.WILTING: _texture,
 }
 
@@ -41,3 +41,7 @@ func update_state(state:PlantGrowthStage):
 	super(state)
 	self.textur = _texture_stet_map.get(state)
 	self.name = _name_stet_map.get(state)
+
+func gather():
+	update_state(PlantGrowthStage.WILTING)
+	return self
