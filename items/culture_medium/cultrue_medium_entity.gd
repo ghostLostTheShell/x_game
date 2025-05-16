@@ -15,9 +15,11 @@ func _init(pure_cultrue_medium:CultureMedium) -> void:
 	
 func grow():
 	if _item != null:
+		
 		pure_cultrue_medium.grow()
 		_item.update()
-		
+		var cultivationWarehouse = get_parent().get_parent().get_parent().get_parent()
+		cultivationWarehouse.nutrition_consumption(0.5)
 
 
 
@@ -51,7 +53,6 @@ func _drop_data(at_position: Vector2, data: Variant):
 	var index = CultivationWarehouse.all_item_list.find(data)
 	CultivationWarehouse.all_item_list.remove_at(index)
 	
-	print(get_parent().get_parent().get_parent().get_parent().name)
 	var propContainer = get_parent().get_parent().get_parent().get_parent().get_node("PropContainer")
 	propContainer.refreshAll()
 	has_item = true

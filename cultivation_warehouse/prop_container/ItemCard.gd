@@ -14,9 +14,21 @@ var item:Item
 @onready var level_6_texture = preload("res://cultivation_warehouse/prop_container/texture/level/level_6_texture.png")
 
 
+@onready var trading_panel_bg_texture = preload("res://textures/ui/trading_panel/购买背板.png")
+
+@onready var sell_button_texture = preload("res://textures/ui/trading_panel/水晶出售.png")
+@onready var sell_button_p_texture = preload("res://textures/ui/trading_panel/水晶出售-暗.png")
+
+@onready var buy_button_texture = preload("res://textures/ui/trading_panel/水晶购买.png")
+@onready var buy_button_p_texture = preload("res://textures/ui/trading_panel/水晶购买-暗.png")
+
+@onready var use_button_texture = preload("res://textures/ui/trading_panel/使用.png")
+@onready var use_button_p_texture = preload("res://textures/ui/trading_panel/使用-暗.png")
+
 var back_panel:TextureRect
 var item_texture:TextureRect
 var level_sign:TextureRect
+var trading_panel:TextureRect
 
 @onready var label_theme = preload("res://themes/item_label_text.tres") 
 var txt:Label
@@ -83,12 +95,68 @@ func _ready() -> void:
 	txt.theme = label_theme
 	txt.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	
+	
+	##交易面板
+	trading_panel = TextureRect.new()
+	trading_panel.visible=false
+	trading_panel.texture = trading_panel_bg_texture
+	trading_panel.scale = Vector2(2, 2)
+	trading_panel.position=Vector2(-5, 1)
+	
+	var sellButton = TextureButton.new()
+	sellButton.texture_normal = sell_button_texture
+	sellButton.texture_pressed =  sell_button_p_texture
+	sellButton.pressed.connect(sell_button_on_pressed)
+	sellButton.position=Vector2(8, 8)
+	
+	var buyButton = TextureButton.new()
+	buyButton.texture_normal = buy_button_texture
+	buyButton.texture_pressed =  buy_button_p_texture	
+	buyButton.pressed.connect(buy_button_on_pressed)
+	buyButton.position=Vector2(8, 36)
+	
+	var useButton = TextureButton.new()
+	useButton.texture_normal = use_button_texture
+	useButton.texture_pressed =  use_button_p_texture	
+	useButton.pressed.connect(use_button_on_pressed)
+	useButton.position=Vector2(8, 64)
+	
+	trading_panel.add_child(sellButton)
+	trading_panel.add_child(buyButton)
+	trading_panel.add_child(useButton)
+	
+	
 	self.add_child(back_panel)
 	self.add_child(item_texture)
 	self.add_child(txt)
 	self.add_child(level_sign)
+	self.add_child(trading_panel)
 
+func sell_button_on_pressed():
+		print("出售")
+		trading_panel.visible=false
+
+func buy_button_on_pressed():
+		print("购买")
+		trading_panel.visible=false
+		
+func use_button_on_pressed():
+	print("使用")
+	trading_panel.visible=false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+	
+func _input(event):
+	#if event is InputEventMouseButton and event.pressed:
+		#print("鼠标点击位置: ", event.position)
+	pass
+	
+func _gui_input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+		if trading_panel.visible:
+			trading_panel.visible = false
+		else:
+			trading_panel.visible = true
+		print("当前组件被点击！")

@@ -65,8 +65,7 @@ func _drop_data(at_position: Vector2, data: Variant):
 		propContainer.refreshAll()
 
 		
-	elif  data is Shear:
-		print("对区域使用剪刀")
+	elif  data is Shear or  data is PruningPliers:
 		if has_cultureMedium:
 			if currentCultrueMediumEntity.has_item:
 				var item = currentCultrueMediumEntity._item

@@ -8,7 +8,7 @@ class_name CultivationWarehouse
 @onready var foodSchedule = $ConsumptionPanel/TextureRect/Food/Schedule
 @onready var electricityLabel = $Electricity/ElectricityRect/ElectricityLabel
 @onready var propContainer = $PropContainer
-
+@onready var nutritionSchedule = $NutritionTracker/Background/Nutrition/Schedule
 
 static var all_item_list:Array[Item] = [
 	RockWoolCultureMedium.new(0),
@@ -28,7 +28,7 @@ static var all_item_list:Array[Item] = [
 
 var energy = 100
 var food = 100
-
+var nutrition = 100
 
 
 func _init() -> void:
@@ -39,16 +39,32 @@ func energy_consumption():
 	#print("剩余能源 %s" %energy)
 	if energy == 0:
 		pass
-	energy = energy - 0.1
-	
-	
+	energy = energy - 0.5
 	energySchedule.size.x = 990 * (energy / 100)
 
+func food_consumption():
+	if food == 0:
+		print("游戏结束")
+		pass
+	food = food - 0.5
+	var x = 990 * (food / 100)
+	foodSchedule.size.x = x
 	
+func nutrition_consumption(value:float):
+	
+	if nutrition == 0:
+		print("游戏结束")
+		pass
+		
+	nutrition = nutrition - 0.5
+	var y = 1120 * (nutrition / 100)
+	nutritionSchedule.size.y = y
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	romWarehouseColorRect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	timer.timeout.connect(energy_consumption)
+	timer.timeout.connect(food_consumption)
 	electricityLabel.text = "%d/100" % Global.electricity_num
 	Global.connect("electricity_num_changed", _on_electricity_num_changed)
 	

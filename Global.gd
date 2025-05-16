@@ -1,6 +1,6 @@
 extends Node
 var CompletedTasks = [] 
-var electricity_num = 0
+var electricity_num = 100
 var gold_num = 0
 var crystal_num = 0
 

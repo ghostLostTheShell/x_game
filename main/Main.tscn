@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c7ua4r03xqw40"]
+[gd_scene load_steps=44 format=3 uid="uid://c7ua4r03xqw40"]
 
 [ext_resource type="Texture2D" uid="uid://dnsor5c7ckrp2" path="res://main/texture/background.png" id="1_2mble"]
 [ext_resource type="PackedScene" uid="uid://c4nj64wmqhnpa" path="res://main/user_info/UserInfo.tscn" id="2_1ssoa"]
@@ -35,6 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://cjsmdgd2npxa1" path="res://main/main_panel/抽奖-暗.png" id="30_662xt"]
 [ext_resource type="Texture2D" uid="uid://cgksnfdbqx55m" path="res://main/main_panel/种植-暗.png" id="32_uvnqc"]
 [ext_resource type="PackedScene" uid="uid://s8kapcxfxw28" path="res://cultivation_warehouse/CultivationWarehouse.tscn" id="35_awq16"]
+[ext_resource type="Texture2D" uid="uid://cdnfu0d0ihbov" path="res://textures/ui/exit_dialog/退出游戏背板.png" id="36_8e6t2"]
+[ext_resource type="Texture2D" uid="uid://ctaaymupg2eav" path="res://textures/ui/exit_dialog/退游.png" id="37_xpbwo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m2tgk"]
 line_spacing = 1.0
@@ -371,8 +373,39 @@ visible = false
 [node name="CultivationWarehouse" parent="Control" instance=ExtResource("35_awq16")]
 visible = false
 
+[node name="ExitDialog" type="Panel" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 1928.0
+offset_bottom = 1082.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ExitDialog"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -513.0
+offset_top = -274.0
+offset_right = 513.0
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_8e6t2")
+
+[node name="QuiteButton" type="TextureButton" parent="Control/ExitDialog/TextureRect"]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 341.0
+offset_right = 649.0
+offset_bottom = 437.0
+texture_normal = ExtResource("37_xpbwo")
+
+[connection signal="gui_input" from="Control" to="Control" method="_on_gui_input"]
 [connection signal="pressed" from="Control/HBoxContainer2/SettingsButtion" to="Control" method="_on_settings_buttion_pressed"]
 [connection signal="pressed" from="Control/MainPanelContainer/VBoxContainer/Panel2/HeroAdBannerBackground/TextureRect/Button1" to="Control/MainPanelContainer/VBoxContainer/Panel2" method="_on_button_1_pressed"]
 [connection signal="pressed" from="Control/MainPanelContainer/VBoxContainer/Panel2/HeroAdBannerBackground/TextureRect/Button2" to="Control/MainPanelContainer/VBoxContainer/Panel2" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Control/MainPanelContainer/VBoxContainer/Panel2/HeroAdBannerBackground/TextureRect/Button3" to="Control/MainPanelContainer/VBoxContainer/Panel2" method="_on_button_3_pressed"]
 [connection signal="pressed" from="Control/MainPanelContainer/HBoxContainer/ColorRect/ToCultivationWarehouseButton" to="Control" method="_on_to_cultivation_warehouse_button_pressed"]
+[connection signal="pressed" from="Control/ExitDialog/TextureRect/QuiteButton" to="Control" method="_on_quite_button_pressed"]

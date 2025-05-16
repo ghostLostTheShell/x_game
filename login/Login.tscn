@@ -1,8 +1,8 @@
 [gd_scene load_steps=41 format=3 uid="uid://dyjtrux3nl5ue"]
 
 [ext_resource type="Script" path="res://login/login.gd" id="1_fdlry"]
-[ext_resource type="Texture2D" uid="uid://cytgmkva30mmr" path="res://login/wallpaper/background.png" id="1_i6vrf"]
 [ext_resource type="Shader" path="res://shader/transition_effect.gdshader" id="1_tlw4c"]
+[ext_resource type="Texture2D" uid="uid://b7en0tn01p0xh" path="res://login/wallpaper/登录.png" id="2_fldes"]
 [ext_resource type="Texture2D" uid="uid://c0x4ispspp4t7" path="res://login/texture/start_button_normal.png" id="2_n7rfi"]
 [ext_resource type="Texture2D" uid="uid://bu2u3v8768j85" path="res://login/texture/start_button_pressed.png" id="3_0khe7"]
 [ext_resource type="Texture2D" uid="uid://bux2506mhcpsf" path="res://login/texture/server_select_button_normal.png" id="4_rf6ec"]
@@ -56,7 +56,7 @@ script = ExtResource("1_fdlry")
 
 [node name="BackGround" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("1_i6vrf")
+texture = ExtResource("2_fldes")
 
 [node name="Ui" type="Control" parent="."]
 layout_mode = 3

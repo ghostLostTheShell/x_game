@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://s8kapcxfxw28"]
+[gd_scene load_steps=47 format=3 uid="uid://s8kapcxfxw28"]
 
 [ext_resource type="Texture2D" uid="uid://hcgf5tnlqdm7" path="res://cultivation_warehouse/texture/bg.png" id="1_lnfni"]
 [ext_resource type="Script" path="res://cultivation_warehouse/cultivation_warehouse.gd" id="1_x41sm"]
@@ -37,7 +37,9 @@
 [ext_resource type="Texture2D" uid="uid://hquqwe7075rg" path="res://cultivation_warehouse/texture/能量槽填充.png" id="23_arvdj"]
 [ext_resource type="Texture2D" uid="uid://bs0ujhgfkirag" path="res://cultivation_warehouse/texture/switch/关.png" id="24_rvgew"]
 [ext_resource type="Texture2D" uid="uid://3kgq4ttk3kx7" path="res://cultivation_warehouse/texture/LED控制滑槽.png" id="25_px6yg"]
+[ext_resource type="Script" path="res://cultivation_warehouse/liquid_inlet_switch_button.gd" id="25_vla87"]
 [ext_resource type="Texture2D" uid="uid://fryv8kuic0oh" path="res://cultivation_warehouse/texture/滑钮.png" id="26_j38kc"]
+[ext_resource type="Script" path="res://cultivation_warehouse/draining_liquid_switch_button.gd" id="28_0m4a1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bpuxe"]
 shader = ExtResource("7_0wilp")
@@ -415,6 +417,7 @@ offset_top = 907.0
 offset_right = 1670.0
 offset_bottom = 939.0
 texture_normal = ExtResource("22_d3mt5")
+script = ExtResource("25_vla87")
 
 [node name="LiquidInletArea" type="Control" parent="ControlPanel"]
 anchors_preset = 0
@@ -439,6 +442,7 @@ offset_top = 984.0
 offset_right = 1670.0
 offset_bottom = 1016.0
 texture_normal = ExtResource("24_rvgew")
+script = ExtResource("28_0m4a1")
 
 [node name="BlueLedScrollBarBg" type="TextureRect" parent="ControlPanel"]
 layout_mode = 0
@@ -497,20 +501,21 @@ offset_bottom = 1526.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_hau4x")
 
-[node name="ColorRect" type="Panel" parent="NutritionTracker/Background"]
+[node name="Nutrition" type="Panel" parent="NutritionTracker/Background"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 224.0
 offset_right = 70.0
 offset_bottom = 1360.0
 
-[node name="TextureRect" type="TextureRect" parent="NutritionTracker/Background/ColorRect"]
+[node name="Schedule" type="TextureRect" parent="NutritionTracker/Background/Nutrition"]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 4.0
+offset_top = 8.0
 offset_right = 51.0
-offset_bottom = 1129.0
+offset_bottom = 1128.0
 texture = ExtResource("20_s2wa4")
+expand_mode = 1
 
 [node name="BackButton" type="TextureButton" parent="."]
 offset_left = 12.0
@@ -634,6 +639,8 @@ autostart = true
 [connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/CultureMediumButton" to="PropContainer" method="_on_culture_medium_button_pressed"]
 [connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/NutrientSolutionButton" to="PropContainer" method="_on_nutrient_solution_button_pressed"]
 [connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/ToolButton" to="PropContainer" method="_on_tool_button_pressed"]
+[connection signal="pressed" from="ControlPanel/LiquidInletSwitchButton" to="ControlPanel/LiquidInletSwitchButton" method="_on_pressed"]
+[connection signal="pressed" from="ControlPanel/DrainingLiquidSwitchButton" to="ControlPanel/DrainingLiquidSwitchButton" method="_on_pressed"]
 [connection signal="value_changed" from="ControlPanel/BlueLedScrollBar" to="." method="_on_blue_led_scroll_bar_value_changed"]
 [connection signal="value_changed" from="ControlPanel/RedLedScrollBar" to="." method="_on_red_led_scroll_bar_value_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
