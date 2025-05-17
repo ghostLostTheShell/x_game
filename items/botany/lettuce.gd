@@ -53,7 +53,7 @@ func gather()->Array[Botany]:
 			Lettuce.new(4)
 			]
 	elif developmentalState < 75:
-		return [Lettuce.new(1)]
+		return [Lettuce.new(1), Radish.new(4, PlantGrowthStage.WILTING)]
 		
 	else:
 		return [

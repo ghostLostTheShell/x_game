@@ -20,6 +20,10 @@ func _process(delta: float) -> void:
 	
 func _can_drop_data(position, data):
 	print("%s, %s" % [data.name, data is NutritionTracker])
+	if cultivationWarehouse.liquidInletState == 1:
+		print("处理中。。。。")
+		return
+		
 	if has_item == false and data is NutritionTracker:
 		return true
 		
@@ -49,6 +53,7 @@ func _drop_data(at_position: Vector2, data: Variant):
 		current_nutrition_tracker=data
 		
 		cultivationWarehouse.current_nutrition_type = data
+		cultivationWarehouse.liquidInletState = 1
 		time.timeout.connect(consumptionNutritionTracker)
 		
 	
@@ -61,6 +66,7 @@ func consumptionNutritionTracker():
 		time.timeout.disconnect(consumptionNutritionTracker)
 		has_item=false
 		current_nutrition_tracker_texture_rect.queue_free()
+		cultivationWarehouse.liquidInletState = 0
 		print("补充完成")
 		
 	else:

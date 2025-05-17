@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://s8kapcxfxw28"]
+[gd_scene load_steps=52 format=3 uid="uid://s8kapcxfxw28"]
 
 [ext_resource type="Texture2D" uid="uid://hcgf5tnlqdm7" path="res://cultivation_warehouse/texture/bg.png" id="1_lnfni"]
 [ext_resource type="Script" path="res://cultivation_warehouse/cultivation_warehouse.gd" id="1_x41sm"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bwowrdh432iky" path="res://cultivation_warehouse/prop_container/texture/右翻页.png" id="8_e2o46"]
 [ext_resource type="Texture2D" uid="uid://cdegpryvhg6km" path="res://cultivation_warehouse/nutrition_tracker/texture/剩余营养背板.png" id="8_hau4x"]
 [ext_resource type="Texture2D" uid="uid://o4haaghg6nfn" path="res://cultivation_warehouse/prop_container/texture/右翻页-暗.png" id="9_atdrd"]
+[ext_resource type="Texture2D" uid="uid://bftkeegc2bupn" path="res://cultivation_warehouse/texture/mode_switch_button_2.png" id="9_q1dw7"]
 [ext_resource type="Texture2D" uid="uid://c5m7jmqkhn73n" path="res://cultivation_warehouse/prop_container/texture/左翻页.png" id="10_cgo4w"]
 [ext_resource type="Texture2D" uid="uid://be2ypdmw47gqy" path="res://cultivation_warehouse/prop_container/texture/左翻页-暗.png" id="11_mbl05"]
 [ext_resource type="Texture2D" uid="uid://wx4wr12jy02m" path="res://cultivation_warehouse/prop_container/texture/switch_button/seed_switch_button.png" id="12_funv6"]
@@ -152,6 +153,7 @@ offset_top = 884.0
 offset_right = 1044.0
 offset_bottom = 1063.0
 texture_normal = ExtResource("6_7s4vc")
+texture_pressed = ExtResource("9_q1dw7")
 
 [node name="PropContainer" type="Control" parent="."]
 unique_name_in_owner = true
@@ -645,6 +647,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="TextureRect" type="TextureRect" parent="FailureDialogPanel"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -670,6 +673,7 @@ texture_pressed = ExtResource("43_ttd7t")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[connection signal="pressed" from="ModeSwitchButton" to="." method="_on_mode_switch_button_pressed"]
 [connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/SeedButton" to="PropContainer" method="_on_seed_button_pressed"]
 [connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/CultureMediumButton" to="PropContainer" method="_on_culture_medium_button_pressed"]
 [connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/NutrientSolutionButton" to="PropContainer" method="_on_nutrient_solution_button_pressed"]

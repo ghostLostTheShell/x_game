@@ -15,15 +15,15 @@ func remove_cultivation_item(cultivation_item:Item):
 	#return Result.Err("移除培育物失败")
 	
 
-func grow(red_light:int, blue_light:int):
+func grow(red_light:int, blue_light:int, multiple:int):
 	
 	if cultivation_item is Botany:
 		#print("%s 当前状态%s" % [cultivation_item.name, cultivation_item.state])
 		if  cultivation_item.state == Botany.PlantGrowthStage.SEED:
 			if  blue_light > red_light:
-				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2)
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2 * multiple) 
 			else:
-				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5)
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5 * multiple) 
 				cultivation_item.developmentalState = cultivation_item.developmentalState -  1
 				
 			if cultivation_item.growthProgress >=30:
@@ -35,9 +35,9 @@ func grow(red_light:int, blue_light:int):
 			#print("%s进入 YOUNG 状态了"% [cultivation_item.name])
 			
 			if blue_light > red_light:
-				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2)
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2 * multiple) 
 			else:
-				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5)
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5  * multiple)
 				cultivation_item.developmentalState = cultivation_item.developmentalState -  1
 	
 			if cultivation_item.growthProgress >=30:
@@ -48,10 +48,10 @@ func grow(red_light:int, blue_light:int):
 		elif cultivation_item.state == Botany.PlantGrowthStage.YOUNG:
 			#print("%s进入 MATURE 状态了"% [cultivation_item.name])
 			
-			if blue_light < red_light:
-				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2)
+			if blue_light > red_light:
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2 * multiple)
 			else:
-				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5)
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5 * multiple)
 				cultivation_item.developmentalState = cultivation_item.developmentalState -  1
 			
 			if cultivation_item.growthProgress >=30:
@@ -64,9 +64,9 @@ func grow(red_light:int, blue_light:int):
 			#print("%s进入 FLOWERING 状态了"% [cultivation_item.name])
 			
 			if blue_light < red_light:
-				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2)
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2 * multiple)
 			else:
-				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5)
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5 * multiple)
 				cultivation_item.developmentalState = cultivation_item.developmentalState -  1
 			
 			if cultivation_item.growthProgress >=30:
@@ -78,9 +78,9 @@ func grow(red_light:int, blue_light:int):
 			#print("%s进入 FRUITING 状态了"% [cultivation_item.name])
 			
 			if blue_light < red_light:
-				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2)
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2 * multiple)
 			else:
-				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5)
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5 * multiple)
 				cultivation_item.developmentalState = cultivation_item.developmentalState -  1
 				
 			if cultivation_item.growthProgress >=30:

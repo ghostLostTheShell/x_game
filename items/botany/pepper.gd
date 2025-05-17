@@ -33,9 +33,9 @@ static var _texture_stet_map = {
 	PlantGrowthStage.WILTING: _texture,
 }
 
-func  _init(qualityLevel:int, stat:PlantGrowthStage=PlantGrowthStage.SEED) -> void:
-	super(_name_stet_map.get(stat), qualityLevel, state)
-	textur = _texture_stet_map.get(stat)
+func  _init(qualityLevel:int, state:PlantGrowthStage=PlantGrowthStage.SEED) -> void:
+	super(_name_stet_map.get(state), qualityLevel, state)
+	textur = _texture_stet_map.get(state)
 
 func update_state(state:PlantGrowthStage):
 	super(state)
@@ -52,7 +52,7 @@ func gather():
 			Pepper.new(4)
 			]
 	elif developmentalState < 75:
-		return [Pepper.new(1)]
+		return [Pepper.new(1), Radish.new(4, PlantGrowthStage.WILTING)]
 		
 	else:
 		return [

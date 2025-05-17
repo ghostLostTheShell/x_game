@@ -12,6 +12,8 @@ class_name CultivationWarehouse
 @onready var failureDialogPanel = $FailureDialogPanel
 @onready var rom_warehouse = $Rom/Warehouse
 
+var doublethetime = false
+
 static var all_item_list:Array[Item] = [
 	Rice.new(6),
 	RockWoolCultureMedium.new(0),
@@ -52,7 +54,12 @@ func energy_consumption():
 		else:
 			energy = 100.0
 			
-	energy = energy - 0.1
+	
+	if doublethetime:
+		energy = energy - (0.1* 2)
+	else:
+		energy = energy - (0.1)
+
 	energySchedule.size.x = 990 * (energy / 100)
 
 func food_consumption():
@@ -60,7 +67,12 @@ func food_consumption():
 		failureDialogPanel.visible = true
 		print("游戏结束")
 		pass
-	food = food - 0.2 #10.0
+	
+	if doublethetime:
+		food = food - (0.2 * 2) #10.0
+	else:
+		food = food - (0.2)
+
 	var x = 990 * (food / 100)
 	foodSchedule.size.x = x
 	
@@ -70,7 +82,12 @@ func nutrition_consumption(value:float):
 		print("营养也为空")
 		pass
 		
-	nutrition = nutrition - 0.5
+	
+	if doublethetime:
+		value * 2
+	
+	nutrition = nutrition - value #0.5
+	
 	var y = 1120 * (nutrition / 100)
 	nutritionSchedule.size.y = y
 
@@ -102,6 +119,8 @@ func _ready() -> void:
 	
 	liquidInletSwitchButton.update_texture_normal(liquidInletSwitchState)
 	drainingLiquidSwitchButton.update_texture_normal(drainingLiquidState)
+	
+	failureDialogPanel.z_index = 9999
 	
 func _on_electricity_num_changed(new_value: int) -> void:
 	electricityLabel.text = "%d/100" % new_value
@@ -184,6 +203,10 @@ func _on_draining_liquid_switch_button_pressed() -> void:
 
 @onready var audioStreamPlayer = $AudioStreamPlayer
 func draining_liquid_handler():
+	if liquidInletState == 1:
+	 	#等待入液完成
+		return
+	
 	if drainingLiquidState and nutrition > 0 and current_nutrition_type != null:
 		nutrition = 0.0
 		nutritionSchedule.size.y = nutrition
@@ -195,6 +218,9 @@ func draining_liquid_handler():
 # 进液状态
 var liquidInletSwitchState:bool = false
 @onready var liquidInletSwitchButton = $ControlPanel/LiquidInletSwitchButton
+# 0 空闲 1 使用中
+var liquidInletState= 0 
+
 
 func _on_liquid_inlet_switch_button_pressed() -> void:
 	if liquidInletSwitchState:
@@ -203,3 +229,10 @@ func _on_liquid_inlet_switch_button_pressed() -> void:
 		liquidInletSwitchState = true
 		
 	liquidInletSwitchButton.update_texture_normal(liquidInletSwitchState)
+
+
+func _on_mode_switch_button_pressed() -> void:
+	if doublethetime:
+		doublethetime = false
+	else:
+		doublethetime = true

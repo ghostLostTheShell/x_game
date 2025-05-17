@@ -16,6 +16,7 @@ func refreshItem() -> void:
 	
 	var botanys = CultivationWarehouse.all_item_list.filter(func(item): return item is Botany and item.state == Botany.PlantGrowthStage.SEED)
 	
+	
 	var i = 0
 	while true:
 		var index = (current_page* 5)+ i 

@@ -142,6 +142,9 @@ func _ready() -> void:
 func sell_button_on_pressed():
 	var p = get_parent().get_parent().get_parent()
 	
+	Global.crystal_num =  Global.crystal_num + 1
+	Global.emit_signal("crystal_num_changed", Global.crystal_num)
+	
 	var index = CultivationWarehouse.all_item_list.find(item)
 	CultivationWarehouse.all_item_list.remove_at(index)
 	p.refreshAll()
@@ -150,7 +153,14 @@ func sell_button_on_pressed():
 func buy_button_on_pressed():
 	print("购买")
 	var p = get_parent().get_parent().get_parent()
-	CultivationWarehouse.all_item_list.append(item.clone())
+	if Global.crystal_num <=0:
+		# 货币不足
+		Global.crystal_num =  Global.crystal_num - 1
+		Global.emit_signal("crystal_num_changed", Global.crystal_num)
+	else:
+		
+		CultivationWarehouse.all_item_list.append(item.clone())
+	
 	p.refreshAll()
 	trading_panel.visible=false
 		

@@ -20,10 +20,17 @@ func grow():
 		if cultivationWarehouse.nutrition <=0:
 			pass
 		else:	
-			pure_cultrue_medium.grow(cultivationWarehouse.redLedScrollBar.value, cultivationWarehouse.blueLedScrollBar.value)
+			var multiple = 1 
+			if cultivationWarehouse.doublethetime:
+				
+				multiple = 2
+			
+			pure_cultrue_medium.grow(cultivationWarehouse.redLedScrollBar.value, 
+									cultivationWarehouse.blueLedScrollBar.value,
+									multiple)
 			_item.update()
 			
-			cultivationWarehouse.nutrition_consumption(0.5)
+			cultivationWarehouse.nutrition_consumption(0.1)
 
 
 
