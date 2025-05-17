@@ -57,6 +57,11 @@ func _drop_data(at_position: Vector2, data: Variant):
 	CultivationWarehouse.all_item_list.remove_at(index)
 	
 	var propContainer = get_parent().get_parent().get_parent().get_parent().get_node("PropContainer")
+	var audioStreamPlayer = get_parent().get_parent().get_parent().get_parent().get_node("AudioStreamPlayer")
+	audioStreamPlayer.stream = preload("res://Music/Planting.wav")
+	audioStreamPlayer.play()
+	
+	
 	propContainer.refreshAll()
 	has_item = true
 	

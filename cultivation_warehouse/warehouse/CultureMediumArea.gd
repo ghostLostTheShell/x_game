@@ -24,7 +24,8 @@ func _can_drop_data(position, data):
 	
 func _drop_data(at_position: Vector2, data: Variant):
 	var warehouse:Warehouse = get_parent()
-	var propContainer = warehouse.get_parent().get_parent().get_node("PropContainer")
+	var cultivationWarehouse = warehouse.get_parent().get_parent()
+	var propContainer = cultivationWarehouse.get_node("PropContainer")
 	
 	if warehouse == null:
 		printerr("无法找到培育仓")
@@ -32,7 +33,7 @@ func _drop_data(at_position: Vector2, data: Variant):
 	if data is CultureMedium:
 		if has_cultureMedium:
 			return
-			
+
 		var entity:CultrueMediumEntity = data.to_entity()
 		
 		add_child(entity)
@@ -63,9 +64,14 @@ func _drop_data(at_position: Vector2, data: Variant):
 	
 		var p:CultivationWarehouse = get_parent().get_parent().get_parent()
 		propContainer.refreshAll()
-
+		
+		cultivationWarehouse.audioStreamPlayer.stream = preload("res://Music/place_the_box.wav")
+		cultivationWarehouse.audioStreamPlayer.play()
 		
 	elif  data is Shear or  data is PruningPliers:
+		cultivationWarehouse.audioStreamPlayer.stream = preload("res://Music/snip.mp3")
+		cultivationWarehouse.audioStreamPlayer.play()
+		
 		if has_cultureMedium:
 			if currentCultrueMediumEntity.has_item:
 				var item = currentCultrueMediumEntity._item

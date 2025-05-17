@@ -28,6 +28,8 @@ func _can_drop_data(position, data):
 func _drop_data(at_position: Vector2, data: Variant):
 	var propContainer = cultivationWarehouse.get_node("PropContainer")
 	
+	cultivationWarehouse.audioStreamPlayer.stream = preload("res://Music/water_in.wav")
+	cultivationWarehouse.audioStreamPlayer.play()
 	
 	if data is NutritionTracker:
 		print("补充 %s" % data.name)

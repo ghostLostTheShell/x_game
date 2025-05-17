@@ -157,8 +157,11 @@ func _on_draining_liquid_switch_button_pressed() -> void:
 
 @onready var drainingLiquidArea = $ControlPanel/DrainingLiquidArea
 
+@onready var audioStreamPlayer = $AudioStreamPlayer
 func draining_liquid_handler():
 	if drainingLiquidState and nutrition > 0 and current_nutrition_type != null:
 		nutrition = 0.0
 		nutritionSchedule.size.y = nutrition
 		drainingLiquidArea.load_current_nutrition_tracker(current_nutrition_type)
+		audioStreamPlayer.stream = preload("res://Music/water_flow.wav")
+		audioStreamPlayer.play()
