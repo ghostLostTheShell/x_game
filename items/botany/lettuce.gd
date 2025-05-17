@@ -4,7 +4,7 @@
 extends Botany
 class_name Lettuce
 
-static var _seed_texture = load("res://textures/items/letuce/letuce_seed.png")
+static var _seed_texture = load("res://textures/items/letuce/生菜种子.png")
 static var _1_texture = load("res://textures/items/letuce/letuce_1.png")
 static var _2_texture = load("res://textures/items/letuce/letuce_2.png")
 static var _3_texture = load("res://textures/items/letuce/letuce_3.png")
@@ -42,6 +42,9 @@ func update_state(state:PlantGrowthStage):
 	self.textur = _texture_stet_map.get(state)
 	self.name = _name_stet_map.get(state)
 	
-func gather():
+func gather()->Array[Botany]:
 	update_state(PlantGrowthStage.WILTING)
-	return self
+	return [self, Lettuce.new(1),  Lettuce.new(1)]
+
+func clone():
+	return Lettuce.new(self.qualityLevel, self.state)

@@ -6,3 +6,6 @@ static var _textur = load("res://textures/items/nutrition_tracker/synthetic_inor
 func  _init(qualityLevel:int) -> void:
 	super("合成无机盐", qualityLevel)
 	textur = _textur
+
+func clone():
+	return SyntheticInorganicSalts.new(self.qualityLevel)

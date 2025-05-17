@@ -1,6 +1,6 @@
 [gd_scene load_steps=44 format=3 uid="uid://c7ua4r03xqw40"]
 
-[ext_resource type="Texture2D" uid="uid://dnsor5c7ckrp2" path="res://main/texture/background.png" id="1_2mble"]
+[ext_resource type="Texture2D" uid="uid://5coq5lbbusg5" path="res://textures/ui/main_page/bg.png" id="1_w10yd"]
 [ext_resource type="PackedScene" uid="uid://c4nj64wmqhnpa" path="res://main/user_info/UserInfo.tscn" id="2_1ssoa"]
 [ext_resource type="Texture2D" uid="uid://csxuh5fc6iy08" path="res://main/texture/电池.png" id="2_3sogo"]
 [ext_resource type="Script" path="res://main/control.gd" id="2_mtkkj"]
@@ -65,7 +65,7 @@ shader_parameter/shadow_offset = 5.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 541)
-texture = ExtResource("1_2mble")
+texture = ExtResource("1_w10yd")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

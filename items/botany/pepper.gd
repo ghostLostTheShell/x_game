@@ -4,7 +4,7 @@
 extends Botany
 class_name Pepper
 
-static var _seed_texture = load("res://textures/items/pepper/pepper_seed.png")
+static var _seed_texture = load("res://textures/items/pepper/辣椒种子.png")
 static var _1_texture = load("res://textures/items/pepper/pepper_1.png")
 static var _2_texture = load("res://textures/items/pepper/pepper_2.png")
 static var _3_texture = load("res://textures/items/pepper/pepper_3.png")
@@ -44,4 +44,7 @@ func update_state(state:PlantGrowthStage):
 	
 func gather():
 	update_state(PlantGrowthStage.WILTING)
-	return self
+	return[self, Pepper.new(1),  Pepper.new(1)]
+
+func clone():
+	return Pepper.new(self.qualityLevel, self.state)

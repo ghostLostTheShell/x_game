@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_pressed() -> void:
+func update_texture_normal(state:bool):
 	if state:
 		texture_normal = button_disable_texture
 		state= false

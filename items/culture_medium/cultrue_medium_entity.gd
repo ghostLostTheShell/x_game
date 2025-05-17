@@ -15,11 +15,14 @@ func _init(pure_cultrue_medium:CultureMedium) -> void:
 	
 func grow():
 	if _item != null:
-		
-		pure_cultrue_medium.grow()
-		_item.update()
 		var cultivationWarehouse = get_parent().get_parent().get_parent().get_parent()
-		cultivationWarehouse.nutrition_consumption(0.5)
+		if cultivationWarehouse.nutrition <=0:
+			pass
+		else:	
+			pure_cultrue_medium.grow()
+			_item.update()
+			
+			cultivationWarehouse.nutrition_consumption(0.5)
 
 
 

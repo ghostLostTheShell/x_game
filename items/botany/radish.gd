@@ -4,7 +4,7 @@
 extends Botany
 class_name Radish
 
-static var _seed_texture = load("res://textures/items/radish/radish_seed.png")
+static var _seed_texture = load("res://textures/items/radish/萝卜种子.png")
 static var _1_texture = load("res://textures/items/radish/radish_1.png")
 static var _2_texture = load("res://textures/items/radish/radish_2.png")
 static var _3_texture = load("res://textures/items/radish/radish_3.png")
@@ -44,4 +44,7 @@ func update_state(state:PlantGrowthStage):
 
 func gather():
 	update_state(PlantGrowthStage.WILTING)
-	return self
+	return [self, Radish.new(2),  Radish.new(1)]
+
+func clone():
+	return Radish.new(self.qualityLevel, self.state)

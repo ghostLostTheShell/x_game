@@ -100,3 +100,4 @@ func refreshAll():
 	cultureMediumPanel.refreshItem()
 	nutritionTrackerPanel.refreshItem()
 	itemPanel.refreshItem()
+	

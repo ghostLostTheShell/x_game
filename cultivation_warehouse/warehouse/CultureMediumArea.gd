@@ -72,7 +72,7 @@ func _drop_data(at_position: Vector2, data: Variant):
 				if item is BotanyEntity:
 					if item.pure_botany.state == Botany.PlantGrowthStage.FRUITING:
 						var botany = item.pure_botany
-						CultivationWarehouse.all_item_list.append(botany.gather())
+						CultivationWarehouse.all_item_list.append_array(botany.gather())
 						
 
 						propContainer.refreshAll()

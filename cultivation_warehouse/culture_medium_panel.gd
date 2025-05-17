@@ -7,7 +7,6 @@ class_name CultureMediumPanel
 func _ready() -> void:
 	refreshItem()
 
-
 func refreshItem() -> void:
 	
 	for el in self.boxContainer.get_children():
@@ -30,3 +29,6 @@ func refreshItem() -> void:
 func _process(_delta: float) -> void:
 	#refreshItem()
 	pass
+
+	
+	

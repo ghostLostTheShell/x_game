@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://s8kapcxfxw28"]
+[gd_scene load_steps=51 format=3 uid="uid://s8kapcxfxw28"]
 
 [ext_resource type="Texture2D" uid="uid://hcgf5tnlqdm7" path="res://cultivation_warehouse/texture/bg.png" id="1_lnfni"]
 [ext_resource type="Script" path="res://cultivation_warehouse/cultivation_warehouse.gd" id="1_x41sm"]
@@ -39,7 +39,11 @@
 [ext_resource type="Texture2D" uid="uid://3kgq4ttk3kx7" path="res://cultivation_warehouse/texture/LED控制滑槽.png" id="25_px6yg"]
 [ext_resource type="Script" path="res://cultivation_warehouse/liquid_inlet_switch_button.gd" id="25_vla87"]
 [ext_resource type="Texture2D" uid="uid://fryv8kuic0oh" path="res://cultivation_warehouse/texture/滑钮.png" id="26_j38kc"]
+[ext_resource type="Script" path="res://cultivation_warehouse/draining_liquid_area.gd" id="27_ugnom"]
 [ext_resource type="Script" path="res://cultivation_warehouse/draining_liquid_switch_button.gd" id="28_0m4a1"]
+[ext_resource type="Texture2D" uid="uid://ctlvvtnryjx5s" path="res://textures/ui/DialogPanel/游戏失败背板.png" id="41_35r6e"]
+[ext_resource type="Texture2D" uid="uid://8ht65ubb03hr" path="res://textures/ui/DialogPanel/重开.png" id="42_6wquw"]
+[ext_resource type="Texture2D" uid="uid://go7rocx5iur7" path="res://textures/ui/DialogPanel/重开-暗.png" id="43_ttd7t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bpuxe"]
 shader = ExtResource("7_0wilp")
@@ -434,6 +438,7 @@ offset_left = 1784.0
 offset_top = 968.0
 offset_right = 1846.0
 offset_bottom = 1032.0
+script = ExtResource("27_ugnom")
 
 [node name="DrainingLiquidSwitchButton" type="TextureButton" parent="ControlPanel"]
 layout_mode = 0
@@ -632,16 +637,51 @@ texture_normal = ExtResource("19_frg43")
 texture_pressed = ExtResource("20_05ktb")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 6.0
 autostart = true
+
+[node name="FailureDialogPanel" type="Panel" parent="."]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="TextureRect" type="TextureRect" parent="FailureDialogPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -513.0
+offset_top = -274.0
+offset_right = 513.0
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("41_35r6e")
+
+[node name="ReStartButton" type="TextureButton" parent="FailureDialogPanel/TextureRect"]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 326.0
+offset_right = 675.0
+offset_bottom = 422.0
+texture_normal = ExtResource("42_6wquw")
+texture_pressed = ExtResource("43_ttd7t")
 
 [connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/SeedButton" to="PropContainer" method="_on_seed_button_pressed"]
 [connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/CultureMediumButton" to="PropContainer" method="_on_culture_medium_button_pressed"]
 [connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/NutrientSolutionButton" to="PropContainer" method="_on_nutrient_solution_button_pressed"]
 [connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/ToolButton" to="PropContainer" method="_on_tool_button_pressed"]
+[connection signal="pressed" from="PropContainer/SeedPanel/RPageTurningButton" to="PropContainer/SeedPanel" method="_on_r_page_turning_button_pressed"]
+[connection signal="pressed" from="PropContainer/SeedPanel/LPageTurningButton" to="PropContainer/SeedPanel" method="_on_l_page_turning_button_pressed"]
+[connection signal="pressed" from="PropContainer/NutritionTrackerPanel/RPageTurningButton" to="PropContainer/NutritionTrackerPanel" method="_on_r_page_turning_button_pressed"]
+[connection signal="pressed" from="PropContainer/NutritionTrackerPanel/LPageTurningButton" to="PropContainer/NutritionTrackerPanel" method="_on_l_page_turning_button_pressed"]
+[connection signal="pressed" from="PropContainer/ItemPanel/RPageTurningButton" to="PropContainer/ItemPanel" method="_on_r_page_turning_button_pressed"]
+[connection signal="pressed" from="PropContainer/ItemPanel/LPageTurningButton" to="PropContainer/ItemPanel" method="_on_l_page_turning_button_pressed"]
 [connection signal="pressed" from="ControlPanel/LiquidInletSwitchButton" to="ControlPanel/LiquidInletSwitchButton" method="_on_pressed"]
-[connection signal="pressed" from="ControlPanel/DrainingLiquidSwitchButton" to="ControlPanel/DrainingLiquidSwitchButton" method="_on_pressed"]
+[connection signal="pressed" from="ControlPanel/DrainingLiquidSwitchButton" to="." method="_on_draining_liquid_switch_button_pressed"]
 [connection signal="value_changed" from="ControlPanel/BlueLedScrollBar" to="." method="_on_blue_led_scroll_bar_value_changed"]
 [connection signal="value_changed" from="ControlPanel/RedLedScrollBar" to="." method="_on_red_led_scroll_bar_value_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="FailureDialogPanel/TextureRect/ReStartButton" to="." method="_on_re_start_button_pressed"]

@@ -9,3 +9,5 @@ func  _init(qualityLevel:int) -> void:
 	textur=_textur
 
 	
+func clone():
+	return VermiculitecultureMedium.new(self.qualityLevel)

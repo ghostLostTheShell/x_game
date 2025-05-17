@@ -22,8 +22,8 @@ func update_state(state:PlantGrowthStage):
 	self.state = state
 	pass
 
-func gather():
-	return null
+func gather()->Array[Botany]:
+	return []
 
 func to_entity()->BotanyEntity:
 	return BotanyEntity.new(self)

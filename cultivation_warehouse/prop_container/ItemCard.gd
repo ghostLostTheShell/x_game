@@ -83,7 +83,14 @@ func _ready() -> void:
 	
 
 	item_texture.scale = Vector2(2, 2)
-	item_texture.position =  Vector2(36, 22)
+	if self.item is Botany:
+		item_texture.position =  Vector2(10, 10)
+	else:
+		item_texture.position =  Vector2(36, 22)
+	
+	level_sign.scale = Vector2(-10, -10)
+	
+		
 	level_sign.scale = Vector2(2, 2)
 	level_sign.position=  Vector2(15, 180)
 	
@@ -133,15 +140,30 @@ func _ready() -> void:
 	self.add_child(trading_panel)
 
 func sell_button_on_pressed():
-		print("出售")
-		trading_panel.visible=false
+	var p = get_parent().get_parent().get_parent()
+	
+	var index = CultivationWarehouse.all_item_list.find(item)
+	CultivationWarehouse.all_item_list.remove_at(index)
+	p.refreshAll()
+	trading_panel.visible=false
 
 func buy_button_on_pressed():
-		print("购买")
-		trading_panel.visible=false
+	print("购买")
+	var p = get_parent().get_parent().get_parent()
+	CultivationWarehouse.all_item_list.append(item.clone())
+	p.refreshAll()
+	trading_panel.visible=false
 		
 func use_button_on_pressed():
-	print("使用")
+	var p = get_parent().get_parent().get_parent()
+	
+	var index = CultivationWarehouse.all_item_list.find(item)
+	CultivationWarehouse.all_item_list.remove_at(index)
+	p.refreshAll()
+	
+	var cultivationWarehouse:CultivationWarehouse = get_parent().get_parent().get_parent().get_parent()
+	cultivationWarehouse.supplement_food(20.0)
+	
 	trading_panel.visible=false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
