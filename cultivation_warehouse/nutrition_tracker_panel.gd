@@ -56,13 +56,17 @@ func _on_l_page_turning_button_pressed() -> void:
 	
 func _can_drop_data(position, data):
 	print(data)
-	if data is NutritionTracker:
+	if data is DrainingLiquidArea:
 		return true
 	
 	return false
 	
-func _drop_data(at_position: Vector2, data: Variant):
-	data.capacity=100
-	CultivationWarehouse.all_item_list.append(data)
+func _drop_data(at_position: Vector2, data):
+	var _current_nutrition= data.current_nutrition_tracker
+	_current_nutrition.capacity = 100
+	data.current_nutrition_tracker = null
+	data.current_nutrition_tracker_texture_rect.queue_free()
+
+	CultivationWarehouse.all_item_list.append(_current_nutrition)
 	refreshItem()
 	

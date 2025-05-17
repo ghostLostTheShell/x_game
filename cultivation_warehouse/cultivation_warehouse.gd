@@ -12,7 +12,7 @@ class_name CultivationWarehouse
 @onready var failureDialogPanel = $FailureDialogPanel
 @onready var rom_warehouse = $Rom/Warehouse
 
-var doublethetime = false
+
 
 static var all_item_list:Array[Item] = [
 	Rice.new(6),
@@ -82,7 +82,6 @@ func nutrition_consumption(value:float):
 		print("营养也为空")
 		pass
 		
-	
 	if doublethetime:
 		value * 2
 	
@@ -230,9 +229,19 @@ func _on_liquid_inlet_switch_button_pressed() -> void:
 		
 	liquidInletSwitchButton.update_texture_normal(liquidInletSwitchState)
 
+var doublethetime = false
+
+@onready var modeSwitchButton = $ModeSwitchButton
+
+
+@onready var mode_switch_button_disable_texture = preload("res://cultivation_warehouse/texture/mode_switch_button_1.png")
+@onready var mode_switch_button_enable_texture = preload("res://cultivation_warehouse/texture/mode_switch_button_2.png")
 
 func _on_mode_switch_button_pressed() -> void:
+	
 	if doublethetime:
 		doublethetime = false
+		modeSwitchButton.texture_normal = mode_switch_button_disable_texture
 	else:
 		doublethetime = true
+		modeSwitchButton.texture_normal = mode_switch_button_enable_texture

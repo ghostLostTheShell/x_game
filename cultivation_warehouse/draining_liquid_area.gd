@@ -1,5 +1,6 @@
 extends Control
 
+class_name DrainingLiquidArea
 
 var current_nutrition_tracker:NutritionTracker
 var current_nutrition_tracker_texture_rect:TextureRect
@@ -31,8 +32,9 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	a.scale = Vector2(1, 1)
 	set_drag_preview(a)
 	
-	var _current_nutrition_tracker = current_nutrition_tracker
-	current_nutrition_tracker = null
-	current_nutrition_tracker_texture_rect.queue_free()
-	return _current_nutrition_tracker
+	#var _current_nutrition_tracker = current_nutrition_tracker
+	#current_nutrition_tracker = null
+	#current_nutrition_tracker_texture_rect.queue_free()
+	
+	return self
 	

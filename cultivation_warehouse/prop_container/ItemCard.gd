@@ -122,15 +122,17 @@ func _ready() -> void:
 	buyButton.pressed.connect(buy_button_on_pressed)
 	buyButton.position=Vector2(8, 36)
 	
-	var useButton = TextureButton.new()
-	useButton.texture_normal = use_button_texture
-	useButton.texture_pressed =  use_button_p_texture	
-	useButton.pressed.connect(use_button_on_pressed)
-	useButton.position=Vector2(8, 64)
-	
+	if self.item is Botany and self.item.state > Botany.PlantGrowthStage.SEED:
+		var useButton = TextureButton.new()
+		useButton.texture_normal = use_button_texture
+		useButton.texture_pressed =  use_button_p_texture	
+		useButton.pressed.connect(use_button_on_pressed)
+		useButton.position=Vector2(8, 64)
+		trading_panel.add_child(useButton)
+		
 	trading_panel.add_child(sellButton)
 	trading_panel.add_child(buyButton)
-	trading_panel.add_child(useButton)
+	
 	
 	
 	self.add_child(back_panel)
@@ -142,7 +144,7 @@ func _ready() -> void:
 func sell_button_on_pressed():
 	var p = get_parent().get_parent().get_parent()
 	
-	Global.crystal_num =  Global.crystal_num + 1
+	Global.crystal_num =  Global.crystal_num + 10
 	Global.emit_signal("crystal_num_changed", Global.crystal_num)
 	
 	var index = CultivationWarehouse.all_item_list.find(item)
@@ -151,14 +153,13 @@ func sell_button_on_pressed():
 	trading_panel.visible=false
 
 func buy_button_on_pressed():
-	print("购买")
 	var p = get_parent().get_parent().get_parent()
 	if Global.crystal_num <=0:
 		# 货币不足
-		Global.crystal_num =  Global.crystal_num - 1
-		Global.emit_signal("crystal_num_changed", Global.crystal_num)
+		return
 	else:
-		
+		Global.crystal_num =  Global.crystal_num - 10
+		Global.emit_signal("crystal_num_changed", Global.crystal_num)
 		CultivationWarehouse.all_item_list.append(item.clone())
 	
 	p.refreshAll()
