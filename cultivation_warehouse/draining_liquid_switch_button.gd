@@ -17,8 +17,6 @@ func _process(delta: float) -> void:
 
 func update_texture_normal(state:bool):
 	if state:
-		texture_normal = button_disable_texture
-		state= false
-	else:
 		texture_normal = button_enable_texture
-		state= true
+	else:
+		texture_normal = button_disable_texture

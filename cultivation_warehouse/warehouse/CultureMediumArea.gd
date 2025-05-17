@@ -90,3 +90,7 @@ func _drop_data(at_position: Vector2, data: Variant):
 			return
 			
 			
+func remove_currentCultrue_medium():
+	if has_cultureMedium:
+		currentCultrueMediumEntity.queue_free()
+		has_cultureMedium=false

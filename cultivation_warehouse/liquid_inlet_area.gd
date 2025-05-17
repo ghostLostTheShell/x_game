@@ -53,6 +53,10 @@ func _drop_data(at_position: Vector2, data: Variant):
 		
 	
 func consumptionNutritionTracker():
+	
+	if cultivationWarehouse.liquidInletSwitchState == false:
+		return
+	
 	if current_nutrition_tracker.capacity <= 0:
 		time.timeout.disconnect(consumptionNutritionTracker)
 		has_item=false

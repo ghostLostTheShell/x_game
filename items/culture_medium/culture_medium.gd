@@ -15,29 +15,78 @@ func remove_cultivation_item(cultivation_item:Item):
 	#return Result.Err("移除培育物失败")
 	
 
-func grow():
+func grow(red_light:int, blue_light:int):
 	
 	if cultivation_item is Botany:
 		#print("%s 当前状态%s" % [cultivation_item.name, cultivation_item.state])
 		if  cultivation_item.state == Botany.PlantGrowthStage.SEED:
-			#print("%s进入 SPROUT 状态了"% [cultivation_item.name])
-			cultivation_item.update_state(Botany.PlantGrowthStage.SPROUT)
-			
+			if  blue_light > red_light:
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2)
+			else:
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5)
+				cultivation_item.developmentalState = cultivation_item.developmentalState -  1
+				
+			if cultivation_item.growthProgress >=30:
+				#print("%s进入 SPROUT 状态了"% [cultivation_item.name])
+				cultivation_item.update_state(Botany.PlantGrowthStage.SPROUT)
+				cultivation_item.growthProgress = 0
+				
 		elif cultivation_item.state == Botany.PlantGrowthStage.SPROUT:
 			#print("%s进入 YOUNG 状态了"% [cultivation_item.name])
-			cultivation_item.update_state(Botany.PlantGrowthStage.YOUNG)
+			
+			if blue_light > red_light:
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2)
+			else:
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5)
+				cultivation_item.developmentalState = cultivation_item.developmentalState -  1
+	
+			if cultivation_item.growthProgress >=30:
+				#print("%s进入 SPROUT 状态了"% [cultivation_item.name])
+				cultivation_item.update_state(Botany.PlantGrowthStage.YOUNG)
+				cultivation_item.growthProgress = 0
 			
 		elif cultivation_item.state == Botany.PlantGrowthStage.YOUNG:
 			#print("%s进入 MATURE 状态了"% [cultivation_item.name])
-			cultivation_item.update_state( Botany.PlantGrowthStage.MATURE)
+			
+			if blue_light < red_light:
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2)
+			else:
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5)
+				cultivation_item.developmentalState = cultivation_item.developmentalState -  1
+			
+			if cultivation_item.growthProgress >=30:
+				#print("%s进入 SPROUT 状态了"% [cultivation_item.name])
+				cultivation_item.update_state( Botany.PlantGrowthStage.MATURE)
+				cultivation_item.growthProgress = 0
+			
 			
 		elif cultivation_item.state == Botany.PlantGrowthStage.MATURE:
 			#print("%s进入 FLOWERING 状态了"% [cultivation_item.name])
-			cultivation_item.update_state( Botany.PlantGrowthStage.FLOWERING)
 			
+			if blue_light < red_light:
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2)
+			else:
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5)
+				cultivation_item.developmentalState = cultivation_item.developmentalState -  1
+			
+			if cultivation_item.growthProgress >=30:
+				#print("%s进入 SPROUT 状态了"% [cultivation_item.name])
+				cultivation_item.update_state( Botany.PlantGrowthStage.FLOWERING)
+				cultivation_item.growthProgress = 0
+	
 		elif cultivation_item.state == Botany.PlantGrowthStage.FLOWERING:
 			#print("%s进入 FRUITING 状态了"% [cultivation_item.name])
-			cultivation_item.update_state(Botany.PlantGrowthStage.FRUITING)
+			
+			if blue_light < red_light:
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1* 2)
+			else:
+				cultivation_item.growthProgress = cultivation_item.growthProgress + (1 * 0.5)
+				cultivation_item.developmentalState = cultivation_item.developmentalState -  1
+				
+			if cultivation_item.growthProgress >=30:
+				#print("%s进入 SPROUT 状态了"% [cultivation_item.name])
+				cultivation_item.update_state(Botany.PlantGrowthStage.FRUITING)
+				cultivation_item.growthProgress = 0
 
 		
 	

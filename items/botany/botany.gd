@@ -8,8 +8,13 @@ enum PlantGrowthStage {
 	MATURE, 	#MATURE - 成熟阶段 🍃
 	FLOWERING, 	#FLOWERING - 开花阶段 🌸
 	FRUITING,  	#FRUITING - 结果阶段 🍏
+	FRUITING2,  #FRUITING - 结果阶段 🍏
 	WILTING,  	#WILTING - 枯萎阶段 🍂
 }
+
+var growthProgress = 0;
+
+var developmentalState = 30 * 5
 
 var state:PlantGrowthStage = PlantGrowthStage.SEED
 

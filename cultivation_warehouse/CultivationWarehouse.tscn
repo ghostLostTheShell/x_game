@@ -33,8 +33,8 @@
 [ext_resource type="Script" path="res://cultivation_warehouse/culture_medium_panel.gd" id="21_gx6wo"]
 [ext_resource type="Script" path="res://cultivation_warehouse/item_panel.gd" id="22_0d4wh"]
 [ext_resource type="Script" path="res://cultivation_warehouse/liquid_inlet_area.gd" id="22_ajtvg"]
-[ext_resource type="Texture2D" uid="uid://dyy2mvf4vyvle" path="res://cultivation_warehouse/texture/switch/开.png" id="22_d3mt5"]
 [ext_resource type="Texture2D" uid="uid://hquqwe7075rg" path="res://cultivation_warehouse/texture/能量槽填充.png" id="23_arvdj"]
+[ext_resource type="Texture2D" uid="uid://of7j4c7fpo0h" path="res://cultivation_warehouse/texture/switch/关-暗.png" id="24_pi7gw"]
 [ext_resource type="Texture2D" uid="uid://bs0ujhgfkirag" path="res://cultivation_warehouse/texture/switch/关.png" id="24_rvgew"]
 [ext_resource type="Texture2D" uid="uid://3kgq4ttk3kx7" path="res://cultivation_warehouse/texture/LED控制滑槽.png" id="25_px6yg"]
 [ext_resource type="Script" path="res://cultivation_warehouse/liquid_inlet_switch_button.gd" id="25_vla87"]
@@ -420,7 +420,7 @@ offset_left = 1598.0
 offset_top = 907.0
 offset_right = 1670.0
 offset_bottom = 939.0
-texture_normal = ExtResource("22_d3mt5")
+texture_normal = ExtResource("24_pi7gw")
 script = ExtResource("25_vla87")
 
 [node name="LiquidInletArea" type="Control" parent="ControlPanel"]
@@ -680,7 +680,7 @@ texture_pressed = ExtResource("43_ttd7t")
 [connection signal="pressed" from="PropContainer/NutritionTrackerPanel/LPageTurningButton" to="PropContainer/NutritionTrackerPanel" method="_on_l_page_turning_button_pressed"]
 [connection signal="pressed" from="PropContainer/ItemPanel/RPageTurningButton" to="PropContainer/ItemPanel" method="_on_r_page_turning_button_pressed"]
 [connection signal="pressed" from="PropContainer/ItemPanel/LPageTurningButton" to="PropContainer/ItemPanel" method="_on_l_page_turning_button_pressed"]
-[connection signal="pressed" from="ControlPanel/LiquidInletSwitchButton" to="ControlPanel/LiquidInletSwitchButton" method="_on_pressed"]
+[connection signal="pressed" from="ControlPanel/LiquidInletSwitchButton" to="." method="_on_liquid_inlet_switch_button_pressed"]
 [connection signal="pressed" from="ControlPanel/DrainingLiquidSwitchButton" to="." method="_on_draining_liquid_switch_button_pressed"]
 [connection signal="value_changed" from="ControlPanel/BlueLedScrollBar" to="." method="_on_blue_led_scroll_bar_value_changed"]
 [connection signal="value_changed" from="ControlPanel/RedLedScrollBar" to="." method="_on_red_led_scroll_bar_value_changed"]

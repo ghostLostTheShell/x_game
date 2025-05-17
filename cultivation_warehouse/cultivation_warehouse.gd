@@ -10,7 +10,7 @@ class_name CultivationWarehouse
 @onready var propContainer = $PropContainer
 @onready var nutritionSchedule = $NutritionTracker/Background/Nutrition/Schedule
 @onready var failureDialogPanel = $FailureDialogPanel
-
+@onready var rom_warehouse = $Rom/Warehouse
 
 static var all_item_list:Array[Item] = [
 	Rice.new(6),
@@ -60,7 +60,7 @@ func food_consumption():
 		failureDialogPanel.visible = true
 		print("游戏结束")
 		pass
-	food = food - 0.2
+	food = food - 0.2 #10.0
 	var x = 990 * (food / 100)
 	foodSchedule.size.x = x
 	
@@ -100,6 +100,8 @@ func _ready() -> void:
 	nutritionSchedule.size.y = 0
 	timer.timeout.connect(draining_liquid_handler)
 	
+	liquidInletSwitchButton.update_texture_normal(liquidInletSwitchState)
+	drainingLiquidSwitchButton.update_texture_normal(drainingLiquidState)
 	
 func _on_electricity_num_changed(new_value: int) -> void:
 	electricityLabel.text = "%d/100" % new_value
@@ -116,12 +118,12 @@ func _on_back_button_pressed() -> void:
 func _on_home_button_pressed() -> void:
 	visible = false
 
-
+@onready var redLedScrollBar = $ControlPanel/RedLedScrollBar
 func _on_red_led_scroll_bar_value_changed(value: float) -> void:
 	value = 10 - value
 	romWarehouseColorRect.material.set_shader_parameter("red_progress", value * 0.04)
 
-
+@onready var blueLedScrollBar =$ControlPanel/BlueLedScrollBar
 func _on_blue_led_scroll_bar_value_changed(value: float) -> void:
 	value = 10 - value
 	romWarehouseColorRect.material.set_shader_parameter("blue_progress", value * 0.04)
@@ -141,7 +143,30 @@ func _on_re_start_button_pressed() -> void:
 	nutritionSchedule.size.y = 1120 * (nutrition / 100)
 	
 	failureDialogPanel.visible = false
-
+	
+	redLedScrollBar.value = 0
+	blueLedScrollBar.value = 0
+	
+	all_item_list = [
+	Rice.new(6),
+	RockWoolCultureMedium.new(0),
+	VermiculitecultureMedium.new(1),
+	RockWoolCultureMedium.new(3),
+	VermiculitecultureMedium.new(4),
+	VermiculitecultureMedium.new(5),
+	Lettuce.new(0),
+	Pepper.new(1),
+	Radish.new(3),
+	SoilLeachate.new(1),
+	SyntheticInorganicSalts.new(1),
+	ReuseWaterCycle.new(0),
+	PruningPliers.new(5),
+	Shear.new(5),
+	]
+	
+	propContainer.refreshAll()
+	
+	rom_warehouse.reset_config()
 
 var drainingLiquidState:bool = false
 
@@ -165,3 +190,16 @@ func draining_liquid_handler():
 		drainingLiquidArea.load_current_nutrition_tracker(current_nutrition_type)
 		audioStreamPlayer.stream = preload("res://Music/water_flow.wav")
 		audioStreamPlayer.play()
+
+
+# 进液状态
+var liquidInletSwitchState:bool = false
+@onready var liquidInletSwitchButton = $ControlPanel/LiquidInletSwitchButton
+
+func _on_liquid_inlet_switch_button_pressed() -> void:
+	if liquidInletSwitchState:
+		liquidInletSwitchState = false
+	else:
+		liquidInletSwitchState = true
+		
+	liquidInletSwitchButton.update_texture_normal(liquidInletSwitchState)

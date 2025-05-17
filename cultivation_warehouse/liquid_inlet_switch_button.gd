@@ -1,7 +1,5 @@
 extends TextureButton
 
-var state = true
-
 @onready var button_enable_texture = preload("res://textures/ui/switch_button/开.png")
 @onready var button_disable_texture = preload("res://textures/ui/switch_button/关.png")
 
@@ -15,10 +13,8 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_pressed() -> void:
+func update_texture_normal(state:bool):
 	if state:
-		texture_normal = button_disable_texture
-		state= false
-	else:
 		texture_normal = button_enable_texture
-		state= true
+	else:
+		texture_normal = button_disable_texture

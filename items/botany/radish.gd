@@ -29,12 +29,12 @@ static var _texture_stet_map = {
 	PlantGrowthStage.YOUNG: _2_texture,
 	PlantGrowthStage.MATURE: _3_texture,
 	PlantGrowthStage.FLOWERING: _4_texture,
-	PlantGrowthStage.FRUITING: _4_texture,
+	PlantGrowthStage.FRUITING: _5_texture,
 	PlantGrowthStage.WILTING: _texture,
 }
 
 func  _init(qualityLevel:int, stat:PlantGrowthStage=PlantGrowthStage.SEED) -> void:
-	super(_name_stet_map.get(stat), qualityLevel)
+	super(_name_stet_map.get(stat), qualityLevel, state)
 	textur = _texture_stet_map.get(stat)
 
 func update_state(state:PlantGrowthStage):
@@ -44,7 +44,21 @@ func update_state(state:PlantGrowthStage):
 
 func gather():
 	update_state(PlantGrowthStage.WILTING)
-	return [self, Radish.new(2),  Radish.new(1)]
+	if developmentalState > 100:
+		return [
+			Radish.new(4, PlantGrowthStage.WILTING), 
+			Radish.new(4, PlantGrowthStage.WILTING),
+			Radish.new(4),
+			Radish.new(4)
+			]
+	elif developmentalState < 75:
+		return [Radish.new(1)]
+		
+	else:
+		return [
+			Radish.new(3, PlantGrowthStage.WILTING), 
+			Radish.new(3)
+		]
 
 func clone():
 	return Radish.new(self.qualityLevel, self.state)
