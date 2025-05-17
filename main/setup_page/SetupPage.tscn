@@ -102,6 +102,8 @@ theme = SubResource("Theme_83qrf")
 theme_override_icons/grabber = ExtResource("9_o83qk")
 theme_override_icons/grabber_highlight = ExtResource("9_o83qk")
 theme_override_icons/grabber_disabled = ExtResource("9_o83qk")
+max_value = 1.0
+step = 0.1
 
 [node name="GraphicsQualityControl" type="Control" parent="TextureRect2"]
 anchors_preset = 0
@@ -254,5 +256,6 @@ texture = ExtResource("18_7nipq")
 
 [connection signal="pressed" from="BrackButtion" to="." method="_on_brack_buttion_pressed"]
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="value_changed" from="TextureRect2/Volume/Progress/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="TextureRect2/VoiceStatus" to="." method="_on_voice_status_pressed"]
 [connection signal="pressed" from="TextureRect2/AntiAliasingStatus" to="." method="_on_anti_aliasing_status_pressed"]
