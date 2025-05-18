@@ -685,6 +685,7 @@ texture_pressed = ExtResource("43_ttd7t")
 
 [node name="HelpDialog" type="Panel" parent="."]
 visible = false
+z_index = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_axxtr")
