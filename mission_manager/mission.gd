@@ -51,6 +51,8 @@ func _process(delta: float) -> void:
 
 
 func _on_button_1_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()		
 	selected = 0
 	__update_bar_button()
 	
@@ -58,18 +60,26 @@ func _on_button_1_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()		
 	selected = 1
 	__update_bar_button()
 
 
 func _on_button_3_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()		
 	selected = 2
 	__update_bar_button()
 
 
 func _on_home_button_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()	
 	visible = false 
 
 
 func _on_back_button_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()	
 	visible = false 

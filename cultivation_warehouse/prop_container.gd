@@ -80,19 +80,28 @@ func _process(delta: float) -> void:
 
 
 func _on_seed_button_pressed() -> void:
+	
+	get_parent().audioStreamPlayer.stream = preload("res://Music/click.wav")
+	get_parent().audioStreamPlayer.play()
 	switch_to_seed()
 
 
 func _on_culture_medium_button_pressed() -> void:
+	get_parent().audioStreamPlayer.stream = preload("res://Music/click.wav")
+	get_parent().audioStreamPlayer.play()	
 	switch_to_culture_medium()
 
 
 func _on_nutrient_solution_button_pressed() -> void:
+	get_parent().audioStreamPlayer.stream = preload("res://Music/click.wav")
+	get_parent().audioStreamPlayer.play()	
 	switch_to_nutrient_solution()
 	
 
 
 func _on_tool_button_pressed() -> void:
+	get_parent().audioStreamPlayer.stream = preload("res://Music/click.wav")
+	get_parent().audioStreamPlayer.play()	
 	switch_to_tool()
 	
 func refreshAll():

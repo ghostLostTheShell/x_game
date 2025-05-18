@@ -25,6 +25,8 @@ func _process(delta: float) -> void:
 
 
 func _on_settings_buttion_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()	
 	setupPage.toggleVisibility()
 	
 
@@ -41,6 +43,8 @@ func _on_gold_num_changed(new_value: int) -> void:
 
 
 func _on_to_cultivation_warehouse_button_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()
 	cultivationWarehouse.visible = true
 	
 
@@ -61,4 +65,6 @@ func _input(event):
 
 
 func _on_quite_button_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()	
 	get_tree().quit()

@@ -28,6 +28,8 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_home_button_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()	
 	visible = false
 	
 func toggleVisibility() -> void:
@@ -69,6 +71,8 @@ func _on_voice_status_pressed() -> void:
 
 
 func _on_brack_buttion_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()
 	visible = false
 
 

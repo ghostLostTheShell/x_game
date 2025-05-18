@@ -20,12 +20,18 @@ func _process(delta: float) -> void:
 
 
 func _on_start_button_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()		
 	loginDiglog.visible=true
 
 
 func _on_config_button_2_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()		
 	loginDiglog.visible=true
 
 
 func _on_config_button_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()		
 	setupPage.visible=true

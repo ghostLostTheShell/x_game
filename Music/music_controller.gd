@@ -1,6 +1,7 @@
 extends Node
 
 @onready var music_player = $AudioStreamPlayer
+@onready var buttonAudioPlayer = $ButtonAudioPlayer
 
 func _ready() -> void:
 	play_music(preload("res://Music/bg.mp3"))

@@ -12,4 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_texture_button_5_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()	
 	mission_view.visible = true

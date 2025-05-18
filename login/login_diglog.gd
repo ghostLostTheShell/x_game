@@ -12,8 +12,12 @@ func _process(delta: float) -> void:
 
 
 func _on_close_button_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()		
 	visible = false # Replace with function body.
 
 
 func _on_anonymous_login_button_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()		
 	get_tree().change_scene_to_file("res://loding_page/loding.tscn")

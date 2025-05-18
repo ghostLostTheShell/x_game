@@ -130,10 +130,14 @@ func _process(delta: float) -> void:
 
 
 func _on_back_button_pressed() -> void:
+	audioStreamPlayer.stream = preload("res://Music/click.wav")
+	audioStreamPlayer.play()
 	visible = false
 
 
 func _on_home_button_pressed() -> void:
+	audioStreamPlayer.stream = preload("res://Music/click.wav")
+	audioStreamPlayer.play()
 	visible = false
 
 @onready var redLedScrollBar = $ControlPanel/RedLedScrollBar
@@ -238,7 +242,8 @@ var doublethetime = false
 @onready var mode_switch_button_enable_texture = preload("res://cultivation_warehouse/texture/mode_switch_button_2.png")
 
 func _on_mode_switch_button_pressed() -> void:
-	
+	audioStreamPlayer.stream = preload("res://Music/click.wav")
+	audioStreamPlayer.play()
 	if doublethetime:
 		doublethetime = false
 		modeSwitchButton.texture_normal = mode_switch_button_disable_texture
@@ -248,4 +253,6 @@ func _on_mode_switch_button_pressed() -> void:
 
 @onready var helpDialog = $HelpDialog
 func _on_open_help_button_pressed() -> void:
+	audioStreamPlayer.stream = preload("res://Music/click.wav")
+	audioStreamPlayer.play()
 	helpDialog.visible = true

@@ -24,6 +24,8 @@ func _process(delta: float) -> void:
 
 
 func _on_next_button_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()
 	
 	if index < 4:
 		index = index + 1
@@ -46,6 +48,8 @@ func _on_next_button_pressed() -> void:
 
 
 func _on_previous_button_pressed() -> void:
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()	
 	if index > 0:
 		index = index - 1
 	else:
@@ -65,4 +69,8 @@ func _on_previous_button_pressed() -> void:
 
 
 func _on_close_button_pressed() -> void:
+	
+	MusicController.buttonAudioPlayer.stream = preload("res://Music/click.wav")
+	MusicController.buttonAudioPlayer.play()
+	
 	visible = false
