@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://s8kapcxfxw28"]
+[gd_scene load_steps=62 format=3 uid="uid://s8kapcxfxw28"]
 
 [ext_resource type="Texture2D" uid="uid://hcgf5tnlqdm7" path="res://cultivation_warehouse/texture/bg.png" id="1_lnfni"]
 [ext_resource type="Script" path="res://cultivation_warehouse/cultivation_warehouse.gd" id="1_x41sm"]
@@ -44,6 +44,16 @@
 [ext_resource type="Texture2D" uid="uid://ctlvvtnryjx5s" path="res://textures/ui/DialogPanel/游戏失败背板.png" id="41_35r6e"]
 [ext_resource type="Texture2D" uid="uid://8ht65ubb03hr" path="res://textures/ui/DialogPanel/重开.png" id="42_6wquw"]
 [ext_resource type="Texture2D" uid="uid://go7rocx5iur7" path="res://textures/ui/DialogPanel/重开-暗.png" id="43_ttd7t"]
+[ext_resource type="Texture2D" uid="uid://dlfmkfukkaxm0" path="res://textures/ui/HelpDialog/背板.png" id="45_gs88f"]
+[ext_resource type="Script" path="res://cultivation_warehouse/help_dialog.gd" id="45_nolj6"]
+[ext_resource type="Texture2D" uid="uid://b17syldk8a44q" path="res://textures/ui/HelpDialog/关闭.png" id="46_powrf"]
+[ext_resource type="Texture2D" uid="uid://bo8tjs8ljvwrh" path="res://textures/ui/HelpDialog/关闭-暗.png" id="47_242xw"]
+[ext_resource type="Texture2D" uid="uid://dhejw87rrcuuu" path="res://textures/ui/HelpDialog/右.png" id="48_qc5wj"]
+[ext_resource type="Texture2D" uid="uid://c13jv8m5yv232" path="res://textures/ui/HelpDialog/右-暗.png" id="49_fpyq4"]
+[ext_resource type="Texture2D" uid="uid://davdf4gtam8pf" path="res://textures/ui/HelpDialog/左.png" id="50_c3gyk"]
+[ext_resource type="Texture2D" uid="uid://cmp4keuvfv0ko" path="res://textures/ui/HelpDialog/左-暗.png" id="51_am8dd"]
+[ext_resource type="Texture2D" uid="uid://x2lbvh43kqm7" path="res://textures/ui/HelpDialog/说明1.png" id="52_tj57h"]
+[ext_resource type="Texture2D" uid="uid://1e2tt1pwwuop" path="res://textures/ui/HelpDialog/帮助图标.png" id="54_ahei3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bpuxe"]
 shader = ExtResource("7_0wilp")
@@ -72,6 +82,8 @@ corner_radius_bottom_left = 10
 line_spacing = 1.0
 font_size = 33
 outline_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axxtr"]
 
 [node name="CultivationWarehouse" type="Node2D"]
 script = ExtResource("1_x41sm")
@@ -671,6 +683,70 @@ texture_pressed = ExtResource("43_ttd7t")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="HelpDialog" type="Panel" parent="."]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_axxtr")
+script = ExtResource("45_nolj6")
+
+[node name="TextureRect" type="TextureRect" parent="HelpDialog"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -485.0
+offset_top = -275.0
+offset_right = 485.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("45_gs88f")
+
+[node name="CloseButton" type="TextureButton" parent="HelpDialog"]
+layout_mode = 0
+offset_left = 1357.0
+offset_top = 280.0
+offset_right = 1428.0
+offset_bottom = 351.0
+texture_normal = ExtResource("46_powrf")
+texture_pressed = ExtResource("47_242xw")
+
+[node name="NextButton" type="TextureButton" parent="HelpDialog"]
+layout_mode = 0
+offset_left = 1360.0
+offset_top = 736.0
+offset_right = 1425.0
+offset_bottom = 801.0
+texture_normal = ExtResource("48_qc5wj")
+texture_pressed = ExtResource("49_fpyq4")
+
+[node name="PreviousButton" type="TextureButton" parent="HelpDialog"]
+layout_mode = 0
+offset_left = 493.0
+offset_top = 731.0
+offset_right = 558.0
+offset_bottom = 796.0
+texture_normal = ExtResource("50_c3gyk")
+texture_pressed = ExtResource("51_am8dd")
+
+[node name="Main" type="TextureRect" parent="HelpDialog"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 351.0
+offset_right = 1348.0
+offset_bottom = 776.0
+texture = ExtResource("52_tj57h")
+
+[node name="openHelpButton" type="TextureButton" parent="."]
+offset_left = 1663.0
+offset_top = 8.0
+offset_right = 1771.0
+offset_bottom = 117.0
+texture_normal = ExtResource("54_ahei3")
+
 [connection signal="pressed" from="ModeSwitchButton" to="." method="_on_mode_switch_button_pressed"]
 [connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/SeedButton" to="PropContainer" method="_on_seed_button_pressed"]
 [connection signal="pressed" from="PropContainer/SwitchControl/HBoxContainer/CultureMediumButton" to="PropContainer" method="_on_culture_medium_button_pressed"]
@@ -689,3 +765,7 @@ texture_pressed = ExtResource("43_ttd7t")
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="FailureDialogPanel/TextureRect/ReStartButton" to="." method="_on_re_start_button_pressed"]
+[connection signal="pressed" from="HelpDialog/CloseButton" to="HelpDialog" method="_on_close_button_pressed"]
+[connection signal="pressed" from="HelpDialog/NextButton" to="HelpDialog" method="_on_next_button_pressed"]
+[connection signal="pressed" from="HelpDialog/PreviousButton" to="HelpDialog" method="_on_previous_button_pressed"]
+[connection signal="pressed" from="openHelpButton" to="." method="_on_open_help_button_pressed"]

@@ -245,3 +245,7 @@ func _on_mode_switch_button_pressed() -> void:
 	else:
 		doublethetime = true
 		modeSwitchButton.texture_normal = mode_switch_button_enable_texture
+
+@onready var helpDialog = $HelpDialog
+func _on_open_help_button_pressed() -> void:
+	helpDialog.visible = true
