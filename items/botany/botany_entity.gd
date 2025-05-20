@@ -40,8 +40,8 @@ func update():
 	
 	elif pure_botany.state == Botany.PlantGrowthStage.FLOWERING:
 		state_txt.text = "4阶段"
-	
-	
+	elif pure_botany.state == Botany.PlantGrowthStage.FRUITING:
+		state_txt.text = "5阶段"
 
 
 func _ready() -> void:
